@@ -1,12 +1,6 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 /* NavBar Styles  */
      .navbar{
-    position: fixed;
-    background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(4, 0, 51));    
-    background-image: url(website1.jpg);
+    background-image: linear-gradient(to right,  rgba(26, 26, 51, 0.925),rgb(4, 0, 51));    
     top: 0;
     width: 100%;
     /* rgb(86, 57, 133)  */
@@ -41,7 +35,10 @@
     /* background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133)); */
     width: 100%;
     margin: 0;
-    background-image: url(website1.jpg);    
+    background-image: url(website1.jpg);  
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;  
 } 
 
 .navbar_container{
@@ -72,4 +69,20 @@
     margin-top: 10rem;
     color: black;
        padding-bottom: 1000rem;
+}
+
+p{
+color: white;
+}
+
+.navIp{
+    padding: 0.1rem;
+    background-color: black;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+.ispspan{
+    color: red;
 }

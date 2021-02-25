@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 import "./Index.css";
 import logo from './security.png'
+import axios from "axios"
 
 export default class Index extends Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            
         }
+        axios.get("http://localhost:5000/index")
+        .then(res=>{
+            console.log(res.data)
+            this.setState({getIp:res.data.ip})
+            this.setState({getIsp:res.data.isp})
+        })
+        .catch(err=>{
+            console.log(err)
+        })
     }
+
+    
 
     onButtonClick = (event) => {
         alert("Clicked!")
@@ -20,9 +32,17 @@ export default class Index extends Component {
         }
     }
     render() {
+        const clientIp = this.state.getIp
+        const clientISP = this.state.getIsp
+        console.log(clientIp)
+
         return (
             <div id="index">
+                     <div className='navIp'>
+                    <p id='getIp'>Your ip address is {clientIp} - {clientISP}- Your Status: <span className='ispspan'>Unprotected</span></p>
+                </div>
                 <div id="navbar_container">
+
                     <nav className="navbar navbar-expand-lg navbar-light ">
                         <div className="container-fluid">
                         <img className='logo-img' src={logo} width="45"  />
