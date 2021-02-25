@@ -6,6 +6,12 @@ const RegisterUserSchema = new mongoose.Schema({
     },
     password:{
         type:String
+    },
+    token:{
+        type:String
+    },
+    ExpireToken:{
+        type:Date
     }
 })
 

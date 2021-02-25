@@ -34,12 +34,16 @@ app.use(bodyParser.urlencoded({ extended:false }))
 const RegisterRouter = require("./routers/RegisterRouter")
 const LoginRouter = require("./routers/LoginRouter")
 const LogoutRouter = require("./routers/LogoutRouter")
+const ForgotRouter = require("./routers/ForgotRouter")
+const ProductCreateRouter = require("./routers/ProductCreateRouter")
 
 
 //Use of Routes
 app.use(RegisterRouter)
 app.use(LoginRouter)
 app.use(LogoutRouter)
+app.use(ForgotRouter)
+app.use(ProductCreateRouter)
 
 
 app.listen(PORT, function(err){
