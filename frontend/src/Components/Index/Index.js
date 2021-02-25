@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import "./Index.css"
+import "./Index.css";
+import logo from './security.png'
 
 export default class Index extends Component {
     constructor(props) {
@@ -24,7 +25,8 @@ export default class Index extends Component {
                 <div id="navbar_container">
                     <nav className="navbar navbar-expand-lg navbar-light ">
                         <div className="container-fluid">
-                            <a className="navbar-brand" href="#" style={{ color: '#FFF' }} >DailyVPN</a>
+                        <img className='logo-img' src={logo} width="45"  />
+                            <a className="navbar-brand" href="#" style={{ color: '#FFF' }}>DailyVPN</a>
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                                 aria-label="Toggle navigation">

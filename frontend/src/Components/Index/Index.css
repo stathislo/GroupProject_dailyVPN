@@ -28,6 +28,11 @@
     padding-right: 3rem;
     word-spacing: 200px;
 }
+.logo-img{
+    /* background-color:white; */
+    /* border-bottom-left-radius: 10%; */
+    border-radius: 100%;
+}
 
 /* Title and Header  */
 .main-header{
