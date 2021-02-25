@@ -3,6 +3,6 @@ const router = express.Router()
 
 const IndexController = require("../controllers/IndexController")
 
-router.get("/", IndexController.getIndexIp)
+router.get("/index", IndexController.getIndexIp)
 
 module.exports = router
