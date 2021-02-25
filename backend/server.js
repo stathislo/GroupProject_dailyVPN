@@ -9,7 +9,7 @@ const cors = require("cors")
 
 
 const store = new MongoDBStore({
-    uri:"mongodb://localhost:27017/vpndaily",
+    uri:"mongodb+srv://alex42q:Alexis42q@cluster0.8nx6m.mongodb.net/vpndaily?retryWrites=true&w=majority",
     collection:"sessions"
 })
 
@@ -37,6 +37,7 @@ const LogoutRouter = require("./routers/LogoutRouter")
 const ForgotRouter = require("./routers/ForgotRouter")
 const ProductCreateRouter = require("./routers/ProductCreateRouter")
 const ProductFindRouter = require("./routers/ProductFindRouter")
+const IndexRouter = require("./routers/IndexRouter")
 
 
 //Use of Routes
@@ -46,7 +47,7 @@ app.use(LogoutRouter)
 app.use(ForgotRouter)
 app.use(ProductCreateRouter)
 app.use(ProductFindRouter)
-
+app.use(IndexRouter)
 
 app.listen(PORT, function(err){
     if(err){

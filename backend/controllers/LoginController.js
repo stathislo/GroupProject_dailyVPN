@@ -22,7 +22,7 @@ RegisterUser.findOne({email:req.body.email})
         })
     }else{
         console.log("Not email")
-        res.status(40).send("no email")
+        res.status(200).send("no email")
     }
 })
 .catch(err=>{
