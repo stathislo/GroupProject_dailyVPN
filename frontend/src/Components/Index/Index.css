@@ -39,10 +39,13 @@
 .main-header{
     height: 47rem;
     /* background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133)); */
+    width: 100%;
+    margin: 0;
     background-image: url(website1.jpg);    
 } 
 
 .navbar_container{
+    width: 100%;
 }
 
 #title-container{
