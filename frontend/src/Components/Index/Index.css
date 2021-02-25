@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* NavBar Styles  */
+     .navbar{
+    position: fixed;
+    background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(4, 0, 51));    
+    background-image: url(website1.jpg);
+    top: 0;
+    width: 100%;
+    /* rgb(86, 57, 133)  */
+}  
+.para{
+    word-spacing: 200px;
+}
+
+.navbar-brand{
+    font-size: 2rem;
+    padding-left:1rem;
+    font-weight: bold;
+}
+
+.nav-link{
+    font-size: 1.5rem;
+    margin-left: 3rem;
+}
+.navbar-nav{
+    padding-right: 3rem;
+    word-spacing: 200px;
+}
+.logo-img{
+    /* background-color:white; */
+    /* border-bottom-left-radius: 10%; */
+    border-radius: 100%;
+}
+
+/* Title and Header  */
+.main-header{
+    height: 47rem;
+    /* background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133)); */
+    width: 100%;
+    margin: 0;
+    background-image: url(website1.jpg);    
+} 
+
+.navbar_container{
+    width: 100%;
+}
+
+#title-container{
+   margin: 10rem 10rem;
+
+}
+
+#title-header1{
+    font-family: 'Prosto One', cursive;
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+}
+#title-header2{
+    font-family: 'Prosto One', cursive;
+    color: white;
+}
+
+#btn{
+    margin: 5rem 0rem;
+}
+
+#dokimi{
+    margin-top: 10rem;
+    color: black;
+       padding-bottom: 1000rem;
+}
