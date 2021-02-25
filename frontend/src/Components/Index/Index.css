@@ -9,26 +9,46 @@
     top: 0;
     width: 100%;
    
-}    
+}  
+.para{
+    word-spacing: 200px;
+}
+
+.navbar-brand{
+    font-size: 2rem;
+    padding-left:1rem;
+    font-weight: bold;
+}
+
+.nav-link{
+    font-size: 1.5rem;
+    margin-left: 3rem;
+}
+.navbar-nav{
+    padding-right: 3rem;
+    word-spacing: 200px;
+}
 
 /* Title and Header  */
 .main-header{
     height: 40rem;
     background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133));
-   
+  
 } 
 
 #title-container{
    margin: 10rem 10rem;
+
 }
 
 #title-header1{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Prosto One', cursive;
     font-size: 3rem;
     font-weight: 800;
     color: white;
 }
 #title-header2{
+    font-family: 'Prosto One', cursive;
     color: white;
 }
 
@@ -39,6 +59,5 @@
 #dokimi{
     margin-top: 10rem;
     color: black;
-    width: 100vw;
-    padding-bottom: 1000rem;
+       padding-bottom: 1000rem;
 }
