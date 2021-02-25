@@ -5,10 +5,10 @@
 /* NavBar Styles  */
      .navbar{
     position: fixed;
-    background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133));    
+    background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(4, 0, 51));    
     top: 0;
     width: 100%;
-   
+    /* rgb(86, 57, 133)  */
 }  
 .para{
     word-spacing: 200px;
