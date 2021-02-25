@@ -14,15 +14,15 @@ RegisterUser.findOne({email:req.body.email})
                 req.session.email = req.body.email
                 req.session._id = user._id
                 console.log(req.session)
-                res.send("perase")
+                res.status(200).send("perase")
             }else{
                 console.log("Lathos password")
-                res.send("Lathos pass")
+                res.status(200).send("Lathos pass")
             }
         })
     }else{
         console.log("Not email")
-        res.send("no email")
+        res.status(40).send("no email")
     }
 })
 .catch(err=>{
