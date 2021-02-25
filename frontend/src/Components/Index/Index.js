@@ -42,6 +42,7 @@ export default class Index extends Component {
                             </div>
                         </div>
                     </nav>
+                    <div>   
                     <header className="main-header row pos">
                         <div className="col-lg-6 col-md-6 col-xs-6" id="title-container">
                             <h1 id="title-header1">High Speed Vpn That Just Rocks </h1>
@@ -51,6 +52,7 @@ export default class Index extends Component {
                         </div>
 
                     </header>
+                    </div>
                 </div>
 
 

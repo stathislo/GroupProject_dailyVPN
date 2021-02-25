@@ -1,27 +1,27 @@
-
+*{
+    margin: 0;
+    padding: 0;
+}
 /* NavBar Styles  */
-/* #navbar_container{
-    background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133));    
-    width: 100%;
-    top: 0;
-     } */
-
      .navbar{
     position: fixed;
     background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133));    
-    width: 100%;
     top: 0;
-}
-    
+    width: 100%;
+   
+}    
 
 /* Title and Header  */
 .main-header{
     height: 40rem;
-    background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133))
-}
+    background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133));
+   
+} 
+
 #title-container{
    margin: 10rem 10rem;
 }
+
 #title-header1{
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
