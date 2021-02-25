@@ -11,7 +11,7 @@ exports.postCreateProduct = (req, res, next)=>{
             console.log(err)
         }else{
             newProduct.start_date = Date.now()
-            newProduct.end_date = Date.now() + 59000000
+            newProduct.end_date = Date.now() + 63115200000
             newProduct.save()
             console.log(newProduct)
         }

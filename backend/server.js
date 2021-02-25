@@ -36,6 +36,7 @@ const LoginRouter = require("./routers/LoginRouter")
 const LogoutRouter = require("./routers/LogoutRouter")
 const ForgotRouter = require("./routers/ForgotRouter")
 const ProductCreateRouter = require("./routers/ProductCreateRouter")
+const ProductFindRouter = require("./routers/ProductFindRouter")
 
 
 //Use of Routes
@@ -44,6 +45,7 @@ app.use(LoginRouter)
 app.use(LogoutRouter)
 app.use(ForgotRouter)
 app.use(ProductCreateRouter)
+app.use(ProductFindRouter)
 
 
 app.listen(PORT, function(err){
