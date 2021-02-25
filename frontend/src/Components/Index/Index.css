@@ -6,6 +6,7 @@
      .navbar{
     position: fixed;
     background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(4, 0, 51));    
+    background-image: url(website1.jpg);
     top: 0;
     width: 100%;
     /* rgb(86, 57, 133)  */
@@ -36,11 +37,13 @@
 
 /* Title and Header  */
 .main-header{
-    height: 40rem;
+    height: 47rem;
     /* background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133)); */
-    background-image: url(website1.jpg);
-    
+    background-image: url(website1.jpg);    
 } 
+
+.navbar_container{
+}
 
 #title-container{
    margin: 10rem 10rem;
