@@ -1,0 +1,44 @@
+
+/* NavBar Styles  */
+/* #navbar_container{
+    background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133));    
+    width: 100%;
+    top: 0;
+     } */
+
+     .navbar{
+    position: fixed;
+    background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133));    
+    width: 100%;
+    top: 0;
+}
+    
+
+/* Title and Header  */
+.main-header{
+    height: 40rem;
+    background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133))
+}
+#title-container{
+   margin: 10rem 10rem;
+}
+#title-header1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+}
+#title-header2{
+    color: white;
+}
+
+#btn{
+    margin: 5rem 0rem;
+}
+
+#dokimi{
+    margin-top: 10rem;
+    color: black;
+    width: 100vw;
+    padding-bottom: 1000rem;
+}
