@@ -1,6 +1,7 @@
 const RegisterUser = require("../models/RegisterUserModel")
 const bcrypt = require("bcryptjs")
 const crypto = require("crypto")
+const transporter = require("../apis/sendgrid")
 
 // exports.postRegister = (req, res, next)=>{
 // bcrypt.hash(req.body.password, 12, function(err,hash){
@@ -38,6 +39,19 @@ crypto.randomBytes(32, (err, buffer)=>{
                 result.RegisterTokenExpiration = Date.now() + 33600000;
                 result.save()
                 res.send(result)
+        RegisterUser.findOne({email:result.email})
+        .then(emailTheUser=>{
+            transporter.sendMail({
+                to:emailTheUser.email,
+                from:"info@vpndaily.eu",
+                subject:"Password reset",
+                html:`Confirm your email by this link <a href="http://localhost:5000/register/${emailTheUser.RegisterToken}" Link</a>`
+            }).catch(err=>{
+                console.log(err)
+            })
+            console.log(emailTheUser.email)
+        })
+             
             }
         })
     }
