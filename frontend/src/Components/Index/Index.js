@@ -41,7 +41,7 @@ export default class Index extends Component {
                      <div className='navIp'>
                     <p id='getIp'>Your ip address is {clientIp} - {clientISP}- Your Status: <span className='ispspan'>Unprotected</span></p>
                 </div>
-                <div id="navbar_container">
+                
 
                     <nav className="navbar navbar-expand-lg navbar-light ">
                         <div className="container-fluid">
@@ -72,7 +72,7 @@ export default class Index extends Component {
                             </div>
                     
                     </div>
-                </div>
+                
 
 
 
