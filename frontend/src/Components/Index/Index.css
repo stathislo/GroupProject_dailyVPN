@@ -57,6 +57,10 @@
     border-radius: 100%;
 }
 
+.navbar_container{
+    width: 100%;
+}
+
 /* Title and Header  */
 .main-header{
     height: 47rem;
@@ -69,13 +73,8 @@
     background-position: center;  
 } 
 
-.navbar_container{
-    width: 100%;
-}
-
 #title-container{
    margin: 10rem 10rem;
-
 }
 
 #title-header1{
@@ -84,6 +83,7 @@
     font-weight: 800;
     color: white;
 }
+
 #title-header2{
     font-family: 'Prosto One', cursive;
     color: white;
@@ -92,7 +92,7 @@
 #btn{
     margin: 5rem 0rem;
 }
-
+/* Testing Content  */
 #dokimi{
     margin-top: 10rem;
     color: black;
@@ -103,3 +103,25 @@ p{
 color: white;
 }
 
+/* Pricing  */
+#pricing{
+    padding: 7% 15%;
+}
+.pricing-columns{
+    padding: 3% 2%;
+}
+
+/* Media queries */
+
+@media(max-width:991px){
+    h1{
+        text-align: center;
+    }
+    .pos{
+      text-align: center;
+    }
+    .title-image{
+    transform: rotate(0);
+    margin-right: 180px;  
+  }
+}
