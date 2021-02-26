@@ -91,7 +91,7 @@ export default class Index extends Component {
           <h5>Up to 5 Devices</h5>
           <h5>Limited Bandwith<small className="text-muted">/ 10Mbps</small></h5>
           <h5><small className="text-muted">Save 0%</small></h5>
-          <button type="button" className="btn btn-outline-primary btn-lg w-100">Sign Up For Free</button>
+          <button type="button" className="btn btn-outline-primary btn-lg w-100">Sign Up</button>
         </div>
       </div>
     </div>
