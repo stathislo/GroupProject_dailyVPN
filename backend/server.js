@@ -38,7 +38,7 @@ const ForgotRouter = require("./routers/ForgotRouter")
 const ProductCreateRouter = require("./routers/ProductCreateRouter")
 const ProductFindRouter = require("./routers/ProductFindRouter")
 const IndexRouter = require("./routers/IndexRouter")
-
+const MainRouter = require("./routers/MainRouter")
 
 
 
@@ -50,6 +50,9 @@ app.use(ForgotRouter)
 app.use(ProductCreateRouter)
 app.use(ProductFindRouter)
 app.use(IndexRouter)
+app.use(MainRouter)
+
+
 
 
 

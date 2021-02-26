@@ -1,7 +1,6 @@
-const RegisterUser = require("../models/RegisterUserModel")
-
-exports.loggedInPolicy = (req, res, next)=>{
-    req.session.loggedin = true
-    req.session.email = req.body.email
-    req.session._id = user._id
+module.exports = (req, res, next)=>{
+    if(!req.session.user){
+        res.status(403).send("not loggedin")
+    }
+    next()
 }

@@ -12,7 +12,7 @@ RegisterUser.findOne({email:req.body.email})
                 console.log(err)
             }else if(hash){
                 console.log("Perase")
-                req.session.loggedin = true
+                req.session.user = true
                 req.session.email = req.body.email
                 req.session._id = user._id
                 res.status(200).send("perase")
