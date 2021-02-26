@@ -6,6 +6,7 @@ const bodyParser = require("body-parser")
 const session = require("express-session")
 const MongoDBStore = require("connect-mongodb-session")(session)
 const cors = require("cors")
+const transporter = require("./apis/sendgrid")
 
 
 const store = new MongoDBStore({
