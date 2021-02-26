@@ -42,7 +42,7 @@ export default class Index extends Component {
                     <p id='getIp'>Your ip address is {clientIp} - {clientISP}- Your Status: <span className='ispspan'>Unprotected</span></p>
                 </div>
                 
-
+                    {/* Navbar Code  */}
                     <nav className="navbar navbar-expand-lg navbar-light ">
                         <div className="container-fluid">
                         <img className='logo-img' src={logo} width="45"  />
