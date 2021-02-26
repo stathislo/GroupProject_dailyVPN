@@ -1,8 +1,6 @@
 const RegisterUser = require("../models/RegisterUserModel")
 const bcrypt = require("bcryptjs")
 
-
-
 exports.postLogin = (req, res, next)=>{
 RegisterUser.findOne({email:req.body.email})
 .then(user=>{
@@ -29,4 +27,5 @@ RegisterUser.findOne({email:req.body.email})
 .catch(err=>{
     console.log(err)
     })
+    
 }

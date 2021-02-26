@@ -16,5 +16,5 @@ bcrypt.hash(req.body.password, 12, function(err,hash){
              res.status(200).send("User created!!!!")
          }
      })
-})
+  })
 }
