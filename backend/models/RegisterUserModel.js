@@ -12,6 +12,12 @@ const RegisterUserSchema = new mongoose.Schema({
     },
     ExpireToken:{
         type:Date
+    },
+    RegisterToken: {
+        type:String
+    },
+    RegisterTokenExpiration:{
+        type:Date
     }
 })
 
