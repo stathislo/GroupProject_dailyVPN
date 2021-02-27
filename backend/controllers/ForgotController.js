@@ -1,6 +1,7 @@
 const RegisterUser = require("../models/RegisterUserModel")
 const bcrypt = require("bcryptjs")
 
+
 exports.postForgot = (req, res, next)=>{
 RegisterUser.findOne({email:req.body.email})
 .then(user=>{
