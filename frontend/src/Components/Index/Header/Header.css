@@ -1,0 +1,39 @@
+/* Title and Header  */
+.main-header{
+    height: 35rem;
+    /* background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133)); */
+    width: 100%;
+    margin: 0;
+    background-image: url(../Images/website1.jpg);  
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;  
+} 
+
+#title-container{
+   margin: 10rem 10rem;
+}
+
+#title-header1{
+    font-family: 'Prosto One', cursive;
+    text-shadow: 4px 4px black;
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+}
+
+#title-header2{
+    font-family: 'Prosto One', cursive;
+    color: white;
+    text-shadow: 4px 4px black;
+
+}
+
+#btn{
+    margin: 5rem 0rem;
+}
+
+
+p{
+color: white;
+}

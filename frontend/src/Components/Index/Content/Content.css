@@ -1,0 +1,41 @@
+.content1{
+    padding: 5% 15%;
+    display: flex;    
+}
+
+.left_content1 {
+    background-image: url(../Images/content4.jpg);
+    background-size: 28rem;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding-bottom: 10rem;
+}
+
+.right_content1 {
+    width: 50%;
+    padding-bottom: 10rem;
+}
+
+.right-content1-h4{
+    padding-top: 2rem;
+    font-family: 'Dosis', sans-serif;
+    color: rgb(87, 87, 209);
+    font-size: 1.8rem;
+}
+
+.right-content1-h1{
+    font-family: 'Dosis', sans-serif;
+font-size: 2.8rem;
+}
+
+.right-content1-span{
+    text-decoration: underline rgb(87, 87, 209);
+}
+
+.right-content-text{
+    font-family: 'K2D', sans-serif;
+    margin-top: 2rem;
+    font-weight: normal;
+}
