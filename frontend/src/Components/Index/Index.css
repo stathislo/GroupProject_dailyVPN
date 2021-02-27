@@ -132,6 +132,7 @@ color: white;
 }
 
 .right-content1-h4{
+    padding-top: 2rem;
     font-family: 'Dosis', sans-serif;
     color: rgb(87, 87, 209);
     font-size: 1.8rem;
@@ -147,6 +148,7 @@ font-size: 2.8rem;
 }
 
 .right-content-text{
+    font-family: 'K2D', sans-serif;
     margin-top: 2rem;
     font-weight: normal;
 }
