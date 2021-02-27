@@ -6,6 +6,8 @@ import Register from "./Components/Register/Register"
 import Login from "./Components/Login/Login"
 import Error from "./Components/Error/Error"
 import Main from "./Components/Main/Main"
+import Registerget from "./Components/Registerget/Registerget"
+import Success from "./Components/Success/Success"
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         <Route path='/register' component={Register}/>
         <Route path="/logout" component={Logout}/>
         <Route path='/main' component={Main}/>
+        <Route path="/registerget/:id" component={Registerget}/>
+        <Route path="/success" component={Success}/>
         <Route path="*" component={Error}/>
       </Switch>
     </Router>
