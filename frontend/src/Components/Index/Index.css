@@ -103,6 +103,18 @@ p{
 color: white;
 }
 
+/* content */
+
+#content {
+    padding: 7% 15%;
+    
+}
+
+.content4 {
+    background-image: url(content4.jpg);
+    
+}
+
 /* Pricing  */
 #pricing{
     padding: 7% 15%;
