@@ -44,6 +44,7 @@ export default class Index extends Component {
         </div>
 
         {/* Navbar Code  */}
+
         <nav className="navbar navbar-expand-lg navbar-light ">
           <div className="container-fluid">
             <img className='logo-img' src={logo} width="45" />
@@ -57,15 +58,15 @@ export default class Index extends Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav ms-auto">
-                <a className="nav-link active" aria-current="page" href="#" style={{ color: '#FFF' }}>Home</a>
-                <a className="nav-link" href="#" style={{ color: '#FFF' }}>Features</a>
+                <a className="nav-link active" aria-current="page" href="#" style={{ color: '#FFF' }}>Features</a>
+                <a className="nav-link" href="#" style={{ color: '#FFF' }}>Reviews</a>
                 <a className="nav-link" href="#" style={{ color: '#FFF' }}>Pricing</a>
               </div>
             </div>
           </div>
         </nav>
         <div className="main-header row pos">
-          <div className="col-lg-6" id="title-container">
+          <div className="col-lg-6 col-md-6 col-sm-8 col-8" id="title-container">
             <h1 id="title-header1">High Speed Vpn That Just Rocks </h1>
             <h2 id="title-header2">Stay Fast Stay Furious</h2>
 
