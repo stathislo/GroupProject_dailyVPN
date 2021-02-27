@@ -1,18 +1,19 @@
 const RegisterUser = require("../models/RegisterUserModel")
 const bcrypt = require("bcryptjs")
+const crypto = require("crypto")
 
 
 exports.postForgot = (req, res, next)=>{
 RegisterUser.findOne({email:req.body.email})
 .then(user=>{
     if(user){
-        bcrypt.hash(req.body.token, 1, function(err,hashToken){
+        crypto.randomBytes(32, (err, buffer)=>{
             if(err){
                 console.log(err)
             }else{
-                console.log(hashToken)
-                user.token = hashToken
-                user.ExpireToken = Date.now() + 360000;
+                const forgotToken = buffer.toString("hex")
+                user.token = forgotToken
+                user.ExpireToken = Date.now() + 36000000
                 res.status(200).send(user.token)
                 user.save()
             }

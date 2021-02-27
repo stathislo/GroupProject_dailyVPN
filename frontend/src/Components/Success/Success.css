@@ -1,0 +1,10 @@
+.success__card{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 10rem;
+    margin: 15rem;
+    margin-left: 40rem;
+    margin-right: 40rem;
+    background-color: rgb(25, 12, 204);
+}

@@ -45,13 +45,16 @@ crypto.randomBytes(32, (err, buffer)=>{
                 to:emailTheUser.email,
                 from:"info@vpndaily.eu",
                 subject:"Password reset",
-                html:`Confirm your email by this link <a href="http://localhost:5000/register/${emailTheUser.RegisterToken}" Link</a>`
+                html:`
+                <p>Confirm your email by this <a href="http://localhost:3000/registerget/${emailTheUser.RegisterToken}">Link</a></p>
+                `
             }).catch(err=>{
                 console.log(err)
             })
             console.log(emailTheUser.email)
         })
              
+       
             }
         })
     }
@@ -65,9 +68,10 @@ exports.getRegisterEmail = (req, res, next)=>{
     .then(getRegisterPage=>{
         if(getRegisterPage){
             console.log("nai")
-            res.send(getRegisterPage)
+            res.status(200).send(getRegisterPage)
         }else{
             console.log("oxi")
+            res.status(403).send("forbidden")
         }
     })
     .catch(err=>{
