@@ -74,16 +74,16 @@ export default class Index extends Component {
                 </div>
 
                 {/* VPN Content */}
+                <section className='row'>
+                    <div className="content1 col-lg-12 col-md-6 col-sm-6 col-xs-12">
+                        <div className="left_content1">
 
-                <section id="content">
-                    <div className="row"> 
-                        <div className="content4">
-                            <div className="content4-text">
-
-                            </div>
+                        </div>
+                        <div className="right_content1">
+                            <h1>One click to a safer internet</h1>
+                            <h4>Going online doesn’t have to.</h4>
                         </div>
                     </div>
-
                 </section>
 
                 {/* <!-- Pricing And Buttons --> */}
