@@ -82,6 +82,7 @@
 
 #title-header1{
     font-family: 'Prosto One', cursive;
+    text-shadow: 4px 4px black;
     font-size: 3rem;
     font-weight: 800;
     color: white;
@@ -90,6 +91,8 @@
 #title-header2{
     font-family: 'Prosto One', cursive;
     color: white;
+    text-shadow: 4px 4px black;
+
 }
 
 #btn{
@@ -99,7 +102,7 @@
 #dokimi{
     margin-top: 10rem;
     color: black;
-       padding-bottom: 1000rem;
+    padding-bottom: 1000rem;
 }
 
 p{
@@ -109,16 +112,13 @@ color: white;
 /* content */
 
 .content1{
-    padding: 7% 15%;
-    display: flex;
-    /* width: auto; */
-    
+    padding: 5% 15%;
+    display: flex;    
 }
 
 .left_content1 {
-    /* padding: 0% 20%; */
     background-image: url(content4.jpg);
-    background-size: 20rem;
+    background-size: 28rem;
     background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
@@ -127,10 +127,17 @@ color: white;
 }
 
 .right_content1 {
-    /* padding: 0% 20%; */
     width: 50%;
     padding-bottom: 10rem;
-
+    font-family: 'Dosis', sans-serif;
+  
+}
+.right-content1-h4{
+    color: rgb(87, 87, 209);
+    font-size: 1.8rem;
+}
+.right-content1-h1{
+font-size: 2.8rem;
 }
 
 /* Pricing  */
