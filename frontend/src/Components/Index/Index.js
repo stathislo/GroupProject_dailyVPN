@@ -22,7 +22,7 @@ export default class Index extends Component {
         console.log(err)
       })
   }
-  
+
 
   render() {
     const clientIp = this.state.getIp
