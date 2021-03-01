@@ -6,6 +6,6 @@ const isAdminAuth = require("../Policies/adminLogin")
 const LogoutController = require("../controllers/LogoutController")
 
 
-router.get("/logout", isUserAuth, LogoutController.postLogout)
+router.get("/logout", LogoutController.postLogout)
 
 module.exports = router

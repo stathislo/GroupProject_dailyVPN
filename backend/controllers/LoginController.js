@@ -1,6 +1,10 @@
 const RegisterUser = require("../models/RegisterUserModel")
 const bcrypt = require("bcryptjs")
 
+exports.getIfUserIsLoggedIn = (req, res ,next)=>{
+    //check if the user is logged in and then redirect to the main loggin page
+}
+
 exports.postLogin = (req, res, next)=>{
 RegisterUser.findOne({email:req.body.email})
 .then(user=>{

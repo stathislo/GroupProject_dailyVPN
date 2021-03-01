@@ -11,6 +11,19 @@ export default class Register extends Component {
             email:"",
             token:""
         }
+
+        axios.get("http://localhost:5000/alreadyregistered", { withCredentials:true })
+        .then(ifAlreadyRegister=>{
+            console.log(ifAlreadyRegister)
+            if(ifAlreadyRegister.data==="not loggedin"){
+                this.props.history.push("/register")
+            }else if(ifAlreadyRegister.data==="loggedin"){
+                this.props.history.push("/alreadyregister")
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
     }
 
     onEmailChange = (event)=>{

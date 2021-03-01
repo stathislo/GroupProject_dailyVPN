@@ -1,6 +1,10 @@
 const RegisterUser = require("../models/RegisterUserModel")
 const AdminUser = require("../models/AdminUsersModel")
 
+exports.ifUserIsLoggedIn = (req, res, next)=>{
+    //check if the user is logged in and then redirect to the index page
+}
+
 exports.getMain = (req, res, next)=>{
 RegisterUser.findOne({email:req.session.email})
 .then(user=>{

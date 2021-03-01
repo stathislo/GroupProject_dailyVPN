@@ -10,6 +10,12 @@ import Registerget from "./Components/Registerget/Registerget"
 import Success from "./Components/Success/Success"
 
 
+//ifUserisLoggedIn Routes
+
+import ifUserIsLoggedIn from "./Components/Logout/IfUserIsLoggedIn/ifUserIsLoggedIn"
+import ifUserIsAlreadyRegistered from "./Components/Register/ifAlreadyRegistered/ifAlreadyRegistered"
+
+
 function App() {
   return (
     <div className="App">
@@ -22,6 +28,8 @@ function App() {
         <Route path='/main' component={Main}/>
         <Route path="/registerget/:id" component={Registerget}/>
         <Route path="/success" component={Success}/>
+        <Route path="/confirmlogout" component={ifUserIsLoggedIn}/>
+        <Route path="/alreadyregister" component={ifUserIsAlreadyRegistered}/>
         <Route path="*" component={Error}/>
       </Switch>
     </Router>
