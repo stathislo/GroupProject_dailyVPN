@@ -4,7 +4,7 @@
     /* background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133)); */
     width: 100%;
     margin: 0;
-    background-image: url(../Images/website1.jpg);  
+    background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../Images/website1.jpg);  
     background-size: cover;
     object-fit: cover;
     background-position: center;  
