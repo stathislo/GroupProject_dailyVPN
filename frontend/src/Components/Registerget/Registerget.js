@@ -132,16 +132,11 @@ export default class Reset extends Component {
             }
         }
 
-
-
         checkAndSwitchClasses(hasEight, hasEightCharsListItem);
         checkAndSwitchClasses2(hasLower, hasLowerCaseListItem);
         checkAndSwitchClasses3(hasUpper, hasUpperCaseListItem);
         checkAndSwitchClasses5(hasDigit, hasDigitListItem);
         checkAndSwitchClasses4(hasSpecial, hasSpecialListItem);
-
-
-        
 
     }
 
