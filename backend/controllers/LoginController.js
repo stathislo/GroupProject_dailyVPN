@@ -17,7 +17,7 @@ RegisterUser.findOne({email:req.body.email})
                 req.session.user = true
                 req.session.email = req.body.email
                 req.session._id = user._id
-                res.status(200).send("perase")
+                res.status(201).send("perase")
             }else{
                 console.log("Lathos password")
                 res.status(200).send("Lathos pass")

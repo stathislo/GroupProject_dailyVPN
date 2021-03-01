@@ -23,5 +23,6 @@ AdminUser.findOne({email:req.session.email})
 })
 .catch(err=>{
     console.log(err)
+    res.status(500).send("Server Error")
 })
 }
