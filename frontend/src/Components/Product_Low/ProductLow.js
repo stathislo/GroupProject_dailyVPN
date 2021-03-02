@@ -42,7 +42,7 @@ export default class ProductLow extends Component {
 
         console.log(JSON.stringify(makePayment.productId))
         
-        axios.post("http://localhost:5000/payment", makePayment)
+        axios.post("http://localhost:5000/payment/productlow", makePayment)
         .then(payment=>{
             window.open(payment.data)
         })
@@ -59,7 +59,7 @@ export default class ProductLow extends Component {
         return (
             <div>
             <form onSubmit={this.onPayClick}>
-                <input type='text' name='productId' value={_id}></input>
+                <input type='hidden' name='productId' value={_id}></input>
                 <h1>Product low</h1>
                 <h5>Product: {name}</h5>
                 <h5>Price: {price}</h5>
