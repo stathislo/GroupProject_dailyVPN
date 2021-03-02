@@ -22,16 +22,20 @@
     font-size: 2rem;
     padding-left:1rem;
     font-weight: bold;
+    text-shadow: 2px 2px black;
+
 }
 
 .nav-link{
     font-size: 1.3rem;
     margin-left: 3rem;
+    text-shadow: 2px 2px black;
+
 }
-.navbar-nav{
-    font-family: 'K2D', sans-serif;
+.navbar-nav a:hover {
     padding-right: 3rem;
-    word-spacing: 200px;
+    border-bottom: 2px solid red;
+    padding-bottom: 3px;   
 
 }
 .logo-img{
@@ -43,3 +47,4 @@
 .navbar_container{
     width: 100%;
 }
+
