@@ -148,7 +148,7 @@ exports.getPaymentProductHigh = (req, res, next)=>{
         },
         redirect_urls: {
             return_url: "http://localhost:5000/success/producthigh",
-            cancel_url: "http://localhost:3000/err"
+            cancel_url: "http://localhost:3000/cancel"
         },
         transactions: [{
             amount: {
@@ -201,4 +201,8 @@ exports.getPaymentProductHigh = (req, res, next)=>{
     .catch(err=>{
         console.log(err)
     })
+}
+
+exports.getCanceledPayment = (req, res, next)=>{
+    res.send("Payment Canceled!")
 }
