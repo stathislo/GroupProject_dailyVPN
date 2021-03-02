@@ -3,6 +3,7 @@ const router = express.Router()
 
 const ProductFindController = require("../controllers/ProductFindController")
 
-router.post("/productfind", ProductFindController.postProductFind)
+router.get("/product", ProductFindController.postProductFind)
+router.get("/product/:name", ProductFindController.getProductPage)
 
 module.exports = router
