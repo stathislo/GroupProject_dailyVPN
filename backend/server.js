@@ -44,7 +44,7 @@ const IndexRouter = require("./routers/IndexRouter")
 const MainRouter = require("./routers/MainRouter")
 const AdminRouter = require("./routers/AdminRouter")
 const PaymentRouter = require("./routers/PaymentsRouter")
-
+const SuccessPaymentRouter = require("./routers/SuccessPaymentRouter")
 
 
 //Use of Routes
@@ -58,7 +58,7 @@ app.use(IndexRouter)
 app.use(MainRouter)
 app.use(AdminRouter)
 app.use(PaymentRouter)
-
+app.use(SuccessPaymentRouter)
 
 
 app.listen(PORT, function(err){
