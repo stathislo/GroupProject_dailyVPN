@@ -21,7 +21,7 @@ export default class Header extends Component {
                         <h1 id="title-header1">High Speed Vpn That Just Rocks </h1>
                         <h2 id="title-header2">Stay Fast Stay Furious</h2>
 
-                        <button onClick={this.onButtonClick} type="button" className="btn btn-danger btn-lg" id="btn-header">Get DailyVPN</button>
+                        <button onClick={this.onButtonClick} type="button" className="btn btn-danger btn-lg" id="btn-header">Get DailyVPN Today</button>
                     </div>
 
                 </div>
