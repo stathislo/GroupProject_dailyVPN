@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './Content.css'
 
-    
+
 
 export default class Content extends Component {
     constructor(props) {
@@ -26,6 +26,7 @@ export default class Content extends Component {
                             <h1 className='right-content1-h1'><span className='right-content1-span'>Secure</span> & Anonymous Access</h1>
                             <h4 className='right-content-text'>DailyVPN provides total anonimity and security for your online data wherever you are.
                                Stay hidden and protected while accessing the web from everywhere.</h4>
+                            <button onClick={this.onButtonClick} type="button" className="btn btn-danger btn-lg " id="btn-content1">Get Started</button>
                         </div>
                     </div>
                 </section>
