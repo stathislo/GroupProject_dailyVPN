@@ -4,33 +4,35 @@
     /* background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133)); */
     width: 100%;
     margin: 0;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../Images/website2.jpeg);  
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(../Images/website2.jpeg);  
     background-size: cover;
     object-fit: cover;
     background-position: center;  
 } 
 
 #title-container{
-   margin: 10rem 10rem;
+   margin: 7rem 10rem;
+
+
 }
 
 #title-header1{
-    font-family: 'Prosto One', cursive;
+    font-family:'K2D', sans-serif;
     text-shadow: 4px 4px black;
     font-size: 3rem;
-    font-weight: 800;
+    /* font-weight: 800; */
     color: white;
 }
 
 #title-header2{
-    font-family: 'Prosto One', cursive;
+    font-family: 'K2D', sans-serif;
     color: white;
     text-shadow: 4px 4px black;
 
 }
 
 #btn-header{
-    margin: 4rem 0rem;
+    margin: 5rem 0rem;
     border-radius: 30px;
     height: 3.5rem;
     font-size: 1.5rem;
