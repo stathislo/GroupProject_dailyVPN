@@ -68,14 +68,14 @@ crypto.randomBytes(32, (err, buffer)=>{
 
 exports.getRegisterEmail = (req, res, next)=>{
     const registerid = req.params.id
-    RegisterUser.findOne({RegisterToken:registerid})
+    RegisterUser.findOne({RegisterToken:registerid, RegisterTokenExpiration:{$gt: Date.now()}})
     .then(getRegisterPage=>{
         if(getRegisterPage){
             console.log("nai")
             res.status(200).send(getRegisterPage)
         }else{
             console.log("oxi")
-            res.status(403).send("forbidden")
+            res.status(403).send("Expired")
         }
     })
     .catch(err=>{

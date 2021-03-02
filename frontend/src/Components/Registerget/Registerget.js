@@ -131,17 +131,11 @@ export default class Reset extends Component {
             }
         }
 
-
-
         checkAndSwitchClasses(hasEight, hasEightCharsListItem);
         checkAndSwitchClasses2(hasLower, hasLowerCaseListItem);
         checkAndSwitchClasses3(hasUpper, hasUpperCaseListItem);
         checkAndSwitchClasses5(hasDigit, hasDigitListItem);
         checkAndSwitchClasses4(hasSpecial, hasSpecialListItem);
-
-
-        
-
     }
 
     onSubmitForm = (event)=>{
@@ -178,7 +172,7 @@ export default class Reset extends Component {
                     <h5 id='req-special'>Has one special Char <i id='error4'></i></h5>
                     <h5 id='req-digit'>Has one digit <i id='error5'></i></h5>
                     <div className='getRegisterSubmitButton'>
-                        <button className='getRegisterSubmitBtn' type='submit'>Register</button>
+                        <button id='button' className='getRegisterSubmitBtn' type='submit'>Register</button>
                     </div>
                 </form>
                 </div>

@@ -1,16 +1,18 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
-const PORT = 5000;
+const PORT = process.env.SERVER_PORT;
 const db = require("./lib/db")
 const bodyParser = require("body-parser")
 const session = require("express-session")
 const MongoDBStore = require("connect-mongodb-session")(session)
 const cors = require("cors")
 const transporter = require("./apis/sendgrid")
+const paypal = require("./apis/paypal")
 
 
 const store = new MongoDBStore({
-    uri:"mongodb+srv://alex42q:Alexis42q@cluster0.8nx6m.mongodb.net/vpndaily?retryWrites=true&w=majority",
+    uri:process.env.DB_URI,
     collection:"sessions"
 })
 
@@ -41,6 +43,7 @@ const ProductFindRouter = require("./routers/ProductFindRouter")
 const IndexRouter = require("./routers/IndexRouter")
 const MainRouter = require("./routers/MainRouter")
 const AdminRouter = require("./routers/AdminRouter")
+const PaymentRouter = require("./routers/PaymentsRouter")
 
 
 
@@ -54,7 +57,7 @@ app.use(ProductFindRouter)
 app.use(IndexRouter)
 app.use(MainRouter)
 app.use(AdminRouter)
-
+app.use(PaymentRouter)
 
 
 

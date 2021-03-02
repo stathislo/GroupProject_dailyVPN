@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
 import './Pricing.css'
+import axios from "axios"
 
 export default class Pricing extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            productId:""
+        }
+    }
     render() {
         return (
             <section id="pricing">
@@ -16,11 +23,11 @@ export default class Pricing extends Component {
                                 <h3>1 Month Plan</h3>
                             </div>
                             <div className="card-body">
-                                <h2>$12.68 <small className="text-muted">/ mo</small></h2>
+                                <h2>$10.99 <small className="text-muted">/ mo</small></h2>
                                 <h5>Up to 5 Devices</h5>
                                 <h5>Limited Bandwith<small className="text-muted">/ 10Mbps</small></h5>
                                 <h5><small className="text-muted">Save 0%</small></h5>
-                                <button type="button" className="btn btn-outline-primary btn-lg w-100">Sign Up</button>
+                                <button type="button" className="btn btn-outline-primary btn-lg w-100"><a href="/product1/product_low">Sign up</a></button>
                             </div>
                         </div>
                     </div>
@@ -32,11 +39,11 @@ export default class Pricing extends Component {
                                 <h3>1 Year Plan</h3>
                             </div>
                             <div className="card-body">
-                                <h2>$6.34 <small className="text-muted">/ mo</small></h2>
+                                <h2>$5.99 <small className="text-muted">/ mo</small></h2>
                                 <h5>Up to 10 Devices</h5>
                                 <h5>Limited Bandwith<small className="text-muted">/ 20Mbps</small></h5>
                                 <h5><small className="text-muted">Save 50%</small></h5>
-                                <button type="button" className="btn btn-outline-danger w-100 btn-lg">Sign Up</button>
+                                <button type="button" className="btn btn-outline-danger w-100 btn-lg"><a href="/product2/product_medium">Sign up</a></button>
                             </div>
                         </div>
                     </div>
@@ -47,11 +54,11 @@ export default class Pricing extends Component {
                                 <h3>2 Year Plan</h3>
                             </div>
                             <div className="card-body">
-                                <h2>$4.23 <small className="text-muted">/ mo</small></h2>
+                                <h2>$1.99 <small className="text-muted">/ mo</small></h2>
                                 <h5>Unlimited Devices</h5>
                                 <h5>Unlimited Bandwith<small className="text-muted">/ 200Mbps</small></h5>
                                 <h5><small className="text-muted">Save 66%</small></h5>
-                                <button type="button" className="btn btn-outline-warning btn-lg w-100">Sign Up</button>
+                                <button type="button" className="btn btn-outline-warning btn-lg w-100"><a href="/product3/product_high">Sign up</a></button>
                             </div>
                         </div>
                     </div>

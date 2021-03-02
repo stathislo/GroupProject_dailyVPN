@@ -27,7 +27,7 @@ RegisterUser.findOne({email:req.body.email})
 
 exports.getReset = (req, res, next)=>{
     const id = req.params.id
-    RegisterUser.findOne({token:id})
+    RegisterUser.findOne({token:id, ExpireToken:{$gt: Date.now()}})
     .then(tokenId=>{
         if(tokenId){
             console.log("to brika")

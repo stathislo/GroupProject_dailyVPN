@@ -8,6 +8,9 @@ import Error from "./Components/Error/Error"
 import Main from "./Components/Main/Main"
 import Registerget from "./Components/Registerget/Registerget"
 import Success from "./Components/Success/Success"
+import Product_Low from "./Components/Product_Low/ProductLow"
+import Product_Medium from "./Components/Product_Medium/ProductMedium"
+import Product_High from "./Components/Product_high/ProductHigh"
 
 
 //ifUserisLoggedIn Routes
@@ -30,6 +33,9 @@ function App() {
         <Route path="/success" component={Success}/>
         <Route path="/confirmlogout" component={ifUserIsLoggedIn}/>
         <Route path="/alreadyregister" component={ifUserIsAlreadyRegistered}/>
+        <Route path='/product1/:name' component={Product_Low}/>
+        <Route path="/product2/:name" component={Product_Medium}/>
+        <Route path="/product3/:name" component={Product_High}/>
         <Route path="*" component={Error}/>
       </Switch>
     </Router>
