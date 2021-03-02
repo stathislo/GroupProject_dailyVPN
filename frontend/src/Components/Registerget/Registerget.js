@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import "./Registerget.css"
-import ErrorIcon from '@material-ui/icons/Error';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+
 
 export default class Reset extends Component {
     constructor(props){
