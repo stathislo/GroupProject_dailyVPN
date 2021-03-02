@@ -6,6 +6,7 @@ const isModeratorAuth = require("../Policies/moderatorLogin")
 
 const MainController = require("../controllers/MainController")
 
-router.get("/", isUserAuth, MainController.getMain)
+router.get("/main", isUserAuth, MainController.ifUserIsLoggedIn)
+router.get("/", MainController.getMain)
 
 module.exports = router

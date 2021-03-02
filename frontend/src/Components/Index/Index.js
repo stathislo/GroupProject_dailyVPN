@@ -12,15 +12,28 @@ export default class Index extends Component {
     this.state = {
 
     }
+
+
+    axios.get("http://localhost:5000/indexRedirect", { withCredentials:true })
+    .then(checkLogin=>{
+      console.log(checkLogin)
+      if(checkLogin.data==="not loggedin"){
     axios.get("http://localhost:5000/index")
       .then(res => {
-        console.log(res.data)
+        console.log(res)
         this.setState({ getIp: res.data.ip })
         this.setState({ getIsp: res.data.isp })
       })
       .catch(err => {
         console.log(err)
       })
+    }else if(checkLogin.data==="loggedin"){
+      this.props.history.push("/main")
+    }
+    })
+    .catch(err=>{
+      console.log(err)
+    })
   }
 
 
