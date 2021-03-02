@@ -29,8 +29,9 @@
 
 }
 
-#btn{
-    margin: 5rem 0rem;
+#btn-header{
+    margin: 4rem 0rem;
+    border-radius: 30px;
 }
 
 
