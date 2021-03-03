@@ -2,6 +2,17 @@ const RegisterUser = require("../models/RegisterUserModel")
 const bcrypt = require("bcryptjs")
 
 exports.getIfUserIsLoggedIn = (req, res ,next)=>{
+    RegisterUser.findOne({email:req.session.email})
+    .then(ifUser=>{
+        if(ifUser){
+            res.status(200).send("loggedin")
+        }else{
+            console.log("kane loggin")
+        }
+    })
+    .catch(err=>{
+        console.log(err)
+    })
     //check if the user is logged in and then redirect to the main loggin page
 }
 

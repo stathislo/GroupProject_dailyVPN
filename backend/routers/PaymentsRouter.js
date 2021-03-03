@@ -1,13 +1,13 @@
 const express = require("express")
 const router = express.Router()
+const isUserAuth = require("../Policies/userLogin")
 
 const PaymentController = require("../controllers/PaymentsController")
 
 //payments
-router.post("/payment/productlow", PaymentController.getPaymentProductLow)
-router.post("/payment/productmedium", PaymentController.getPaymentProductMedium)
-router.post("/payment/producthigh", PaymentController.getPaymentProductHigh)
+router.post("/payment/productlow", PaymentController.getPayment)
+
 
 //cancel
-router.get("/cancel", PaymentController.getCanceledPayment)
+router.get("/cancel", PaymentController.CancelPayment)
 module.exports = router

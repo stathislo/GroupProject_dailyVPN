@@ -1,4 +1,5 @@
 const ProductModel = require("../models/ProductsModel")
+const RegisterUserModel = require('../models/RegisterUserModel')
 
 exports.postProductFind = (req, res, next)=>{
     ProductModel.findOne({_id:req.body.productId})
@@ -11,20 +12,35 @@ exports.postProductFind = (req, res, next)=>{
 }
 
 exports.getProductPage = (req, res, next)=>{
-    const name = req.params.name
+  RegisterUserModel.findOne({email:req.session.email})
+  .then(ifUser=>{
+      if(ifUser){
+        const name = req.params.name
 
-    ProductModel.findOne({name:name})
-    .then(productPage=>{
-        if(productPage){
-        console.log(productPage)
-        res.status(200).json(productPage)
-        }else{
-            res.status(404).send("not found")
-        }
+        ProductModel.findOne({name:name})
+        .then(productPage=>{
+            if(productPage){
+            console.log(productPage)
+            res.status(200).json({
+                loggedin:"loggedin",
+                products:productPage,
+                user:ifUser    
+            })
+            }else{
+                res.status(404).send("not found")
+            }
+    
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+      }else{
+        console.log("kane loggin")
+      }
+  })
+  .catch(err=>{
+      console.log(err)
+  })  
 
-    })
-    .catch(err=>{
-        console.log(err)
-    })
 }
 

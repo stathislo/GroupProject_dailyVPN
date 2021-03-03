@@ -9,7 +9,12 @@ exports.getMain = (req, res, next)=>{
 RegisterUser.findOne({email:req.session.email})
 .then(user=>{
     if(user){
-        res.send(user)
+        res.send({
+            loggedin:'loggedin',
+            user:user
+        })
+    }else{
+        res.send({loggedin: 'not loggedin'})
     }
 })
 .catch(err=>{
