@@ -14,7 +14,7 @@ export default class Main extends Component {
             console.log(ifUser)
             if(ifUser.data==="not loggedin"){
                 this.props.history.push("/")
-            }else if(ifUser.data==="loggedin"){
+            }else if(ifUser.data.loggedin==="loggedin"){
                 this.props.history.push("/main")
             }
         })
@@ -26,7 +26,7 @@ export default class Main extends Component {
         axios.get("http://localhost:5000/", { withCredentials:true })
         .then(res=>{
             console.log(res)
-            this.setState({email:res.data.email})
+            this.setState({email:res.data.user.email})
         })
         .catch(err=>{
             console.log(err)

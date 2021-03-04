@@ -2,7 +2,16 @@ const request = require("request")
 const RegisterUser = require("../models/RegisterUserModel")
 
 exports.getIfUserLoggedinRedirect = (req, res, next)=>{
-    //check if the user is logged in and then redirect to the main loggin page
+RegisterUser.findOne({email:req.session.email})
+.then(user=>{
+    if(user){
+        res.send('loggedin')
+    }
+})
+.catch(err=>{
+    console.log(err)
+})
+    
 }
 
 exports.getIndexIp = (req, res, next)=>{

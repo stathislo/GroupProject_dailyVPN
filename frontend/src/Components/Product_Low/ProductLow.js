@@ -10,26 +10,34 @@ export default class ProductLow extends Component {
     }
 
     componentDidMount(){
-        axios.get("http://localhost:5000/product/" + this.props.match.params.name)
+        axios.get("http://localhost:5000/product/" + this.props.match.params.name, {withCredentials:true})
         .then(res=>{
-            console.log(res.data)
-            this.setState({productId:res.data._id})
-            this.setState({name:res.data.name})
-            this.setState({price:res.data.price})
-            this.setState({start_date:res.data.start_date})
-            this.setState({end_date:res.data.end_date})
-
-           
-           const getStartDate = res.data.start_date
-            console.log(getStartDate.slice(0,10))
-        const getEndDate = res.data.end_date
-            const start_date = document.getElementById("start_date").textContent ="Start Date: " + getStartDate.slice(0,10)
-            const end_date = document.getElementById("end_date").textContent = "End Date: " + getEndDate.slice(0,10)
+            if(res.data.loggedin==="loggedin"){
+                this.props.history.push("/product1/product_low")
+                console.log(res.data)
+                this.setState({productId:res.data.products._id})
+                this.setState({name:res.data.products.name})
+                this.setState({price:res.data.products.price})
+                this.setState({start_date:res.data.products.start_date})
+                this.setState({end_date:res.data.products.end_date})
+                this.setState({email:res.data.user.email})
+                this.setState({userId:res.data.user._id})
+    
+               
+               const getStartDate = res.data.products.start_date
+                console.log(getStartDate.slice(0,10))
+            const getEndDate = res.data.products.end_date
+                const start_date = document.getElementById("start_date").textContent ="Start Date: " + getStartDate.slice(0,10)
+                const end_date = document.getElementById("end_date").textContent = "End Date: " + getEndDate.slice(0,10)
+            }else{
+                this.props.history.push("/login")
+            }
+          
             
         })
         .catch(err=>{
             console.log(err)
-            this.props.history.push("/error")
+            //this.props.history.push("/error")
         })
     }
 
@@ -37,12 +45,14 @@ export default class ProductLow extends Component {
         event.preventDefault()
 
         const makePayment = {
-            productId:this.state.productId
+            productId:this.state.productId,
+            email:this.state.email,
+            userId:this.state.userId
         }
 
         console.log(JSON.stringify(makePayment.productId))
         
-        axios.post("http://localhost:5000/payment", makePayment)
+        axios.post("http://localhost:5000/payment/productlow", makePayment)
         .then(payment=>{
             window.open(payment.data)
         })
@@ -56,10 +66,15 @@ export default class ProductLow extends Component {
         const name = this.state.name
         const price = this.state.price
 
+        const email = this.state.email
+        const userId = this.state.userId
+
         return (
             <div>
             <form onSubmit={this.onPayClick}>
-                <input type='text' name='productId' value={_id}></input>
+                <input type='hidden' name='productId' value={_id}></input>
+                <input type='hidden' name='email' value={email}></input>
+                <input type='hidden' name='userId' value={userId}></input>
                 <h1>Product low</h1>
                 <h5>Product: {name}</h5>
                 <h5>Price: {price}</h5>
