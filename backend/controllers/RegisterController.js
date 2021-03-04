@@ -22,7 +22,9 @@ const transporter = require("../apis/sendgrid")
 // }
 
 exports.getIfAlreadyRegistered = (req, res, next)=>{
-    //check if the user is logged in and then redirect to the checkIfRegistered page
+    if(req.session){
+        res.status(200).send("loggedin")
+    }
 }
 
 exports.postRegisterEmail = (req, res, next)=>{
