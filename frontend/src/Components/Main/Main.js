@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "./Main.css"
 import axios from "axios"
+import Nav from "../Index/Nav/Nav"
 
 export default class Main extends Component {
     constructor(props){
@@ -36,6 +37,9 @@ export default class Main extends Component {
         const userEmail = this.state.email
         return (
             <div>
+
+               {/* Navbar Code  */}
+        <Nav />
                 Main page
 
                 User that is logged in now is {userEmail}
