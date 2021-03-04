@@ -39,7 +39,7 @@ export default class Content extends Component {
                             <h4 className='right-content2-h4'>Total protection fast and easy</h4>
                             <h1 className='right-content2-h1'><span className='right-content2-span'>Advanced</span> Device Protection</h1>
                             <h4 className='right-content2-text'>Secure all your devices with one subscription.Stay safe on Desktop, Laptop, Mobile phone or Tablet
-                            with DailyVPN all the time.<br></br> You can also set DailyVpn to your TV and your Router</h4>
+                            with DailyVPN all the time.<br></br> You can also set DailyVpn to your TV and your Router.</h4>
                             <button onClick={this.onButtonClick} type="button" className="btn btn-danger btn-lg " id="btn-content2">Guard Me</button>
                         </div>
                         <div className="right-content2">
