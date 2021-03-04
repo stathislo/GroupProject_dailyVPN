@@ -59,7 +59,7 @@ export default class Content extends Component {
                             <h1 className='right-content3-h1'><span className='right-content3-span'>Specialized</span> Technical Support</h1>
                             <h4 className='right-content3-text'>We've got you covered.<br></br>Contact us through our Live Chat or Email to have instant troubleshoot from our experts.
                              <br></br>DailyVPN makes sure that you get top level support 24/7.</h4>
-                            <button onClick={this.onButtonClick} type="button" className="btn btn-danger btn-lg " id="btn-content1">Get Started</button>
+                            <button onClick={this.onButtonClick} type="button" className="btn btn-danger btn-lg " id="btn-content3">Stay Secured</button>
                         </div>
                     </div>
                 </section>
