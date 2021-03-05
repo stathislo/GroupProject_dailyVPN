@@ -11,6 +11,7 @@ import Success from "./Components/Success/Success"
 import Product_Low from "./Components/Product_Low/ProductLow"
 import Product_Medium from "./Components/Product_Medium/ProductMedium"
 import Product_High from "./Components/Product_high/ProductHigh"
+import Checkout from "./Components/Checkout/Checkout"
 
 
 //ifUserisLoggedIn Routes
@@ -30,6 +31,7 @@ function App() {
         <Route path="/logout" component={Logout}/>
         <Route path='/main' component={Main}/>
         <Route path="/registerget/:id" component={Registerget}/>
+        <Route path='/checkout' component={Checkout} />
         <Route path="/success" component={Success}/>
         <Route path="/confirmlogout" component={ifUserIsLoggedIn}/>
         <Route path="/alreadyregister" component={ifUserIsAlreadyRegistered}/>
