@@ -13,8 +13,8 @@ export default class Pricing extends Component {
         return (
             <section id="pricing">
 
-                <h2 className="text-center">A Plan for Every User's Needs</h2>
-                <h5 className="text-center">Simple and affordable price plans for your Internet Protection.</h5>
+                <h2 className="text-center1">A Plan for Every User's Needs</h2>
+                <h5 className="text-center1">Simple and affordable price plans for your Internet Protection.</h5>
 
                 <div className="row ">
                     <div className="pricing-columns col-lg-4 col-md-6 text-center">

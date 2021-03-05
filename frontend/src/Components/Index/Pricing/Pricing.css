@@ -1,4 +1,14 @@
 #pricing{
-    background-color: blue;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Images/nasa-Q1p7bh3SHj8-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    background-attachment:fixed;
     padding: 3rem;
+}
+
+.text-center1{
+    color: white;
+    text-align: center;
+    align-items: center;
 }
