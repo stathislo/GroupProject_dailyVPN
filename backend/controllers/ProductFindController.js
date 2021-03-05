@@ -36,7 +36,22 @@ exports.getProductPage = (req, res, next)=>{
             console.log(err)
         })
       }else{
-        console.log("kane loggin")
+        const name = req.params.name
+
+        ProductModel.findOne({name:name})
+        .then(productPage=>{
+            if(productPage){
+            console.log(productPage)
+            res.status(200).json({
+                loggedin:"not loggedin",
+                products:productPage,
+                user:ifUser    
+            })
+            }else{
+                res.status(404).send("not found")
+            }
+    
+        })
       }
   })
   .catch(err=>{

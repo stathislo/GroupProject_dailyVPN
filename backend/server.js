@@ -46,7 +46,7 @@ const MainRouter = require("./routers/MainRouter")
 const AdminRouter = require("./routers/AdminRouter")
 const PaymentRouter = require("./routers/PaymentsRouter")
 const SuccessPaymentRouter = require("./routers/SuccessPaymentRouter")
-const CheckoutRouter = require("./routers/CheckoutRouter")
+
 
 
 //Use of Routes
@@ -61,7 +61,7 @@ app.use(MainRouter)
 app.use(AdminRouter)
 app.use(PaymentRouter)
 app.use(SuccessPaymentRouter)
-app.use(CheckoutRouter)
+
 
 
 app.listen(PORT, function(err){

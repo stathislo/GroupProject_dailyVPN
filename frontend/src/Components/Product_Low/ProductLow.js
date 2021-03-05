@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios"
+import "./ProductLow.css"
 import Nav from "../Index/Nav/Nav"
 
 export default class ProductLow extends Component {
@@ -14,7 +15,7 @@ export default class ProductLow extends Component {
         axios.get("http://localhost:5000/product/" + this.props.match.params.name, {withCredentials:true})
         .then(res=>{
             if(res.data.loggedin==="loggedin"){
-                this.props.history.push("/product1/product_low")
+                
                 console.log(res.data)
                 this.setState({productId:res.data.products._id})
                 this.setState({name:res.data.products.name})
@@ -31,7 +32,20 @@ export default class ProductLow extends Component {
                 const start_date = document.getElementById("start_date").textContent ="Start Date: " + getStartDate.slice(0,10)
                 const end_date = document.getElementById("end_date").textContent = "End Date: " + getEndDate.slice(0,10)
             }else{
-                this.props.history.push("/login")
+                this.setState({productId:res.data.products._id})
+                this.setState({name:res.data.products.name})
+                this.setState({price:res.data.products.price})
+                this.setState({start_date:res.data.products.start_date})
+                this.setState({end_date:res.data.products.end_date})
+                this.setState({email:res.data.user.email})
+                this.setState({userId:res.data.user._id})
+    
+               
+               const getStartDate = res.data.products.start_date
+                console.log(getStartDate.slice(0,10))
+            const getEndDate = res.data.products.end_date
+                const start_date = document.getElementById("start_date").textContent ="Start Date: " + getStartDate.slice(0,10)
+                const end_date = document.getElementById("end_date").textContent = "End Date: " + getEndDate.slice(0,10)
             }
           
             
@@ -71,19 +85,28 @@ export default class ProductLow extends Component {
         const userId = this.state.userId
 
         return (
-            <div>
+            <div className='productLow'>
             <Nav />
-            <form onSubmit={this.onPayClick}>
+            <div className='secure'>
+                <h1>test</h1>
+            </div>
+            <div className='plan'>
+            <div className='plan__text'>
+                <h2 className='plan__h2'>Choosen plan</h2>
+            </div>
+            <form className='plan__form' onSubmit={this.onPayClick}>
                 <input type='hidden' name='productId' value={_id}></input>
                 <input type='hidden' name='email' value={email}></input>
                 <input type='hidden' name='userId' value={userId}></input>
                 <h1>Product low</h1>
                 <h5>Product: {name}</h5>
                 <h5>Price: {price}</h5>
+                <p className='plan__p'>Billed every month</p>
                 <h5 id="start_date"></h5>
                 <h5 id="end_date"></h5>
                 <button type='submit'>Go to pay</button>
                 </form>
+            </div>
             </div>
         )
     }
