@@ -28,7 +28,15 @@ export default class Index extends Component {
         console.log(err)
       })
     }else if(checkLogin.data==="loggedin"){
-      this.props.history.push("/main")
+      axios.get("http://localhost:5000/index")
+      .then(res => {
+        console.log(res)
+        this.setState({ getIp: res.data.ip })
+        this.setState({ getIsp: res.data.isp })
+      })
+      .catch(err => {
+        console.log(err)
+      })
     }
     })
     .catch(err=>{

@@ -1,0 +1,25 @@
+.login{
+    background-color: black;
+    height: 100vh;
+}
+
+.login__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+}
+
+.login__leftSide{
+    width: 50%;
+}
+
+.login__rightSide{
+    width: 50%;
+}
+
+.login__already{
+    color: white;
+}

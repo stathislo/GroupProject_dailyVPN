@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import "./Login"
+import "./Login.css"
 import axios from "axios"
+import logo from "./security.png"
 
 export default class Login extends Component {
     constructor(props){
@@ -44,8 +45,15 @@ export default class Login extends Component {
 
         axios.post("http://localhost:5000/loginform", user, { withCredentials:true })
         .then(res=>{
-            console.log(res)
-            this.props.history.push("/")
+            if(res.data==="perase"){
+                console.log(res)
+                this.props.history.push("/")
+            }else if(res.data==="Lathos pass"){
+                let message = document.getElementById("message").textContent="Wrong email or password"
+            }else if(res.data==="no email"){
+                let message = document.getElementById("message").textContent="Wrong email or password"
+            }
+
         })
         .catch(err=>{
             console.log(err)
@@ -54,7 +62,12 @@ export default class Login extends Component {
     render() {
         return (
             <div className="login">
-                <form onSubmit={this.onFormSubmit}>
+            <div className='login__container'>
+            <div className='login__leftSide'>
+            <img src={logo}></img>
+            </div>
+            <div className='login__rightSide'>
+            <form onSubmit={this.onFormSubmit}>
                     <div className='login__email'>
                         <input onChange={this.onEmailChange} type='email' name='email' placeholder='Write your email'></input>
                     </div>
@@ -64,7 +77,11 @@ export default class Login extends Component {
                     <div className='login__button'>
                         <button type='submit'>Login</button>
                     </div>
+                    <h5 id='message'></h5>
+                    <h5 className='login__already'>You dont have an account? Go to register</h5>
                 </form>
+            </div>
+</div>
             </div>
         )
     }
