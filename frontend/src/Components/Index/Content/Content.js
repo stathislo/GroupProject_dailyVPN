@@ -30,7 +30,7 @@ export default class Content extends Component {
                         </div>
                     </div>
                 </section>
-
+                <div className="first-br"></div>
                 {/* Content 2  */}
 
                 <section className='row row2'>
@@ -38,12 +38,28 @@ export default class Content extends Component {
                         <div className="left-content2">
                             <h4 className='right-content2-h4'>Total protection fast and easy</h4>
                             <h1 className='right-content2-h1'><span className='right-content2-span'>Advanced</span> Device Protection</h1>
-                            <h4 className='right-content2-text'>Secure all your devices with one subscription.Stay safe on Desktop, Laptop, Mobile phone or Tablet
-                            with DailyVPN all the time.<br></br> You can also set DailyVpn to your TV and your Router</h4>
+                            <h4 className='right-content2-text'>Secure all your devices with one subscription.<br></br> Stay safe on Desktop, Laptop, Mobile phone or Tablet
+                            with DailyVPN all the time.<br></br> You can also set DailyVpn to your TV and your Router.</h4>
                             <button onClick={this.onButtonClick} type="button" className="btn btn-danger btn-lg " id="btn-content2">Guard Me</button>
                         </div>
                         <div className="right-content2">
 
+                        </div>
+                    </div>
+                </section>
+                <div className="first-br"></div>
+
+                <section className='row row3'>
+                    <div className="content3 col-lg-12 col-md-6 col-sm-6 col-xs-12">
+                        <div className="left-content3">
+
+                        </div>
+                        <div className="right-content3">
+                            <h4 className='right-content3-h4'>Unmatched Support System</h4>
+                            <h1 className='right-content3-h1'><span className='right-content3-span'>Specialized</span> Technical Support</h1>
+                            <h4 className='right-content3-text'>We've got you covered.<br></br>Contact us through our Live Chat or Email to have instant troubleshoot from our experts.
+                             <br></br>DailyVPN makes sure that you get top level support 24/7.</h4>
+                            <button onClick={this.onButtonClick} type="button" className="btn btn-danger btn-lg " id="btn-content3">Stay Secured</button>
                         </div>
                     </div>
                 </section>
