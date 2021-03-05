@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios"
+import Nav from "../Index/Nav/Nav"
 
 export default class ProductLow extends Component {
     constructor(props){
@@ -71,6 +72,7 @@ export default class ProductLow extends Component {
 
         return (
             <div>
+            <Nav />
             <form onSubmit={this.onPayClick}>
                 <input type='hidden' name='productId' value={_id}></input>
                 <input type='hidden' name='email' value={email}></input>
