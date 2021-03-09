@@ -87,9 +87,6 @@ export default class ProductLow extends Component {
         return (
             <div className='productLow'>
             <Nav />
-            <div className='secure'>
-                <h1>test</h1>
-            </div>
             <div className='plan'>
             <div className='plan__text'>
                 <h2 className='plan__h2'>Choosen plan</h2>
