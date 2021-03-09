@@ -1,6 +1,7 @@
  .nav{
     position: sticky ; 
     top: -1px;
+    z-index: 10;
  }
 
 .navbar{
