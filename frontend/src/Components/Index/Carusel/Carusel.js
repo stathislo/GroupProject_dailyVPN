@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Carusel.css'
 import img1 from '../Images/bill.jpg'
 import img2 from '../Images/elon.jpg'
+import img3 from '../Images/bezos.jpg'
 import techcrunch from '../Images/techcrunch.png'
 import tnw from '../Images/tnw.png'
 import mysql from '../Images/mysql.png'
@@ -29,6 +30,11 @@ export default class Carusel extends Component {
                                 <h2 className="testimonial-text">Fast reliable and secure VPN solution for every device giving you unlimited opportunities </h2>
                                 <img className="testimonial-img2" src={img2} alt="elon" />
                                 <em>Elon, New York</em>
+                            </div>
+                            <div className="carousel-item">
+                                <h2 className="testimonial-text">It is easy to say your the best VPN however DailyVPN superb service speaks for them!! </h2>
+                                <img className="testimonial-img2" src={img3} alt="bezos" />
+                                <em>Jeff, Washington DC</em>
                             </div>
                         </div>
 
