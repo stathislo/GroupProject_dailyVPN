@@ -32,7 +32,7 @@ export default class Carusel extends Component {
                                 <em>Elon, New York</em>
                             </div>
                             <div className="carousel-item">
-                                <h2 className="testimonial-text">It is easy to say your the best VPN however DailyVPN superb service speaks for them!! </h2>
+                                <h2 className="testimonial-text">It is easy to say your the best VPN however DailyVPN superb service speaks for them , great job  </h2>
                                 <img className="testimonial-img2" src={img3} alt="bezos" />
                                 <em>Jeff, Washington DC</em>
                             </div>
