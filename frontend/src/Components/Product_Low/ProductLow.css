@@ -1,1 +1,18 @@
+.secure{
+    background-color: rgb(233, 233, 233);
+    padding-bottom: 1rem;
+}
 
+.secure__p{
+    color: black;
+}
+
+.productLow__container{
+    text-align: center;
+    align-items: center;
+}
+
+.plan{
+    background-color: rgb(231, 229, 229);
+
+}

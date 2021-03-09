@@ -87,10 +87,18 @@ export default class ProductLow extends Component {
         return (
             <div className='productLow'>
             <Nav />
+            <div className='productLow__container'>
+            <div className='secure'>
+                <div className='secure__texts'>
+                    <h3 className='secure__h3'>Secure your digital life effortlessly</h3>
+                    <p className='secure__p'>100% money-back guarantee for your first 30 days of service.</p>
+                </div>
+            </div>
             <div className='plan'>
             <div className='plan__text'>
-                <h2 className='plan__h2'>Choosen plan</h2>
+                <h2 className='plan__h2'>1. Choose your plan</h2>
             </div>
+            <div className='plan__container'>
             <form className='plan__form' onSubmit={this.onPayClick}>
                 <input type='hidden' name='productId' value={_id}></input>
                 <input type='hidden' name='email' value={email}></input>
@@ -102,7 +110,20 @@ export default class ProductLow extends Component {
                 <h5 id="start_date"></h5>
                 <h5 id="end_date"></h5>
                 <button type='submit'>Go to pay</button>
+
+                <div className="card-header">
+                    <h3>1 Month Plan</h3>
+                    </div>
+                 <div className="card-body">
+                   <h2>${price} <small className="text-muted">/ mo</small></h2>
+                     <h5>Up to 5 Devices</h5>
+                        <h5>Limited Bandwith<small className="text-muted">/ 10Mbps</small></h5>
+                           <h5><small className="text-muted">Save 0%</small></h5>
+                                <button type="button" className="btn btn-outline-primary btn-lg w-100"><a href="/product1/product_low">Sign up</a></button>
+                            </div>
                 </form>
+        </div>
+            </div>
             </div>
             </div>
         )
