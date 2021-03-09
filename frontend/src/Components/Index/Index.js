@@ -35,24 +35,6 @@ export default class Index extends Component {
       .catch(err => {
         console.log(err)
       })
-<<<<<<< Updated upstream
-    }else if(checkLogin.data==="loggedin"){
-      axios.get("http://localhost:5000/index")
-      .then(res => {
-        console.log(res)
-        this.setState({ getIp: res.data.ip })
-        this.setState({ getIsp: res.data.isp })
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    }
-    })
-    .catch(err=>{
-      console.log(err)
-    })
-=======
->>>>>>> Stashed changes
   }
 
 
