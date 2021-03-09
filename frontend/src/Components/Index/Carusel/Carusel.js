@@ -17,7 +17,7 @@ export default class Carusel extends Component {
 
                 <section id="testimonials">
 
-                    <div id="testimonial-carousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="4500"
+                    <div id="testimonial-carousel" className="carousel slide" data-bs-ride="carousel" data-bs-interval="6000"
                         data-bs-pause="false">
                         <div className="carousel-inner">
                             <div className="carousel-item active">
