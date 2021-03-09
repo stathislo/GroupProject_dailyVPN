@@ -29,7 +29,7 @@ export default class Index extends Component {
               console.log(err)
             })
         } else if (checkLogin.data === "loggedin") {
-          this.props.history.push("/main")
+          
         }
       })
       .catch(err => {
