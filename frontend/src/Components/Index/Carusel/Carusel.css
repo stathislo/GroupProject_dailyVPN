@@ -1,0 +1,50 @@
+#testimonials{
+    text-align: center;
+    background-color: #d6dff8;
+    color: black;
+}
+
+.testimonial-img1{
+    width: 12%;
+    height: 12%;
+    border-radius: 100%;
+    margin: 20px;
+}
+
+.testimonial-text{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.5;
+}
+.testimonial-img2{
+    width: 12%;
+    height: 12%;
+    border-radius: 100%;
+    margin: 20px;
+}
+
+.carousel-item{
+    padding: 7% 15%;
+}
+
+/* Press  */   
+
+#press{
+    background-color: #d6dff8;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.press-logo{
+    width:15%;
+    margin:20px 20px 50px;
+}
+
+.carousel-control-prev-icon{
+    background-color: rgb(167, 167, 167);
+}
+
+.carousel-control-next-icon{
+    background-color:rgb(167, 167, 167);
+}

@@ -31,6 +31,7 @@ export default class Content extends Component {
                     </div>
                 </section>
                 <div className="first-br"></div>
+
                 {/* Content 2  */}
 
                 <section className='row row2'>
@@ -49,6 +50,8 @@ export default class Content extends Component {
                 </section>
                 <div className="first-br"></div>
 
+                {/* Content 3  */}
+                
                 <section className='row row3'>
                     <div className="content3 col-lg-12 col-md-6 col-sm-6 col-xs-12">
                         <div className="left-content3">
@@ -68,3 +71,5 @@ export default class Content extends Component {
         )
     }
 }
+
+
