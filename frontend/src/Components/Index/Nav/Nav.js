@@ -59,6 +59,7 @@ export default class Nav extends Component {
         </nav>
 
         {/* Navbar loggedin  */}
+        
         <nav id='nav__loggedin' className="navbar navbar-expand-lg navbar-light nav__loggedin">
           <div className="container-fluid">
             <img className='logo-img' src={logo} width="45" />
