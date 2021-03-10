@@ -19,13 +19,13 @@ background-color: whitesmoke;
 
 .post__image{
     width: 700px;
-    height: 700px;
+    height: 400px;
     object-fit: cover;
     border-radius: 0px;
-    box-shadow: 5px 5px 5px 5px;
 }
 
 .getPosts{
+background-color: rgb(221, 221, 221);
 display: flex;
 justify-content: center;
 align-items: center;
