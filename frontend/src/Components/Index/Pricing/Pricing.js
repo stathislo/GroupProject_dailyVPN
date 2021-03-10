@@ -27,7 +27,7 @@ export default class Pricing extends Component {
                                 <h5>Up to 5 Devices</h5>
                                 <h5>Limited Bandwith<small className="text-muted">/ 10Mbps</small></h5>
                                 <h5><small className="text-muted">Save 0%</small></h5>
-                                <button type="button" className="btn btn-outline-primary btn-lg w-100"><a href="/product1/product_low">Sign up</a></button>
+                                <a href="/product1/product_low"><button type="button" className="btn btn-outline-primary btn-lg w-100">Sign up</button></a>
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ export default class Pricing extends Component {
                                 <h5>Up to 10 Devices</h5>
                                 <h5>Limited Bandwith<small className="text-muted">/ 20Mbps</small></h5>
                                 <h5><small className="text-muted">Save 50%</small></h5>
-                                <button type="button" className="btn btn-outline-danger w-100 btn-lg"><a href="/product2/product_medium">Sign up</a></button>
+                                <a href="/product2/product_medium"><button type="button" className="btn btn-outline-danger w-100 btn-lg">Sign up</button></a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ export default class Pricing extends Component {
                                 <h5>Unlimited Devices</h5>
                                 <h5>Unlimited Bandwith<small className="text-muted">/ 200Mbps</small></h5>
                                 <h5><small className="text-muted">Save 66%</small></h5>
-                                <button type="button" className="btn btn-outline-warning btn-lg w-100"><a href="/product3/product_high">Sign up</a></button>
+                                <a href="/product3/product_high"><button type="button" className="btn btn-outline-warning btn-lg w-100">Sign up</button></a>
                             </div>
                         </div>
                     </div>
