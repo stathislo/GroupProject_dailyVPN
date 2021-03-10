@@ -4,8 +4,9 @@
     /* background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133)); */
     width: 100%;
     margin: 0;
-    background-image: url(../Images/website1.jpg);  
+    background-image: url(../Images/website1.jpeg);  
     background-size: cover;
+    background-repeat: no-repeat;
     object-fit: cover;
     background-position: center;  
 } 
