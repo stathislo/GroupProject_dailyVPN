@@ -1,0 +1,47 @@
+.nav__container{
+    background-image: url("./Images/austin-poon-JO_S6ewBqAk-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    height: 60vh;
+    padding-bottom: 1rem;
+}
+
+.header__container{
+    display: flex;
+     justify-content: space-between;
+     padding: 3rem;
+}
+
+.header__ul{
+    display: flex;
+}
+
+.header__h2{
+    color: white;
+}
+
+.header__li{
+    list-style: none;
+}
+
+.header__link{
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+}
+
+.header__texts{
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.header__textsH4{
+    font-size: 2.6rem;
+}
+
+.headerTextImg{
+    width: 300px;
+    height: 300px;
+}

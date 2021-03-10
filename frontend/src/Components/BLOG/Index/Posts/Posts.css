@@ -1,0 +1,24 @@
+.posts__p{
+    color: black;
+}
+
+.posts{
+    display: flex; 
+    flex-wrap: wrap; 
+    margin-top: 5rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.getPosts{
+    display: flex; 
+    flex-wrap: wrap; 
+    background-color: aqua;
+    margin: 2rem 5rem;
+    flex-direction: column;
+    text-align: center;
+    color: black;
+    border-radius: 5px;
+}

@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 require('dotenv/config');
-const PORT = 6000;
+const cors = require("cors")
+const PORT = 7000;
 
 app.use(bodyParser.json());
 
@@ -16,6 +17,13 @@ app.use(
     cookie: { maxAge: 17760000 },
   }),
 );
+
+app.use(cors({
+  origin:"http://localhost:3000",
+  methods:"GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials:true,
+  optionsSuccessStatus:204
+}))
 
 // Import Routes
 const loginRoute = require('./routes/login');

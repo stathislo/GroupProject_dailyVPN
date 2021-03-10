@@ -6,9 +6,11 @@ module.exports = {
   getAllPosts: async (req, res) => {
     try {
       const posts = await Post.find();
-      res.status(200).send(posts);
+      res.status(200).json(posts);
     } catch (err) {
-      res.send({ message: 'The are no posts!' });
+      res.send({ 
+        message: 'The are no posts!' 
+      });
     }
   },
 

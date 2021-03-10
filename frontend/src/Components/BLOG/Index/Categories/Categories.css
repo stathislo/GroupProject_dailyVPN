@@ -1,0 +1,25 @@
+.cat{
+    background-color: rgb(2, 112, 175);
+}
+
+.cat__ul, .cat__nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.cat__li{
+    list-style: none;
+    border: 1px solid white;
+    margin-left: 3rem;
+    padding: 1rem;
+}
+
+.cat__link{
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
