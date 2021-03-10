@@ -25,8 +25,8 @@ export default class Posts extends Component {
             console.log(items.date)
             return(<div className='posts'>
             <img className='post__image' src={items.image}></img>
-                <h1>{items.title}</h1>
-                <h3>{items.description}</h3>
+                <h2 className='post__h2'>{items.title}</h2>
+                <h3 className='post__h3'>{items.description}</h3>
                 <p className='posts__p'>{items.date}</p>
             </div>)
         })

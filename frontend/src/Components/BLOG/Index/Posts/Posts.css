@@ -1,9 +1,16 @@
+.posts__h2{
+
+}
+
 .posts__p{
     color: black;
+    text-align: center;
 }
 
 .posts{
 margin: 1rem 1rem;
+text-align: center;
+align-items: center;
 }
 
 .post__image{
