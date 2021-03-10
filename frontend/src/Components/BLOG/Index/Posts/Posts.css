@@ -9,7 +9,7 @@
 }
 
 .posts{
-margin: 1rem 1rem;
+margin: 1rem 2rem;
 text-align: center;
 align-items: center;
 border-radius: 5px;
@@ -22,11 +22,12 @@ background-color: whitesmoke;
     text-align: center;
     color: white;
     background-color: purple;
-    border-radius: 10px;
-    margin-left: 0.3rem;
+    border-radius: 50px;
+    right: 0.7rem;
     width: 17%;
-    padding: 1rem;
-    bottom: 1.7rem;
+    padding: 0.1rem;
+    bottom: 1.1rem;
+    box-shadow: 2px 2px 1px 1px;
 }
 
 .post__image{
@@ -49,11 +50,12 @@ flex-wrap: wrap;
     align-items: right;
     width: 100%;
     text-align: right;
-    padding: 2rem 10rem;
+    padding: 2rem 12.4rem;
 }
 
 .posts__searchInput{
     padding: 8px;
+    padding-right: 4rem;
     border-radius: 5px;
     border: none;
 }
