@@ -12,7 +12,7 @@ export default class Header extends Component {
                     <p className='blog__headerP'>This is a test p</p>
                 </div>
                 <div className='blog__headerImage'>
-                    <img src={Image}></img>
+                    
                 </div>
             </div>
             </div>
