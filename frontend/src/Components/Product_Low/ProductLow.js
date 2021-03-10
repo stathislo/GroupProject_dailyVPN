@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import paypalLogo from "../Index/Images/paypal.png"
 import axios from "axios"
 import "./ProductLow.css"
 import Nav from "../Index/Nav/Nav"
@@ -85,47 +86,176 @@ export default class ProductLow extends Component {
         const userId = this.state.userId
 
         return (
-            <div className='productLow'>
-            <Nav />
-            <div className='productLow__container'>
+            <div className='productLow text-center'>
+            <Nav/>
+            <div className='product-container'>
             <div className='secure'>
                 <div className='secure__texts'>
-                    <h3 className='secure__h3'>Secure your digital life effortlessly</h3>
-                    <p className='secure__p'>100% money-back guarantee for your first 30 days of service.</p>
+                    <h1 id="header-productLow">Secure your digital life effortlessly</h1>
+                    <span>100% money-back guarantee for your first 30 days of service.</span>
                 </div>
-            </div>
-            <div className='plan'>
-            <div className='plan__text'>
-                <h2 className='plan__h2'>1. Choose your plan</h2>
-            </div>
-            <div className='plan__container'>
-            <form className='plan__form' onSubmit={this.onPayClick}>
-                <input type='hidden' name='productId' value={_id}></input>
-                <input type='hidden' name='email' value={email}></input>
-                <input type='hidden' name='userId' value={userId}></input>
-                <h1>Product low</h1>
-                <h5>Product: {name}</h5>
-                <h5>Price: {price}</h5>
-                <p className='plan__p'>Billed every month</p>
-                <h5 id="start_date"></h5>
-                <h5 id="end_date"></h5>
-                <button type='submit'>Go to pay</button>
-
-                <div className="card-header">
-                    <h3>1 Month Plan</h3>
-                    </div>
-                 <div className="card-body">
-                   <h2>${price} <small className="text-muted">/ mo</small></h2>
-                     <h5>Up to 5 Devices</h5>
-                        <h5>Limited Bandwith<small className="text-muted">/ 10Mbps</small></h5>
-                           <h5><small className="text-muted">Save 0%</small></h5>
-                                <button type="button" className="btn btn-outline-primary btn-lg w-100"><a href="/product1/product_low">Sign up</a></button>
+            </div>          
+                
+                <form className='plan__form' onSubmit={this.onPayClick}>
+                    <div className="pricing-columns col-lg-6 col-md-6 text-center">
+                    <input type='hidden' name='productId' value={_id}></input>
+                    <input type='hidden' name='email' value={email}></input>
+                    <input type='hidden' name='userId' value={userId}></input>
+                        <div className="card">
+                            <div className="card-header">
+                                <h3>1 Month Plan</h3>
                             </div>
+                            <div className="card-body">
+                                <h2>${price} <small className="text-muted">/ mo</small></h2>
+                                <h5>Up to 5 Devices</h5>
+                                <h5>Limited Bandwith<small className="text-muted">/ 10Mbps</small></h5>
+                                <h5><small className="text-muted">Save 0%</small></h5>
+                                </div>    
+                        </div> 
+                    </div>        
+                <hr></hr>
+                <div>
+                    <h1>Create your account</h1>
+                </div>
+                <div>
+                    <span>Email address you will use to log in</span><br/>
+                    <input type="email" placeholder="enter your email" name="email"></input>
+                </div>
+                <hr></hr>
+                <div>
+                    <h1>Payment</h1>
+                </div>
+                <div className='card'>
+                <div className="card-header">
+                    <span>Paypal </span>
+                    <img src={paypalLogo}></img>
+                </div>
+                <div className="card-body">
+                    <dd>Your subscription - 1 month Plan EUR {price}</dd>
+                    <dd>VAT 24 Greece EUR</dd>
+                    <dd>Total</dd>
+                    <dd>
+                    <button className="paypal-button" type="submit">
+                        <span className="paypal-button-title">
+                        Buy now with
+                        </span>
+                        <span className="paypal-logo">
+                        <i className="Pay">Pay</i><i className="Pal">Pal</i>
+                        </span>
+                    </button>
+                    </dd>
+                    <dd>By clicking Complete purchase, you agree to our Terms and Conditions. Learn how we collect, use and share your data in our Privacy Policy. If you do not wish to receive information about Surfshark services, please send us an email at support@surfshark.com. You can cancel recurring payments at any time.
+                    This order process is conducted by our online reseller cleverbridge AG. Payment processing and order fulfillment are done by cleverbridge AG, Gereonstr. 43-65, 50670 Cologne, Germany.
+                    Terms & Conditions Contact Right of Revocation Security Legal Info Privacy Policy</dd>
+
+                </div>
+                    
+                </div>
                 </form>
         </div>
+
+                {/* <form className='plan__form' onSubmit={this.onPayClick}>
+                <div className="pricing-columns col-lg-3 col-md-3 text-center">
+                        <div className="card">
+                            <div className="card-header">
+                                <h3>1 Year Plan</h3>
+                            </div>
+                            <div className="card-body">
+                                <h2>$5.99 <small className="text-muted">/ mo</small></h2>
+                                <h5>Up to 10 Devices</h5>
+                                <h5>Limited Bandwith<small className="text-muted">/ 20Mbps</small></h5>
+                                <h5><small className="text-muted">Save 50%</small></h5>
+                                <button className='btn btn-outline-primary btn-s' type='sumbit'>Go to pay</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <form className='plan__form' onSubmit={this.onPayClick}>
+                <div className="pricing-columns col-lg-3 col-md-3 text-center">
+                        <div className="card">
+                            <div className="card-header">
+                                <h3>2 Year Plan</h3>
+                            </div>
+                            <div className="card-body">
+                                <h2>$1.99 <small className="text-muted">/ mo</small></h2>
+                                <h5>Unlimited Devices</h5>
+                                <h5>Unlimited Bandwith<small className="text-muted">/ 200Mbps</small></h5>
+                                <h5><small className="text-muted">Save 66%</small></h5>
+                                <button className='btn btn-outline-primary btn-s' type='sumbit'>Go to pay</button>
+                            </div>
+                        </div>
+                    </div>
+                </form> */}
+
+
+        
+        <div>
+               
+               <footer className="bg-dark text-center text-white">
+                <div className="container p-4  pb-0">
+                
+                <section className="mb-5">
+                {/* facebook */}
+                <a class="btn btn-link btn-floating btn-lg  text-light s-1 facebook" href="#!" type="button">
+                <i class="fab fa-facebook-f"></i></a>
+                {/* twitter */}
+                <a class="btn btn-link btn-floating btn-lg text-light s-1 twitter" href="#!" role="button">
+                <i class="fab fa-twitter"></i></a>
+                {/* Instagram  */}
+                <a class="btn btn-link btn-floating btn-lg text-light s-1 instagram" href="#!" role="button">
+                <i class="fab fa-instagram"></i></a>
+                {/* Google */}
+                <a class="btn btn-link btn-floating btn-lg text-light s-1 google" href="#!" role="button">
+                <i class="fab fa-google"></i></a>
+                {/* Linkedin */}
+                <a className="btn btn-link btn-floating btn-lg text-light s-1 linkedin" href="#!" role="button">
+                <i class="fab fa-linkedin"></i></a>
+                {/* Github */}
+                <a class="btn btn-link btn-floating btn-lg text-light s-1 github" href="#!" role="button">
+                <i class="fab fa-github"></i></a>
+                </section>
+                
+                <div className="row">
+                <div className="col-md-4">
+                <h5>Contact Us</h5>
+                <dl className="Contact-list"></dl>
+                <dt>Email:</dt>
+                <dd><a href="#">info@vpndaily.eu</a></dd>
+                <dt>Tech Support:</dt>
+                <dd><a href="#">support@vpndaily.eu</a></dd>
+                </div>
+
+                <div className="col-md-4">
+                <dt>Live Chat</dt>
+                <dd>
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                <i class='far fa-comments'></i></a>
+                </dd>
+                </div>
+                
+                <div className="col-md-4">
+                <h5>Help</h5>
+                <dl className="Help-list"></dl>
+                <dd><a href="#">FAQ</a></dd>
+                <dd><a href="#">Privacy Policy</a></dd>
+                <dd><a href="#">Terms Of service</a></dd>    
+                </div>
+                </div>
+
+                <div className="text-center p-3 copy">
+                <a>2021 Copyright DailyVPN©.All rights reserved </a>
+                </div>
+                
+                
+                </div>
+               
+               </footer>
             </div>
+
             </div>
-            </div>
+
+            
         )
     }
 }
