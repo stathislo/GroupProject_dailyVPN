@@ -5,12 +5,12 @@ import "./Categories.css"
 export default class Categories extends Component {
     render() {
         return (
-            <div className='cat'>
-                <div className='cat__nav'>
-                    <ul className='cat__ul'>
-                        <li className='cat__li'><a className='cat__link' href=''>News</a></li>
-                        <li className='cat__li'><a className='cat__link' href=''>Security</a></li>
-                        <li className='cat__li'><a className='cat__link' href=''>How to</a></li>
+            <div className='blog__cat'>
+                <div className='blog__catnav'>
+                    <ul className='blog__catul'>
+                        <li className='blog__catli'><a className='blog__catlink' href=''>News</a></li>
+                        <li className='blog__catli'><a className='blog__catlink' href=''>Security</a></li>
+                        <li className='blog__catli'><a className='blog__catlink' href=''>How to</a></li>
                     </ul>
                 </div>
             </div>

@@ -21,6 +21,10 @@ const PostSchema = new mongoose.Schema({
     ref: 'User',
   },
 
+  image:{
+    type:String
+  },
+
   reaction: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -34,6 +38,7 @@ const PostSchema = new mongoose.Schema({
       ref: 'Comment',
     },
   ],
+
 });
 
 module.exports = mongoose.model('Post', PostSchema);

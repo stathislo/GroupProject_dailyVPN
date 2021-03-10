@@ -1,0 +1,4 @@
+.blog__headerContainer{
+    display: flex;
+    justify-content: space-evenly;
+}

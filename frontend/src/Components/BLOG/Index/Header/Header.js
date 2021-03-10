@@ -1,13 +1,20 @@
 import React, { Component } from 'react'
-import Nav from "../Nav/Nav"
-import Categories from "../Categories/Categories"
+import Image from "./content1.jpg"
+import "./Header.css"
 
 export default class Header extends Component {
     render() {
         return (
-            <div className='header'>
-                <Nav />
-                <Categories />
+            <div className='blog__header'>
+            <div className='blog__headerContainer'>
+                <div className='blog__headerTexts'>
+                    <h3 className='blog__headerH3'>Welcome to vpndaily blog</h3>
+                    <p className='blog__headerP'>This is a test p</p>
+                </div>
+                <div className='blog__headerImage'>
+                    <img src={Image}></img>
+                </div>
+            </div>
             </div>
         )
     }

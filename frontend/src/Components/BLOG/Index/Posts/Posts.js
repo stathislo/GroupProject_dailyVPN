@@ -24,6 +24,7 @@ export default class Posts extends Component {
         const getPosts = this.state.posts.map(function(items){
             console.log(items.date)
             return(<div className='posts'>
+            <img className='post__image' src={items.image}></img>
                 <h1>{items.title}</h1>
                 <h3>{items.description}</h3>
                 <p className='posts__p'>{items.date}</p>

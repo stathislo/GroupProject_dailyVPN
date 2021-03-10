@@ -68,6 +68,7 @@ module.exports = {
       const post = new Post({
         title: req.body.title,
         description: req.body.description,
+        image:req.body.image,
         user: user,
       });
 
