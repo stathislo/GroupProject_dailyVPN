@@ -32,8 +32,15 @@ export default class Posts extends Component {
             </div>)
         })
         return (
+            <div className='showPosts'>
+            <div className='posts__search'>
+                <input className='posts__searchInput' type='text' name='search' placeholder='Search a post'></input>
+                <i className="fas fa-search post__searchIcon"></i>
+            </div>
             <div className='getPosts'>
-                {getPosts}
+            {getPosts}
+            </div>
+                
             </div>
         )
     }

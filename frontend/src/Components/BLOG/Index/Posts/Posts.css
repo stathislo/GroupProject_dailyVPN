@@ -43,3 +43,23 @@ justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 }
+
+.posts__search{
+    background-color: rgb(221, 221, 221);
+    align-items: right;
+    width: 100%;
+    text-align: right;
+    padding: 2rem 10rem;
+}
+
+.posts__searchInput{
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+.post__searchIcon{
+    position: relative;
+    right: 1.5rem;
+}
+
