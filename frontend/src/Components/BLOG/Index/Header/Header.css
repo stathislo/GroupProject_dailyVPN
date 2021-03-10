@@ -1,4 +1,17 @@
 .blog__headerContainer{
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.blog__headerImg{
+    width: 500px;
+    height: 500px;
+    padding-bottom: 5rem;
+}
+
+.blog__headerH3{
+    font-size: 3rem;
+    color: white;
 }

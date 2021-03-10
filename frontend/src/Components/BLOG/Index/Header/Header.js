@@ -12,7 +12,7 @@ export default class Header extends Component {
                     <p className='blog__headerP'>This is a test p</p>
                 </div>
                 <div className='blog__headerImage'>
-                    
+                    <img className='blog__headerImg' src='https://www.papaki.com/blog/wp-content/themes/papaki_blog/redesign/img/assets/home_blog.svg'></img>
                 </div>
             </div>
             </div>
