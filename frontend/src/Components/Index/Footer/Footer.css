@@ -1,0 +1,40 @@
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer dd :hover {
+    color: grey;
+}
+
+footer a  :hover {
+    color : grey
+}
+
+.btn {
+    margin-left: 10px;
+}
+
+/* .facebook {
+    background-color:#3b5998;
+}
+
+.twitter {
+    background-color: #55acee;
+}
+
+.instagram {
+    background-color: #ac2bac;
+}
+
+.google {
+    background-color: #dd4b39;
+}
+
+.linkedin {
+    background-color: #0082ca;
+}
+
+.github {
+    background-color: #333333;
+} */

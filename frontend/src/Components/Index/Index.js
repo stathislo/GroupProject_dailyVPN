@@ -5,6 +5,7 @@ import Header from './Header/Header'
 import Content from './Content/Content'
 import Pricing from './Pricing/Pricing'
 import Carusel from './Carusel/Carusel'
+import Footer from './Footer/Footer'
 import axios from "axios"
 
 export default class Index extends Component {
@@ -65,16 +66,10 @@ export default class Index extends Component {
         {/* <!-- Pricing And Buttons --> */}
         <Pricing />
 
-
-        <div className='dokimi' id='dokimi'>
-
-          hi
-                </div>
+        {/* <!-- Footer --> */}
+        <Footer />
 
       </div>
-
-
-
     )
   }
 }
