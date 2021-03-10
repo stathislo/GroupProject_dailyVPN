@@ -1,6 +1,7 @@
-.posts__h2{
-
+.post__h2{
+    margin-top: 1rem;
 }
+
 
 .posts__p{
     color: black;
@@ -11,13 +12,16 @@
 margin: 1rem 1rem;
 text-align: center;
 align-items: center;
+border-radius: 5px;
+box-shadow: 5px 5px 5px 5px;
+background-color: whitesmoke;
 }
 
 .post__image{
     width: 700px;
     height: 700px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 0px;
     box-shadow: 5px 5px 5px 5px;
 }
 
