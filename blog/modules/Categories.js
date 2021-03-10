@@ -5,9 +5,10 @@ const CategoriesSchema = new mongoose.Schema({
         type:String
     },
     posts:[{
-        types:mongoose.Schema.Types.ObjectId,
+        type:mongoose.Schema.Types.ObjectId,
         ref:"Post"
     }],
+ 
 })
 
 const CategoriesModel = mongoose.model('Categories', CategoriesSchema)

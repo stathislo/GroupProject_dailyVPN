@@ -1,5 +1,6 @@
 const Post = require('../modules/Post');
 const User = require('../modules/User');
+const Category = require("../modules/Categories")
 
 module.exports = {
   // Get all posts
@@ -64,17 +65,23 @@ module.exports = {
     try {
       const userID = req.params.userID;
       const user = await User.findById({ _id: userID });
+      const category = await Category.findOne({_id:req.body.categoryid})
 
       const post = new Post({
         title: req.body.title,
         description: req.body.description,
         image:req.body.image,
         user: user,
+        category:req.body.category,
+        categoryId:req.body.categoryid
       });
 
+
       user.posts.push(post);
+      category.posts.push(post._id)
       await user.save();
       await post.save();
+      await category.save();
       res.status(200).send('Success');
     } catch (err) {
       res.send({ message: 'Error on post creation!' });

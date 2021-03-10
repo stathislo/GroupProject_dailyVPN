@@ -5,18 +5,25 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 require('dotenv/config');
 const cors = require("cors")
+const MongoDBStore = require("connect-mongodb-session")(session)
 const PORT = 7000;
 
-app.use(bodyParser.json());
+
+const store = new MongoDBStore({
+  uri:process.env.VPNDAILY_URI,
+  collection:"sessions"
+})
 
 app.use(
   session({
-    secret: 'stroumf',
+    secret: 'vpndaily"',
     saveUninitialized: false,
     resave: false,
+    store:store,
     cookie: { maxAge: 17760000 },
   }),
 );
+
 
 app.use(cors({
   origin:"http://localhost:3000",
@@ -25,18 +32,25 @@ app.use(cors({
   optionsSuccessStatus:204
 }))
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended:false }))
+
 // Import Routes
 const loginRoute = require('./routes/login');
 const registerRoute = require('./routes/register');
 const postsRoute = require('./routes/posts');
 const userRoute = require('./routes/user');
 const reactionRoute = require('./routes/reaction');
+const CategoryRoute = require("./routes/Categories")
+
+
 
 app.use('/login', loginRoute);
 app.use('/register', registerRoute);
 app.use('/posts', postsRoute);
 app.use('/user', userRoute);
 app.use('/reaction', reactionRoute);
+app.use(CategoryRoute)
 
 // Connect To DB
 mongoose

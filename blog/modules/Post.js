@@ -25,6 +25,14 @@ const PostSchema = new mongoose.Schema({
     type:String
   },
 
+  category:{
+    type:mongoose.Schema.Types.String,
+    ref:"Categories"
+  },
+  categoryId:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"Categories"
+  },
   reaction: [
     {
       type: mongoose.Schema.Types.ObjectId,

@@ -11,6 +11,8 @@ export default class Categories extends Component {
                         <li className='blog__catli'><a className='blog__catlink' href=''>News</a></li>
                         <li className='blog__catli'><a className='blog__catlink' href=''>Security</a></li>
                         <li className='blog__catli'><a className='blog__catlink' href=''>How to</a></li>
+                        <li className='blog__catli'><a className='blog__catlink' href=''>Node JS</a></li>
+                        <li className='blog__catli'><a className='blog__catlink' href=''>Javascript</a></li>
                     </ul>
                 </div>
             </div>
