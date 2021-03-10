@@ -10,13 +10,14 @@
 }
 
 .left-content1 {
-    background-image: url(../Images/content4.jpg);
+    background-image: url(../Images/security23.png);
     background-size: 33rem;
     background-repeat: no-repeat;
     justify-content: center;
     align-items: center;
     width: 50%;
     padding-bottom: 6rem;
+    /* box-shadow: 5px 10px; */
 }
 
 .right-content1 {
