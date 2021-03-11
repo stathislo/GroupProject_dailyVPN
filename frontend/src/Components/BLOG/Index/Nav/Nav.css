@@ -1,8 +1,5 @@
 .blog__nav{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./Images/austin-poon-JO_S6ewBqAk-unsplash.jpg");
-    background-position: center;
-    background-size: cover;
-    object-fit: cover;
+    background-color: rgba(0, 0, 255, 0.877);
     height: 60vh;
     padding-bottom: 1rem;
 }
