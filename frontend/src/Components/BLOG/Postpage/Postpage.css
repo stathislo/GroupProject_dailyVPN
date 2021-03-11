@@ -23,7 +23,7 @@
 
 .onePost__desc{
     text-align: center;
-    margin: 1rem 10rem;
+    margin: 0rem 10rem;
 }
 
 .onePost__ava{
@@ -37,7 +37,12 @@
 .onePost__image{
 margin-left: 3rem;
 position: relative;
-bottom: 8rem;
+bottom: 7rem;
+}
+
+.onePost__h2{
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .onePost__img{

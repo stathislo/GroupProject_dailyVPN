@@ -23,6 +23,18 @@ export default class Postpage extends Component {
         .catch(err=>{
             console.log(err)
         })
+
+        axios.get("http://localhost:5000/", { withCredentials:true })
+        .then(user=>{
+            if(user.data.loggedin==="not loggedin"){
+                this.props.history.push("/login")
+            }else{
+                this.setState({userEmail:user.data.user.email})
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
 }
 componentDidMount(){
 
@@ -36,6 +48,8 @@ const category = this.state.category
 const userId = this.state.user
 const date = this.state.date
 
+const userMail = this.state.userEmail
+
 
         return (
             <div className='onePost'>
@@ -47,9 +61,10 @@ const date = this.state.date
                   </div>
                   <div className='blog__navRightSide'>
                       <ul className='blog__navUl'>
-                      <li className='blog__navLi'><a className='blog__navLink'>Welcome </a></li>
+                      <li className='blog__navLi'><a className='blog__navLink'>{userMail}</a></li>
                           <li className='blog__navLi'><a href='/' className='blog__navLink'>VPNDAILY</a></li>
-                          <li className='blog__navLi'><a href='logout' className='blog__navLink'>LOGOUT</a></li>
+                          <li className='blog__navLi'><a href='/blog' className='blog__navLink'>BLOG</a></li>
+                          <li className='blog__navLi'><a href='/logout' className='blog__navLink'>LOGOUT</a></li>
                           
                       </ul>
                   </div>
@@ -82,6 +97,9 @@ const date = this.state.date
 
                     </div>
                     
+                </div>
+                <div class='onePost_title'>
+                    <h2 class='onePost__h2'>{title}</h2>
                 </div>
                 <div class='onePost__desc'>
                     <h5 class='onePost__h5'>{description}</h5>
