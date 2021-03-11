@@ -12,6 +12,9 @@ const ModeratorUserSchema = new mongoose.Schema({
     },
     password:{
         type:String
+    },
+    avantar:{
+        type:String
     }
 })
 
