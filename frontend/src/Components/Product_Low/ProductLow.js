@@ -97,7 +97,7 @@ export default class ProductLow extends Component {
             </div>          
                 
                 <form className='plan__form' onSubmit={this.onPayClick}>
-                    <div className="pricing-columns col-lg-6 col-md-6 text-center">
+                <div className="pricing-columns col-lg-6 col-md-6 text-center">
                     <input type='hidden' name='productId' value={_id}></input>
                     <input type='hidden' name='email' value={email}></input>
                     <input type='hidden' name='userId' value={userId}></input>
@@ -125,16 +125,24 @@ export default class ProductLow extends Component {
                 <div>
                     <h1>Payment</h1>
                 </div>
-                <div className='card'>
+                <div className="container">
+                <div className='card-paypal col-lg-7 col-md-7 text-center'>
                 <div className="card-header">
-                    <span>Paypal </span>
-                    <img src={paypalLogo}></img>
+                    <div className="row justify-content-between">
+                    <div className="col-4 top">Paypal</div>
+                    <div className="col-2"><img src={paypalLogo}></img></div>
+                    </div>    
                 </div>
-                <div className="card-body">
-                    <dd>Your subscription - 1 month Plan EUR {price}</dd>
-                    <dd>VAT 24 Greece EUR</dd>
-                    <dd>Total</dd>
-                    <dd>
+                <div className="card-paypal-body">
+                    <div className="row justify-content-between"> 
+                    <div className="col-6">Your subscription - 1 month  Plan </div>
+                    <div className="col-2">EUR {price}</div>
+                    </div>
+                    <div className="row justify-content-between">
+                    <div className="col-4">VAT 24% Greece</div>
+                    <div className="col-2">EUR Total</div>
+                </div>
+                <div>
                     <button className="paypal-button" type="submit">
                         <span className="paypal-button-title">
                         Buy now with
@@ -143,11 +151,16 @@ export default class ProductLow extends Component {
                         <i className="Pay">Pay</i><i className="Pal">Pal</i>
                         </span>
                     </button>
-                    </dd>
-                    <dd>By clicking Complete purchase, you agree to our Terms and Conditions. Learn how we collect, use and share your data in our Privacy Policy. If you do not wish to receive information about Surfshark services, please send us an email at support@surfshark.com. You can cancel recurring payments at any time.
-                    This order process is conducted by our online reseller cleverbridge AG. Payment processing and order fulfillment are done by cleverbridge AG, Gereonstr. 43-65, 50670 Cologne, Germany.
-                    Terms & Conditions Contact Right of Revocation Security Legal Info Privacy Policy</dd>
+                    <div className="badge bg-primary text-wrap">30-day money-back guarantee</div>
+                </div>
+                    <div className="paypal-footer">
+                    By clicking Complete purchase, you agree to our <b>Terms and Conditions.</b> Learn how we collect, use and share your data in our <b>Privacy Policy.</b> If you do not wish to receive information about <b>DailyVPN</b> services, please send us an email at <b>support@DailyVPN.com</b>. You can cancel recurring payments at any time.
+                    <div>This order process is conducted by our online reseller cleverbridge AG. Payment processing and order fulfillment are done by cleverbridge AG, Gereonstr. 43-65, 50670 Cologne, Germany.
+                    <div><b>Terms & Conditions Contact Right of Revocation Security Legal Info Privacy Policy</b></div>
+                </div>
+                </div>
 
+                </div>
                 </div>
                     
                 </div>
