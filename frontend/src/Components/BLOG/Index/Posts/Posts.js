@@ -46,7 +46,7 @@ export default class Posts extends Component {
             <input type='hidden' name='postsId' value={items._id}></input>
             <input type='hidden' name='categoryid' value={items.categoryId}></input>
                 <a href={"/posts/" + items._id} className='post__h2'>{items.title}</a>
-                <h3 className='post__h3'><a href={"/posts/" + items._id}>{items.description.slice(0,50)}..</a></h3>
+                <h3 className='post__h3'><a href={"/posts/" + items._id}>{items.description.slice(0,30)}..</a></h3>
                 <p className='posts__p'>Date Posted: {items.date.slice(0,10)} <span>{items.date.slice(11,16)}</span></p>
                 
             </div>)

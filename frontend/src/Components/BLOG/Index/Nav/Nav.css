@@ -1,5 +1,6 @@
 .blog__nav{
-    background-color: rgba(91, 91, 247, 0.877);
+    
+    background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
     height: 60vh;
     padding-bottom: 1rem;
 }
