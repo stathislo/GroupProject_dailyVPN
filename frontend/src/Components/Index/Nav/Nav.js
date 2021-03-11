@@ -78,6 +78,7 @@ export default class Nav extends Component {
                 <a className="nav-link active" aria-current="page" href="#" style={{ color: '#FFF' }}>Features</a>
                 <a className="nav-link" href="#" style={{ color: '#FFF' }}>Reviews</a>
                 <a className="nav-link" href="#" style={{ color: '#FFF' }}>Pricing</a>
+                <a className="nav-link" href="/blog" style={{ color: '#FFF' }}>Blog</a>
                 <a className="nav-link" href="#" style={{ color: '#FFF' }}>Welcome {userEmail}</a>
               </div>
             </div>
