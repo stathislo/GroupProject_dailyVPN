@@ -21,6 +21,11 @@ const PostSchema = new mongoose.Schema({
     ref: 'User',
   },
 
+  userName:{
+    type:mongoose.Schema.Types.String,
+    ref:"User"
+  },
+  
   image:{
     type:String
   },

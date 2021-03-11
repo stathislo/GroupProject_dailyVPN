@@ -1,0 +1,49 @@
+.onePost__nav{
+    background-color: blue;
+    height: 40vh;
+}
+
+.onePost__headerText{
+    text-align: center;
+    color: white;
+    align-items: center;
+}
+
+.onePost__postContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.onePost__avantar{
+    align-items: center;
+    text-align: center;
+    position: relative;
+    right: 0.6rem;
+}
+
+.onePost__desc{
+    text-align: center;
+    margin: 1rem 10rem;
+}
+
+.onePost__ava{
+
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.onePost__image{
+margin-left: 3rem;
+position: relative;
+bottom: 8rem;
+}
+
+.onePost__img{
+width: 700px;
+height: 450px;
+object-fit: cover;
+box-shadow: 2px 2px 2px 2px;
+border-radius: 5px;
+}

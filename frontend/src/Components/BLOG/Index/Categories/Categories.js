@@ -8,6 +8,7 @@ export default class Categories extends Component {
             <div className='blog__cat'>
                 <div className='blog__catnav'>
                     <ul className='blog__catul'>
+                    <li className='blog__catli'><a className='blog__catlink' href=''>All</a></li>
                         <li className='blog__catli'><a className='blog__catlink' href=''>News</a></li>
                         <li className='blog__catli'><a className='blog__catlink' href=''>Security</a></li>
                         <li className='blog__catli'><a className='blog__catlink' href=''>How to</a></li>

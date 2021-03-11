@@ -19,14 +19,21 @@ module.exports = {
   getPostById: async (req, res) => {
     const postID = req.params.postID;
 
-    try {
-      await Post.findOne({ _id: postID });
-      res
-        .status(200)
-        .send({ message: ' The post has been created successfully!' });
-    } catch (err) {
-      res.send({ message: `Post with id = ${postID} does not exists !` });
-    }
+    // try {
+    //   await Post.findOne({ _id: postID });
+    //   res
+    //     .status(200)
+    //     .json();
+    // } catch (err) {
+    //   res.send({ message: `Post with id = ${postID} does not exists !` });
+    // }
+    Post.findOne({_id:postID})
+    .then(result=>{
+      res.status(200).json(result)
+    })
+    .catch(err=>{
+      console.log(err)
+    })
   },
 
   // Delete a post
@@ -109,3 +116,4 @@ module.exports = {
     }
   },
 };
+
