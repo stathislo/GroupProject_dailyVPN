@@ -12,7 +12,8 @@ exports.ifUserIsLoggedIn = (req, res, next)=>{
                 user:user.role,
                 userFirstName:user.firstName,
                 userLastName:user.lastName,
-                userId:user._id
+                userId:user._id,
+                avantar:user.avantar
             })
         }else{
             res.send("not loggedin")
@@ -35,7 +36,8 @@ RegisterUser.findOne({email:req.session.email})
             userRole:user.role,
             userFirstName:user.firstName,
             userLastName:user.lastName,
-            userId:user._id
+            userId:user._id,
+            avantar:user.avantar
         })
     }else{
         console.log("not logged in")

@@ -10,31 +10,52 @@ export default class Postpage extends Component {
 
         }
 
+        axios.get("http://localhost:5000/", { withCredentials:true })
+        .then(user=>{
+            console.log(user)
+            if(user.data.loggedin==="not loggedin"){
+                this.props.history.push("/login")
+            }else if(user.data.loggedin==='loggedin'){
+                this.setState({userEmail:user.data.user})
+                this.setState({userFirstName:user.data.userFirstName})
+                this.setState({userLastName:user.data.userLastName})
+                this.setState({userId:user.data.userId})
+                this.setState({avantar:user.data.avantar})
+                
         axios.get("http://localhost:7000/posts/" + this.props.match.params.postId)
         .then(post=>{
-            console.log(post)
+            console.log(post.data.category)
             this.setState({title:post.data.title})
             this.setState({description:post.data.description})
             this.setState({image:post.data.image})
             this.setState({category:post.data.category})
             this.setState({user:post.data.user})
             this.setState({date:post.data.date.slice(0,10)})
-        })
-        .catch(err=>{
-            console.log(err)
-        })
 
-        axios.get("http://localhost:5000/", { withCredentials:true })
-        .then(user=>{
-            if(user.data.loggedin==="not loggedin"){
-                this.props.history.push("/login")
-            }else{
-                this.setState({userEmail:user.data.user.email})
+            let onePost__category = document.getElementById("onePost__category")
+            if(onePost__category.textContent==="news"){
+                onePost__category.style.backgroundColor = "blue"
+            }else if(onePost__category.textContent==='security'){
+                onePost__category.style.backgroundColor = "green"
+            }else if(onePost__category.textContent==='javascript'){
+                onePost__category.style.backgroundColor = "orange"
+            }else if(onePost__category.textContent==='nodejs'){
+                onePost__category.style.backgroundColor = "gold"
+            }else if(onePost__category.textContent==='how to'){
+                onePost__category.style.backgroundColor = 'aqua'
             }
         })
         .catch(err=>{
             console.log(err)
         })
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+
+
+
 }
 componentDidMount(){
 
@@ -48,7 +69,14 @@ const category = this.state.category
 const userId = this.state.user
 const date = this.state.date
 
+//
+
 const userMail = this.state.userEmail
+
+const userFirstName = this.state.userFirstName
+const userLastName = this.state.userLastName
+const getUserId = this.state.userId
+const userAvantar = this.state.avantar
 
 
         return (
@@ -78,32 +106,44 @@ const userMail = this.state.userEmail
                 <div className='onePost__postContainer'>
                     <div className='onePost__leftSide'>
                     <div className='onePost__avantar'>
-                        <img src='https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8bWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' className='onePost__ava'></img>
+                        <img src={userAvantar} className='onePost__ava'></img>
                     </div>
                     <div className='onePost__userName'>
-                        <h3 className='onePost__h3'>Name</h3>
+                    <input type='hidden' name='userId' value={getUserId}></input>
+                        <h5 className='onePost__p1'>{userFirstName} {userLastName}</h5>
                     </div>
                     <div className='onePost__posteDate'>
-                        <h5 className='onePost__h5'>{date}</h5>
+                        <h5 className='onePost__p'>{date}</h5>
                     </div>
                     <div className='onePost__category'>
-                        <h5 className='onePost__h5'>{category}</h5>
+                        <h5 id='onePost__category' className='onePost__h5_cat'>{category}</h5>
+                    </div>
+                    <hr></hr>
+                    <div className='onePost__share'>
+                        <p className='onePost__shareP'>Share with</p>
+                    </div>
+                    <div className='onePost__icons'>
+                    <i class="fab fa-facebook fa-2x onePost__fb"></i>
+                    <i class="fab fa-twitter fa-2x onePost__twi"></i>
+                    <i class="fab fa-linkedin fa-2x onePost__linked"></i>
                     </div>
                     </div>
                     <div className='onePost__rightSide'>
                         <div className='onePost__image'>
                             <img className='onePost__img' src={image}></img>
                         </div>
-
-                    </div>
-                    
-                </div>
-                <div class='onePost_title'>
+                        <div className='onePost__rightSideTexts'>
+                        <div class='onePost_title'>
                     <h2 class='onePost__h2'>{title}</h2>
                 </div>
                 <div class='onePost__desc'>
-                    <div class='onePost__h5'>{description}</div>
+                    <div class='onePost__h4'>{description}</div>
                 </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
             </div>
 
             </div>
