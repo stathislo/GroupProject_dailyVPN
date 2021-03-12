@@ -6,6 +6,7 @@ import "./Postpage.css"
 export default class Postpage extends Component {
     constructor(props){
         super(props)
+
         this.state = {
 
         }

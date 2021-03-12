@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import "./CreatePost.css"
 import axios from "axios"
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 export default class CreatePost extends Component {
     constructor(props){
