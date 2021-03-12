@@ -13,7 +13,6 @@ export default class Posts extends Component {
     componentDidMount(){
         axios.get("http://localhost:7000/posts/")
         .then(res=>{
-            console.log(res)
             this.setState({posts:res.data})
             let color = document.querySelectorAll(".posts")
             for(let colors of color){
