@@ -1,5 +1,6 @@
 const Post = require('../modules/Post');
 const User = require('../modules/User');
+const Category = require("../modules/Categories")
 
 module.exports = {
   // Get all posts
@@ -18,14 +19,21 @@ module.exports = {
   getPostById: async (req, res) => {
     const postID = req.params.postID;
 
-    try {
-      await Post.findOne({ _id: postID });
-      res
-        .status(200)
-        .send({ message: ' The post has been created successfully!' });
-    } catch (err) {
-      res.send({ message: `Post with id = ${postID} does not exists !` });
-    }
+    // try {
+    //   await Post.findOne({ _id: postID });
+    //   res
+    //     .status(200)
+    //     .json();
+    // } catch (err) {
+    //   res.send({ message: `Post with id = ${postID} does not exists !` });
+    // }
+    Post.findOne({_id:postID})
+    .then(result=>{
+      res.status(200).json(result)
+    })
+    .catch(err=>{
+      console.log(err)
+    })
   },
 
   // Delete a post
@@ -62,19 +70,33 @@ module.exports = {
   // Create a post for user
   userCreatesPost: async (req, res) => {
     try {
-      const userID = req.params.userID;
-      const user = await User.findById({ _id: userID });
+
+
+      const category = await Category.findOne({_id:req.body.categoryid})
 
       const post = new Post({
         title: req.body.title,
         description: req.body.description,
         image:req.body.image,
-        user: user,
+        userId:req.body.userId,
+        userEmail:req.body.userEmail,
+        userFirstName:req.body.userFirstName,
+        userLastName:req.body.userLastName,
+        category:req.body.category,
+        categoryId:req.body.categoryid
       });
 
-      user.posts.push(post);
-      await user.save();
+      Post.create(post,function(err,result){
+        if(err){
+          console.log(err)
+        }else{
+          console.log(result)
+        }
+      })
+
+      category.posts.push(post._id)
       await post.save();
+      await category.save();
       res.status(200).send('Success');
     } catch (err) {
       res.send({ message: 'Error on post creation!' });
@@ -102,3 +124,4 @@ module.exports = {
     }
   },
 };
+

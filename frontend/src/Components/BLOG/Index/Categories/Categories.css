@@ -1,21 +1,32 @@
 .blog__cat{
-    background-color: blue;
-    padding: 3rem;
+    background-color: rgb(221, 221, 221);
+    padding-bottom: 0.5rem;
+    width: 100%;
 }
 
 .blog__catul{
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .blog__catli{
     list-style: none;
+    border-top: 0.5px solid;
+    border-bottom: 0.5px solid blue;
+    border-right: 0.5px solid ;
+    border-left: 0.5px solid blue;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 8rem;
+    padding-right:8rem;
+    width: 100%;
 }
 
 .blog__catlink{
     text-decoration: none;
-    color: white;
-    font-size: 2rem;
-    margin: 2rem 10rem;
+    color: black;
+    font-size: 0.9rem;
+
 }

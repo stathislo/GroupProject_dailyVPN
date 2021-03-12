@@ -4,6 +4,12 @@ const RegisterUserSchema = new mongoose.Schema({
     email:{
         type:String
     },
+    firstName:{
+        type:String
+    },
+    lastName:{
+        type:String
+    },
     password:{
         type:String
     },
@@ -18,7 +24,14 @@ const RegisterUserSchema = new mongoose.Schema({
     },
     RegisterTokenExpiration:{
         type:Date
+    },
+    avantar:{
+        type:String
+    },
+    role:{
+        type:String
     }
+
 })
 
 const RegisterUser = mongoose.model("users", RegisterUserSchema)

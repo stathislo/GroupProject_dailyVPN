@@ -13,16 +13,25 @@ export default class Nav extends Component {
 
       axios.get("http://localhost:5000/main", {withCredentials:true})
       .then(ifUser=>{
-        console.log(ifUser)
         let nav=document.getElementById("nav")
         let navLoggedIn = document.getElementById("nav__loggedin")
+        let nav__loggedinModerator = document.getElementById("nav__loggedinModerator")
         if(ifUser.data==="not loggedin"){
           navLoggedIn.style.display= "none"
-        }else if(ifUser.data==="loggedin"){
+          nav__loggedinModerator.style.display='none'
+        }else if(ifUser.data.loggedin==="loggedin" && ifUser.data.user==="user"){
           nav.style.display = "none"
+          nav__loggedinModerator.style.display= 'none'
           axios.get("http://localhost:5000/", { withCredentials:true})
           .then(res=>{
-            this.setState({email:res.data.user.email})
+            this.setState({email:res.data.user})
+          })
+        }else if(ifUser.data.loggedin==="loggedin" && ifUser.data.user==="moderator"){
+          nav.style.display='none'
+          navLoggedIn.style.display='none'
+          axios.get("http://localhost:5000/", { withCredentials:true})
+          .then(res=>{
+            this.setState({email:res.data.user})
           })
         }
       })
@@ -54,7 +63,7 @@ export default class Nav extends Component {
                 <a className="nav-link" href="#" style={{ color: '#FFF' }}>Reviews</a>
                 <a className="nav-link" href="#" style={{ color: '#FFF' }}>Pricing</a>
                 <a className="nav-link" href="/blog" style={{ color: '#FFF' }}>Blog</a>
-                <a className="nav-link" href="#" style={{ color: '#FFF' }}>Login</a>
+                <a className="nav-link" href="/login" style={{ color: '#FFF' }}>Login</a>
               </div>
             </div>
           </div>
@@ -78,12 +87,39 @@ export default class Nav extends Component {
                 <a className="nav-link active" aria-current="page" href="#" style={{ color: '#FFF' }}>Features</a>
                 <a className="nav-link" href="#" style={{ color: '#FFF' }}>Reviews</a>
                 <a className="nav-link" href="#" style={{ color: '#FFF' }}>Pricing</a>
+                <a className="nav-link" href="/blog" style={{ color: '#FFF' }}>Blog</a>
                 <a className="nav-link" href="#" style={{ color: '#FFF' }}>Welcome {userEmail}</a>
+                <a className="nav-link" href="/logout" style={{ color: '#FFF' }}>Logout</a>
               </div>
             </div>
           </div>
         </nav>
         
+      {/* Navbar loggedin for moderator */}
+      <nav id='nav__loggedinModerator' className="navbar navbar-expand-lg navbar-light nav__loggedin">
+          <div className="container-fluid">
+            <img className='logo-img' src={logo} width="45" />
+            <a className="navbar-brand" href="#" style={{ color: '#FFF' }}>DailyVPN</a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+
+
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div className="navbar-nav ms-auto">
+                <a className="nav-link active" aria-current="page" href="#" style={{ color: '#FFF' }}>Features</a>
+                <a className="nav-link" href="#" style={{ color: '#FFF' }}>Reviews</a>
+                <a className="nav-link" href="#" style={{ color: '#FFF' }}>Pricing</a>
+                <a className="nav-link" href="/blog" style={{ color: '#FFF' }}>Blog</a>
+                <a className="nav-link" href="/blog" style={{ color: '#FFF' }}>Moderator Panel</a>
+                <a className="nav-link" href="#" style={{ color: '#FFF' }}>Welcome {userEmail}</a>
+                <a className="nav-link" href="/logout" style={{ color: '#FFF' }}>Logout</a>
+              </div>
+            </div>
+          </div>
+        </nav>
 
       </div>
     )

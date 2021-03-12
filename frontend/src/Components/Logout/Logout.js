@@ -12,6 +12,9 @@ export default class Logout extends Component {
         axios.get("http://localhost:5000/logout", { withCredentials:true})
         .then(logout=>{
             console.log(logout)
+            if(logout.data==="logout"){
+                this.props.history.push("/")
+            }
         })
         .catch(err=>{
             console.log(err)

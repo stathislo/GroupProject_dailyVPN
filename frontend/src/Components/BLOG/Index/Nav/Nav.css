@@ -1,8 +1,6 @@
 .blog__nav{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./Images/austin-poon-JO_S6ewBqAk-unsplash.jpg");
-    background-position: center;
-    background-size: cover;
-    object-fit: cover;
+    
+    background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
     height: 60vh;
     padding-bottom: 1rem;
 }
@@ -31,4 +29,12 @@
     text-decoration: none;
     color: white;
     margin-left: 3rem;
+}
+
+#createPost{
+    display: none;
+}
+
+#moderatorPanel{
+    display: none;
 }

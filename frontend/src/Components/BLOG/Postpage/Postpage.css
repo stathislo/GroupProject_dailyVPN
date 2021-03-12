@@ -1,0 +1,129 @@
+.onePost__nav{
+    background-color: blue;
+    height: 40vh;
+}
+
+.onePost__headerText{
+    text-align: center;
+    color: white;
+    align-items: center;
+}
+
+.onePost__postContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.onePost__leftSide{
+    margin-top: 3rem;
+    width: 20%;
+    position: fixed;
+}
+
+.onePost__rightSide{
+    width: 80%;
+    margin: 0rem 15rem;
+}
+
+.onePost__avantar{
+    align-items: center;
+    text-align: center;
+    position: relative;
+    right: 0.6rem;
+}
+
+.onePost__desc{
+text-align: left;
+align-items: left;
+}
+
+.onePost__ava{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 2px solid rgb(19, 161, 255);
+    box-shadow: 1px 2px 1px 1px;
+    margin-bottom: 1rem;
+}
+
+.onePost__image{
+left: 15rem;
+position: relative;
+bottom: 7rem;
+
+}
+
+.onePost__h2{
+text-align: center;
+}
+
+.onePost__p{
+    text-align: center;
+}
+
+.onePost__p1{
+    text-align: center;
+    color: rgb(19, 113, 255);
+}
+
+.onePost__rightSideTexts{
+text-align: left;
+margin: 1rem 10rem;
+}
+
+.onePost__shareP{
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.onePost__icons{
+    text-align: center;
+    align-items: center;
+}
+
+.onePost__fb{
+    color: blue;
+
+}
+
+.onePost__twi{
+    margin: 0rem 1rem;
+    color: aqua;
+}
+
+.onePost__linked{
+    color: rgb(9, 9, 134);
+}
+
+hr{
+    margin: 1rem 5rem;
+    text-align: center;
+}
+
+.onePost__img{
+width: 1000px;
+height: 450px;
+object-fit: cover;
+box-shadow: 2px 2px 2px 2px;
+border-radius: 5px;
+
+}
+
+.onePost__h5{
+    text-align: left;
+}
+
+.onePost__h5_cat{
+    position: relative;
+    left: 5.5rem;
+ align-items: center;
+    text-align: center;
+    color: white;
+    background-color: purple;
+    border-radius: 50px;
+    width: 49%;
+    padding: 0.1rem;
+    box-shadow: 2px 2px 1px 1px;
+}

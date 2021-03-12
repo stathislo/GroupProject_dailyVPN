@@ -16,15 +16,34 @@ const PostSchema = new mongoose.Schema({
     default: Date.now(),
   },
 
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+  userId: {
+    type:String
+  },
+
+  userEmail:{
+    type:String
+  },
+
+  userFirstName:{
+    type:String
+  },
+
+  userLastName:{
+    type:String
   },
 
   image:{
     type:String
   },
 
+  category:{
+    type:mongoose.Schema.Types.String,
+    ref:"Categories"
+  },
+  categoryId:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"Categories"
+  },
   reaction: [
     {
       type: mongoose.Schema.Types.ObjectId,

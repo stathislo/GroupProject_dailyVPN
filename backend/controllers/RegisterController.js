@@ -91,7 +91,7 @@ bcrypt.hash(req.body.password, 12, function(err, hash){
     if(err){
         console.log(err)
     }else{
-    RegisterUser.findOneAndUpdate({RegisterToken:req.body.registerToken, RegisterTokenExpiration:{$gt: Date.now()}}, {password:hash})
+    RegisterUser.findOneAndUpdate({RegisterToken:req.body.registerToken, RegisterTokenExpiration:{$gt: Date.now()}}, {firstName:req.body.firstName,lastName:req.body.lastName,role:"user",password:hash})
     .then(ifRegisterToken=>{
          console.log(ifRegisterToken)
          res.send(ifRegisterToken)
