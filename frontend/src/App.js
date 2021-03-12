@@ -13,7 +13,7 @@ import Product_High from "./Components/Product_high/ProductHigh"
 import BLOG from "./Components/BLOG/Index/Index"
 import PostPage from "./Components/BLOG/Postpage/Postpage"
 import CreatePost from "./Components/BLOG/CreatePost/CreatePost"
-
+import News from "./Components/BLOG/News/News"
 
 
 //ifUserisLoggedIn Routes
@@ -41,6 +41,7 @@ function App() {
         <Route path='/blog' component={BLOG}/>
         <Route path='/posts/:postId' component={PostPage}/>
         <Route path='/createpost' component={CreatePost}/>
+        <Route exact path='/category/:name' component={News}/>
         <Route path="*" component={Error}/>
       </Switch>
     </Router>

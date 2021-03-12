@@ -5,7 +5,7 @@ exports.getIfUserLoggedinRedirect = (req, res, next)=>{
 RegisterUser.findOne({email:req.session.email})
 .then(user=>{
     if(user){
-        res.send('loggedin')
+        res.status(200).send('loggedin')
     }
 })
 .catch(err=>{
