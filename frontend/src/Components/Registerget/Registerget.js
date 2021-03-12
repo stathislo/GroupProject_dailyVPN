@@ -8,6 +8,8 @@ export default class Reset extends Component {
         super(props)
         this.state = {
             id:"",
+            firstname:"",
+            lastname:"",
             password:"",
         }
 
@@ -138,10 +140,20 @@ export default class Reset extends Component {
         checkAndSwitchClasses4(hasSpecial, hasSpecialListItem);
     }
 
+    onChageFirstname = (event)=>{
+        this.setState({firstName:event.target.value})
+    }
+
+    OnChageLastname = (event)=>{
+        this.setState({lastName:event.target.value})
+    }
+
     onSubmitForm = (event)=>{
         event.preventDefault()
 
         const user = {
+            firstName:this.state.firstName,
+            lastName:this.state.lastName,
             password:this.state.password,
             registerToken: this.state.registerToken
         }
@@ -162,6 +174,12 @@ export default class Reset extends Component {
             <div>
                 <div id='registerNewForm' className='form__container'>
                 <form onSubmit={this.onSubmitForm} className='registerNewForm'>
+                <div className='getRegisterFirstname'>
+                    <input onChange={this.onChageFirstname} type='text' name='firstName' placeholder='Write your firstname'></input>
+                </div>
+                <div className='getRegisterLastname'>
+                    <input onChange={this.OnChageLastname} type='text' name='lastName' placeholder='Write your lastname'></input>
+                </div>
                     <div className='getRegisterPassword'>
                         <input onChange={this.onChangePassword1} className='getRegisterInput' name='password' placeholder='Write your password' type='password'></input>
                     </div>

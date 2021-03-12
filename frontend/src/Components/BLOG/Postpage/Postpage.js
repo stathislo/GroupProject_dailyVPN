@@ -102,7 +102,7 @@ const userMail = this.state.userEmail
                     <h2 class='onePost__h2'>{title}</h2>
                 </div>
                 <div class='onePost__desc'>
-                    <h5 class='onePost__h5'>{description}</h5>
+                    <div class='onePost__h5'>{description}</div>
                 </div>
             </div>
 

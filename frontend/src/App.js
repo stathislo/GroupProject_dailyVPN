@@ -12,6 +12,7 @@ import Product_Medium from "./Components/Product_Medium/ProductMedium"
 import Product_High from "./Components/Product_high/ProductHigh"
 import BLOG from "./Components/BLOG/Index/Index"
 import PostPage from "./Components/BLOG/Postpage/Postpage"
+import CreatePost from "./Components/BLOG/CreatePost/CreatePost"
 
 
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="/product3/:name" component={Product_High}/>
         <Route path='/blog' component={BLOG}/>
         <Route path='/posts/:postId' component={PostPage}/>
+        <Route path='/createpost' component={CreatePost}/>
         <Route path="*" component={Error}/>
       </Switch>
     </Router>

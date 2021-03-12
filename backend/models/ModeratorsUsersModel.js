@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const ModeratorUserSchema = new mongoose.Schema({
-    firstname:{
+    firstName:{
         type:String
     },
     lastName:{
@@ -18,6 +18,6 @@ const ModeratorUserSchema = new mongoose.Schema({
     }
 })
 
-const ModeratorUserModel = mongoose.model("moderators", ModeratorUserSchema)
+const ModeratorUserModel = mongoose.model("moderator", ModeratorUserSchema)
 
-module.exports = ModeratorUserSchema
+module.exports = ModeratorUserModel

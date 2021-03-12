@@ -70,23 +70,31 @@ module.exports = {
   // Create a post for user
   userCreatesPost: async (req, res) => {
     try {
-      const userID = req.params.userID;
-      const user = await User.findById({ _id: userID });
+
+
       const category = await Category.findOne({_id:req.body.categoryid})
 
       const post = new Post({
         title: req.body.title,
         description: req.body.description,
         image:req.body.image,
-        user: user,
+        userId:req.body.userId,
+        userEmail:req.body.userEmail,
+        userFirstName:req.body.userFirstName,
+        userLastName:req.body.userLastName,
         category:req.body.category,
         categoryId:req.body.categoryid
       });
 
+      Post.create(post,function(err,result){
+        if(err){
+          console.log(err)
+        }else{
+          console.log(result)
+        }
+      })
 
-      user.posts.push(post);
       category.posts.push(post._id)
-      await user.save();
       await post.save();
       await category.save();
       res.status(200).send('Success');
