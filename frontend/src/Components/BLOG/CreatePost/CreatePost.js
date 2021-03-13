@@ -21,6 +21,7 @@ export default class CreatePost extends Component {
             this.setState({userId:user.data.userId})
             this.setState({userFirstName:user.data.userFirstName})
             this.setState({userLastName:user.data.userLastName})
+            this.setState({userAvantar:user.data.avantar})
         }else{
             this.props.history.push("/login")
         }
@@ -59,6 +60,7 @@ onPostSubmit = (event)=>{
         userEmail:this.state.userEmail,
         userFirstName:this.state.userFirstName,
         userLastName:this.state.userLastName,
+        userAvantar:this.state.userAvantar,
         title:this.state.title,
         description:this.state.description,
         image:this.state.image,
@@ -84,6 +86,7 @@ onPostSubmit = (event)=>{
                             <input type='hidden' name='userId' value={this.state.userId}></input>
                             <input type='hidden' name='userFirstName' value={this.state.userFirstName}></input>
                             <input type='hidden' name='userLastName' value={this.state.userLastName}></input>
+                            <input type='hidden' name='userAvantar' value={this.state.userAvantar}></input>
                             <div className='createPost__texts'>
                                 <h2 className='createPost__h2'>Create a post</h2>
                             </div>

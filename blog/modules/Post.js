@@ -32,6 +32,10 @@ const PostSchema = new mongoose.Schema({
     type:String
   },
 
+  userAvantar:{
+    type:String
+  },
+
   image:{
     type:String
   },

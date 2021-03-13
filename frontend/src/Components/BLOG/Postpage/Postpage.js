@@ -21,7 +21,7 @@ export default class Postpage extends Component {
                 this.setState({userFirstName:user.data.userFirstName})
                 this.setState({userLastName:user.data.userLastName})
                 this.setState({userId:user.data.userId})
-                this.setState({avantar:user.data.avantar})
+                
                 
         axios.get("http://localhost:7000/posts/" + this.props.match.params.postId)
         .then(post=>{
@@ -31,6 +31,7 @@ export default class Postpage extends Component {
             this.setState({image:post.data.image})
             this.setState({category:post.data.category})
             this.setState({user:post.data.user})
+            this.setState({userAvantar:post.data.userAvantar})
             this.setState({date:post.data.date.slice(0,10)})
 
             let onePost__category = document.getElementById("onePost__category")
@@ -77,7 +78,7 @@ const userMail = this.state.userEmail
 const userFirstName = this.state.userFirstName
 const userLastName = this.state.userLastName
 const getUserId = this.state.userId
-const userAvantar = this.state.avantar
+const userAvantar = this.state.userAvantar
 
 
         return (

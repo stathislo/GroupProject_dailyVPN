@@ -80,6 +80,7 @@ module.exports = {
           userEmail:req.body.userEmail,
           userFirstName:req.body.userFirstName,
           userLastName:req.body.userLastName,
+          userAvantar:req.body.userAvantar,
           category:req.body.category,
           categoryId:req.body.categoryid
         });
