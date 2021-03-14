@@ -6,7 +6,8 @@ export default class Posts extends Component {
     constructor(props){
         super(props)
         this.state = {
-            posts:[]
+            posts:[],
+            search:""
         }
     }
 
@@ -35,6 +36,21 @@ export default class Posts extends Component {
         })
     }
 
+    onClickSearchChange = (event)=>{
+        this.setState({search:event.target.value})
+    }
+
+    onClickSearchClick = (event)=>{
+        axios.get("http://localhost:7000/search")
+        .then(res=>{
+            console.log(res)
+            this.props.history.push()
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+
+    }
     
 
     render() {
@@ -54,8 +70,11 @@ export default class Posts extends Component {
         return (
             <div className='showPosts'>
             <div className='posts__search'>
-                <input className='posts__searchInput' type='text' name='search' placeholder='Search a post'></input>
-                <i className="fas fa-search post__searchIcon"></i>
+            <form onSubmit={this.onClickSearchClick}>
+            <input onChange={this.onClickSearchChange} className='posts__searchInput' type='text' name='search' placeholder='Search a post'></input>
+                <button><i  className="fas fa-search post__searchIcon"></i></button>
+            </form>
+               
             </div>
             <div className='getPosts'>
             {getPosts}

@@ -42,6 +42,7 @@ const postsRoute = require('./routes/posts');
 const userRoute = require('./routes/user');
 const reactionRoute = require('./routes/reaction');
 const CategoryRoute = require("./routes/Categories")
+const SearchRouter = require("./routes/SearchRouter")
 
 
 
@@ -51,6 +52,7 @@ app.use('/posts', postsRoute);
 app.use('/user', userRoute);
 app.use('/reaction', reactionRoute);
 app.use(CategoryRoute)
+app.use(SearchRouter)
 
 // Connect To DB
 mongoose

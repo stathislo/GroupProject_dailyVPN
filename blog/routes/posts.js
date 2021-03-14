@@ -10,4 +10,7 @@ router.get('/postsOfUser/:userID', PostController.getPostsOfUser);
 router.patch('/update/:postID', PostController.userUpdatesPost);
 router.delete('/delete/:postID', PostController.deleteAPost);
 
+
+
+
 module.exports = router;
