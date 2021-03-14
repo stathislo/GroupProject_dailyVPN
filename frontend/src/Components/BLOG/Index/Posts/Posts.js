@@ -72,7 +72,7 @@ export default class Posts extends Component {
             <input onChange={this.onClickSearchChange} className='posts__searchInput' type='text' name='search' placeholder='Search a post'></input>
             </div>
            
-                <button type='submit'>Submit</button>
+                <button className='posts__searchBtn' type='submit'><i class="fas fa-search"></i></button>
             </form>
                
             </div>

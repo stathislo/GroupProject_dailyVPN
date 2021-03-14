@@ -66,3 +66,11 @@ flex-wrap: wrap;
     right: 1.5rem;
 }
 
+.posts__searchBtn{
+    border: none;
+    background: none;
+    position: relative;
+    bottom: 1.9rem;
+    right: 1rem;
+}
+
