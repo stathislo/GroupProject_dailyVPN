@@ -14,12 +14,14 @@ import BLOG from "./Components/BLOG/Index/Index"
 import PostPage from "./Components/BLOG/Postpage/Postpage"
 import CreatePost from "./Components/BLOG/CreatePost/CreatePost"
 import News from "./Components/BLOG/News/News"
+import Search from "./Components/BLOG/SearchPage/SearchPage"
 
 
 //ifUserisLoggedIn Routes
 
 import ifUserIsLoggedIn from "./Components/Logout/IfUserIsLoggedIn/ifUserIsLoggedIn"
 import ifUserIsAlreadyRegistered from "./Components/Register/ifAlreadyRegistered/ifAlreadyRegistered"
+import SearchPage from "./Components/BLOG/SearchPage/SearchPage";
 
 
 function App() {
@@ -38,10 +40,11 @@ function App() {
         <Route path='/product1/:name' component={Product_Low}/>
         <Route path="/product2/:name" component={Product_Medium}/>
         <Route path="/product3/:name" component={Product_High}/>
-        <Route path='/blog' component={BLOG}/>
+        <Route exact path='/blog' component={BLOG}/>
         <Route path='/posts/:postId' component={PostPage}/>
         <Route path='/createpost' component={CreatePost}/>
         <Route exact path='/category/:name' component={News}/>
+        <Route path="/blog/search/posts=:search" component={SearchPage}/>
         <Route path="*" component={Error}/>
       </Switch>
     </Router>

@@ -17,7 +17,7 @@ export default class Posts extends Component {
             this.setState({posts:res.data})
             let color = document.querySelectorAll(".posts")
             for(let colors of color){
-                console.log(colors.childNodes[1])
+                
                 if(colors.childNodes[1].textContent==="security"){
                     colors.childNodes[1].style.backgroundColor = "green"
                 }else if(colors.childNodes[1].textContent==="news"){
@@ -38,17 +38,14 @@ export default class Posts extends Component {
 
     onClickSearchChange = (event)=>{
         this.setState({search:event.target.value})
+        console.log(event.target.value)
     }
 
     onClickSearchClick = (event)=>{
-        axios.get("http://localhost:7000/search")
-        .then(res=>{
-            console.log(res)
-            this.props.history.push()
-        })
-        .catch(err=>{
-            console.log(err)
-        })
+        event.preventDefault()
+
+       console.log(this.state.search)
+       window.location.href ="http://localhost:3000/blog/search/posts=" + this.state.search
 
     }
     
@@ -71,8 +68,11 @@ export default class Posts extends Component {
             <div className='showPosts'>
             <div className='posts__search'>
             <form onSubmit={this.onClickSearchClick}>
+            <div className='test'>
             <input onChange={this.onClickSearchChange} className='posts__searchInput' type='text' name='search' placeholder='Search a post'></input>
-                <button><i  className="fas fa-search post__searchIcon"></i></button>
+            </div>
+           
+                <button type='submit'>Submit</button>
             </form>
                
             </div>
