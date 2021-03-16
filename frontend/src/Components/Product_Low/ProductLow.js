@@ -91,8 +91,8 @@ export default class ProductLow extends Component {
             <div className='product-container'>
             <div className='secure'>
                 <div className='secure__texts'>
-                    <h1 id="header-productLow">Secure your digital life effortlessly</h1>
-                    <span>100% money-back guarantee for your first 30 days of service.</span>
+                    <h1 id="header-productLow"><mark><strong>Secure your digital life effortlessly</strong></mark></h1>
+                    <span><b>100% money-back guarantee</b> for your first 30 days of service.</span>
                 </div>
             </div>          
                 
@@ -114,18 +114,31 @@ export default class ProductLow extends Component {
                         </div> 
                     </div>        
                 <hr></hr>
-                <div>
-                    <h1>Create your account</h1>
+                <div className="container account">
+                    <div>
+                    <h1 className="account-header"><strong>Create your account</strong></h1>
+                    </div>
+                    <div className="row justify-content-between">
+                    <div className="email col-6">Email address you will use to log in</div>
+                    <div className="col-6 email-content">
+                    <i class="fas fa-undo col-3"> 30-day money-back guarantee</i>
+                    <i class="fas fa-infinity col-3"> One account for all your devices</i>
+                    </div>
+                    <div className="w-100"></div>
+                    <div className="row justify-content-around">
+                    <input className="input-email col-6" type="email" placeholder="enter your email" name="email"></input>
+                    <div className="col-5 email-content">
+                    <i class="fas fa-headset col-3 "> 24/7 friendly customer team</i>
+                    <i class="fas fa-award col-3"> Award winning product for you all </i>
+                    </div>
+                    </div>
                 </div>
-                <div>
-                    <span>Email address you will use to log in</span><br/>
-                    <input type="email" placeholder="enter your email" name="email"></input>
                 </div>
                 <hr></hr>
-                <div>
-                    <h1>Payment</h1>
-                </div>
                 <div className="container">
+                <div>
+                    <h1 className="payment-header"><strong>Payment</strong></h1>
+                </div>
                 <div className='card-paypal col-lg-7 col-md-7 text-center'>
                 <div className="card-header">
                     <div className="row justify-content-between">
