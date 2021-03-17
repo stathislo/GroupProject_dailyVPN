@@ -87,13 +87,13 @@ export default class ProductLow extends Component {
         const userId = this.state.userId
 
         return (
-            <div className='productLow text-center'>
+            <div className='product-content text-center'>
             <Nav/>
             <div className='product-container'>
             <div className='secure'>
                 <div className='secure__texts'>
-                    <h1 id="header-productLow"><mark><strong>Secure your digital life effortlessly</strong></mark></h1>
-                    <span><b>100% money-back guarantee</b> for your first 30 days of service.</span>
+                    <h1 id="header-productLow"><strong>Secure your digital life effortlessly</strong></h1>
+                    <span><strong>100% money-back guarantee</strong> for your first 30 days of service.</span>
                 </div>
             </div>          
                 

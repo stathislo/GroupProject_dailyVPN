@@ -86,13 +86,13 @@ export default class ProductMedium extends Component {
         const email = this.state.email
         const userId = this.state.userId
         return (
-            <div className='productLow text-center'>
+            <div className='product-content text-center'>
             <Nav/>
             <div className='product-container'>
             <div className='secure'>
                 <div className='secure__texts'>
-                    <h1 id="header-productLow">Secure your digital life effortlessly</h1>
-                    <span>100% money-back guarantee for your first 30 days of service.</span>
+                    <h1 id="header-productLow"><strong>Secure your digital life effortlessly</strong></h1>
+                    <span><strong>100% money-back guarantee</strong> for your first 30 days of service.</span>
                 </div>
             </div>          
                 
@@ -117,7 +117,7 @@ export default class ProductMedium extends Component {
                 <hr></hr>
                 
                 {/* create account */}
-                <div className="container account">
+                <div className="container-account">
                     <div>
                         <h1 className="account-header"><strong>Create your account</strong></h1>
                     </div>
