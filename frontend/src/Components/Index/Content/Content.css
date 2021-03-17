@@ -1,27 +1,30 @@
 /* Content 1 */
+#content {
+    background-color: #eef3f8;
+}
 
 .row{
-    width: 100%;
+    /* width: 100%; */
 }
 .content1{
     padding: 5% 15%;
     padding-bottom: 0%;
-    display: flex;    
+    /* display: flex;     */
 }
 
 .left-content1 {
-    background-image: url(../Images/content4.jpg);
+    background-image: url(../Images/content4without.png);
     background-size: 33rem;
     background-repeat: no-repeat;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    padding-bottom: 6rem;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* width: 50%; */
+    padding-bottom: 8rem;
 }
 
 .right-content1 {
-    width: 50%;
-    padding-bottom: 6rem;
+    /* width: 50%; */
+    padding-bottom: 8rem;
 
 }
 
@@ -34,7 +37,7 @@
 
 .right-content1-h1{
     font-family: 'Dosis', sans-serif;
-font-size: 2.8rem;
+    font-size: 2.8rem;
 }
 
 .right-content1-span{
@@ -67,31 +70,30 @@ font-size: 2.8rem;
 /* Content 2  */
 
 .row2{
-    width: 100%;
+    /* width: 100%; */
 }
 .content2{
-    padding: 0% 15%;
-    display: flex; 
+    padding: 5% 15%;
+    /* display: flex;  */
     
 }
 
 .left-content2 {
-    width: 50%;
+    /* width: 50%; */
     padding-bottom: 8rem;
     
 }
 
 .right-content2 {
-    background-image: url(../Images/content1.jpg);
+    background-image: url(../Images/content1without.png);
     background-size: 40rem;
     background-repeat: no-repeat;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    padding-bottom: 8rem;
-    margin-left: 1.5rem;
-    margin-bottom: 2rem;
-    
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* width: 50%; */
+    padding-bottom: 6rem;
+    /* margin-left: 1.5rem; */
+    /* margin-bottom: 2rem; */
 }
 
 .right-content2-h4{
@@ -117,12 +119,10 @@ font-size: 2.8rem;
 }
 
 #btn-content2{
+    margin: 2rem 0rem;
     border-radius: 30px;
-    margin-top: 1rem;
-    margin-left: 25rem;
     height: 3.5rem;
-    font-size: 1.5rem;
-    
+    font-size: 1.5rem;   
 }
 
 /* Content 3  */
@@ -137,7 +137,7 @@ font-size: 2.8rem;
 }
 
 .left-content3 {
-    background-image: url(../Images/content3.jpg);
+    background-image: url(../Images/content3without.png);
     background-size: 34rem;
     background-repeat: no-repeat;
     justify-content: center;

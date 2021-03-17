@@ -3,8 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* header */
 
+.productLow {
+    background-color:#d6dff8;
+}
+/* header */
 #header-productLow {
     margin-top: 5rem; 
     font-family: 'verdana';
@@ -32,7 +35,7 @@ mark {
     font-family: 'verdana';
 }
 
-.account {
+.container-account {
     padding-bottom: 2rem;
     border-radius: 10px;
     background-color: #eef3f8;

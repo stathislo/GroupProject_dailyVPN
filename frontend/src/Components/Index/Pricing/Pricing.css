@@ -1,4 +1,48 @@
+
+/* background color */
+#pricing {
+    background-color:#eef3f8;
+}
+
+/* card header  */
+.pricing-card-header {
+    background: linear-gradient(217deg, #020524, rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, #001737, rgba(0,255,0,0) 70.71%),
+                linear-gradient(336deg, #26456b, rgba(0,0,255,0) 70.71%);            
+    height: 15rem;
+    color: white;
+}
+
+.card h3 {
+    line-height: 200px;
+    margin: auto;
+    font-weight: bold;
+}
+
+/* card body  */
+.card h2 {
+    font-weight: bold;
+}
+
+.card h5 {
+    margin: 40px;
+}
+
+/* card button sign up */
+.card-button {
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background:linear-gradient(217deg, #020524, rgba(255,0,0,0) 70.71%),
+               linear-gradient(127deg, #001737, rgba(0,255,0,0) 70.71%),
+               linear-gradient(336deg, #26456b, rgba(0,0,255,0) 70.71%); 
+    color: white;
+}
+
+.card-button:hover {
+    box-shadow: 2px 2px 2px 2px #26456b ;
+}
+
 a{
     text-decoration: none;
-    color: black;
 }

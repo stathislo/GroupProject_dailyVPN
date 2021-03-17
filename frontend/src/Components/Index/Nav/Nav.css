@@ -52,11 +52,11 @@
 }
 
 .nav__after{
-display: none;
-visibility: none;
+    display: none;
+    visibility: none;
 }
 
 .nav__loggedin_after{
-display: none;
+    display: none;
 }
 
