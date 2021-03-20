@@ -32,7 +32,7 @@ mark {
 /* create your account */
 .account-header{
     padding-bottom: 2rem;
-    font-family: 'verdana';
+    
 }
 
 .container-account {
@@ -51,14 +51,9 @@ mark {
 
 /* paypal-payment */
 
-.payment-header{
-    font-family: 'verdana';
-}
-
 .card-paypal {
     margin: auto;
     margin-bottom: 5rem;
-    height: 500px;
     border: 1px solid darkgrey;
     background-color:  	#eef3f8;
     border-radius: 10px;
@@ -66,7 +61,14 @@ mark {
 }
 
 .top {
-    margin-top: 20px;
+    color: #253b80;
+    font-weight: bold;
+    padding-left: 60px;
+       
+}
+
+.paypal-img-top{
+    padding-left: 300px;
 }
 
 .card-paypal-body {
@@ -74,8 +76,6 @@ mark {
 }
 
 .paypal-logo {
-
-    font-family: Verdana, Tahoma;
     font-weight: bold;
     font-size: 25px;
 }

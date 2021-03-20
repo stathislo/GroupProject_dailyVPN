@@ -4,7 +4,11 @@
     /* background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133)); */
     width: 100%;
     margin: 0;
-    background-image: url(../Images/website1.jpg);  
+    /* background-image: url(../Images/website1.jpg); */
+    background: linear-gradient(217deg, #020524, rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, #001737, rgba(0,255,0,0) 70.71%),
+                linear-gradient(336deg, #26456b, rgba(0,0,255,0) 70.71%); 
+    /* background-image: linear-gradient(to right,  #020524,#1b324d 20%,#001737 );           */
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
@@ -12,9 +16,7 @@
 } 
 
 #title-container{
-   margin: 7rem 10rem;
-
-
+   margin: 10rem 10rem;
 }
 
 #title-header1{
@@ -23,6 +25,7 @@
     font-size: 3rem;
     /* font-weight: 800; */
     color: white;
+    margin: 40px auto;
 }
 
 #title-header2{
@@ -42,4 +45,40 @@
 
 p{
 color: white;
+}
+
+/* image */
+.header-img {
+    background: url(../Images/security.png);
+    background-repeat: no-repeat; 
+    margin-top: 6rem;
+}
+
+
+@media only screen and (max-width: 780px) {
+    .header-img {
+       display: none;
+    }
+
+    #title-container {
+        margin: 10rem 10rem;
+        margin: auto;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .header-img {
+      animation: skew 3s infinite;
+      animation-direction: alternate;;
+    }
+}
+
+@keyframes skew {
+    0% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      transform: rotate(5deg);
+    }
+    
 }

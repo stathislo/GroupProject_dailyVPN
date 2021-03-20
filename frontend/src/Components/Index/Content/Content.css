@@ -1,6 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&family=Roboto+Slab&display=swap');
+ 
 /* Content 1 */
 #content {
     background-color: #eef3f8;
+}
+
+.btn {
+    font-family: 'Roboto Slab', serif;
 }
 
 .row{
@@ -13,7 +21,7 @@
 }
 
 .left-content1 {
-    background-image: url(../Images/content4without.png);
+    background-image: url(../Images/content5.png);
     background-size: 33rem;
     background-repeat: no-repeat;
     /* justify-content: center; */
@@ -30,22 +38,26 @@
 
 .right-content1-h4{
     padding-top: 2rem;
-    font-family: 'Dosis', sans-serif;
+    /* font-family: 'Dosis', sans-serif; */
+    font-family: 'Roboto Slab', serif;
     color: rgb(87, 87, 209);
     font-size: 1.8rem;
 }
 
 .right-content1-h1{
-    font-family: 'Dosis', sans-serif;
+    /* font-family: 'Dosis', sans-serif; */
+    font-family: 'Roboto Slab';
+    /* font-family: 'Nunito Sans', sans-serif; */
     font-size: 2.8rem;
 }
 
 .right-content1-span{
-    text-decoration: underline rgb(87, 87, 209);
+    /* text-decoration: underline rgb(87, 87, 209); */
 }
 
 .right-content1-text{
-    font-family: 'K2D', sans-serif;
+    /* font-family: 'K2D', sans-serif; */
+    font-family: 'Roboto Slab', serif;
     margin-top: 2rem;
     font-weight: normal;
 }
@@ -98,22 +110,25 @@
 
 .right-content2-h4{
     padding-top: 2rem;
-    font-family: 'Dosis', sans-serif;
+    /* font-family: 'Dosis', sans-serif; */
+    font-family: 'Roboto Slab', serif;
     color: rgb(87, 87, 209);
     font-size: 1.8rem;
 }
 
 .right-content2-h1{
-    font-family: 'Dosis', sans-serif;
+    /* font-family: 'Dosis', sans-serif; */
+    font-family: 'Roboto Slab', serif;
     font-size: 2.8rem;
 }
 
 .right-content2-span{
-    text-decoration: underline rgb(87, 87, 209);
+    /* text-decoration: underline rgb(87, 87, 209); */
 }
 
 .right-content2-text{
-    font-family: 'K2D', sans-serif;
+    /* font-family: 'K2D', sans-serif; */
+    font-family: 'Roboto Slab', serif;
     margin-top: 2rem;
     font-weight: normal;
 }
@@ -156,22 +171,25 @@
 
 .right-content3-h4{
     padding-top: 2rem;
-    font-family: 'Dosis', sans-serif;
+    /* font-family: 'Dosis', sans-serif; */
+    font-family: 'Roboto Slab', serif;
     color: rgb(87, 87, 209);
     font-size: 1.8rem;
 }
 
 .right-content3-h1{
-    font-family: 'Dosis', sans-serif;
-font-size: 2.8rem;
+    /* font-family: 'Dosis', sans-serif; */
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.8rem;
 }
 
 .right-content3-span{
-    text-decoration: underline rgb(87, 87, 209);
+    /* text-decoration: underline rgb(87, 87, 209); */
 }
 
 .right-content3-text{
-    font-family: 'K2D', sans-serif;
+    /* font-family: 'K2D', sans-serif; */
+    font-family: 'Roboto Slab', serif;
     margin-top: 2rem;
     font-weight: normal;
 }
