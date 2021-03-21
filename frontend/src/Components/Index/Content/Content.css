@@ -11,9 +11,6 @@
     font-family: 'Roboto Slab', serif;
 }
 
-.row{
-    /* width: 100%; */
-}
 .content1{
     padding: 5% 15%;
     padding-bottom: 0%;
@@ -24,9 +21,6 @@
     background-image: url(../Images/content5.png);
     background-size: 33rem;
     background-repeat: no-repeat;
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* width: 50%; */
     padding-bottom: 8rem;
 }
 
@@ -80,10 +74,6 @@
   
 }
 /* Content 2  */
-
-.row2{
-    /* width: 100%; */
-}
 .content2{
     padding: 5% 15%;
     /* display: flex;  */
@@ -199,4 +189,23 @@
     border-radius: 30px;
     height: 3.5rem;
     font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1100px) {
+    .left-content1 {
+        display: none;
+    }
+    
+    .right-content2 {
+        display: none;
+    }
+    .left-content2 {
+        margin: auto;
+    }
+    .left-content3 {
+        display: none;
+    }
+    .right-content3 {
+        margin: auto;
+    }    
 }
