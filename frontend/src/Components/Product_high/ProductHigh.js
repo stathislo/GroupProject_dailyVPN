@@ -150,7 +150,7 @@ export default class ProductMedium extends Component {
                 <div className="accordion-item card-header">
                     <div className="row justify-content-between accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <div className="col-2 top">Paypal</div>
+                        <div className="col-9 top">Paypal</div>
                         <div className="col-2 paypal-img-top"><img src={paypalLogo}></img></div>
                         </button>
                     </div> 

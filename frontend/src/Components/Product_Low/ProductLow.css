@@ -63,16 +63,12 @@ mark {
 .top {
     color: #253b80;
     font-weight: bold;
-    padding-left: 60px;
+    padding-left: 80px;
        
 }
 
-.paypal-img-top{
-    padding-left: 300px;
-}
-
 .card-paypal-body {
-    margin: 50px auto;
+    margin: 50px auto 30px auto;
 }
 
 .paypal-logo {
@@ -94,7 +90,7 @@ mark {
     border: 1px solid #FF9933;
     border-radius: 50px;
     background-image: linear-gradient(#FFF0A8, #F9B421);
-    margin: 90px auto 5px;
+    margin: 90px auto 5px auto;
     display: block;
     min-width: 138px;
     position: relative;
@@ -115,6 +111,6 @@ mark {
   
 .paypal-footer {
     font-size: 10px;
-    margin: 40px 20px 0px 20px;
+    margin: 50px auto 0 auto;
 }  
 

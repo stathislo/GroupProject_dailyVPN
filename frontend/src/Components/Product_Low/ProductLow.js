@@ -151,7 +151,7 @@ export default class ProductLow extends Component {
                 <div className="accordion-item card-header">
                     <div className="row justify-content-between accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <div className="col-2 top">Paypal</div>
+                        <div className="col-9 top">Paypal</div>
                         <div className="col-2 paypal-img-top"><img src={paypalLogo}></img></div>
                         </button>
                     </div> 
@@ -161,11 +161,11 @@ export default class ProductLow extends Component {
                 <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div className="accordion-body card-paypal-body">
                     <div className="row justify-content-between"> 
-                        <div className="col-6">Your subscription - 1 month  Plan </div>
+                        <div className="col-6"> Your subscription - 1 month  Plan </div>
                         <div className="col-2">EUR {price}</div>
                     </div>
                     <div className="row justify-content-between">
-                        <div className="col-6">VAT 24% Greece</div>
+                        <div className="col-4">VAT 24% Greece</div>
                         <div className="col-2">EUR Total</div>
                 
                 <div>
