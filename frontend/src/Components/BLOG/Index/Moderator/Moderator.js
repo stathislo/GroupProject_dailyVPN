@@ -14,9 +14,8 @@ export default class Moderator extends Component {
                             <li><a href=""> VpnDaily</a></li>
                         </ul>
                     </div>
-                    <div className="main_content">
+                    <div className="main_content"></div>
 
-                    </div>
                 </div>
             </div>
         )
