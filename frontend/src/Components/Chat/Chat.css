@@ -47,6 +47,18 @@ position: absolute;
    display: contents;
 }
 
+.chat__moderatorMessage, .chat__moderatorP{
+    text-align: left;
+    margin-left: 0.5rem;
+    color: black;
+}
+
+.chat__userMessage, .chat__userP{
+    text-align: right;
+    margin-right: 0.5rem;
+    color: black;
+}
+
 .chat__display{
     position: relative;
     bottom: 27rem;

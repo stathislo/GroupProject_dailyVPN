@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { Component } from 'react'
 import "./Chat.css"
 
@@ -8,6 +9,18 @@ export default class Chat extends Component {
         this.state = {
 
         }
+
+        axios.get("http://localhost:5000/main" , { withCredentials:true })
+        .then(res=>{
+            if(res.data.loggedin==='loggedin' && res.data.user==="user"){
+                
+            }else{
+                let chat = document.getElementById("chat").style.display ='none'
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
     }
 
     onChatClick =()=>{
@@ -33,17 +46,24 @@ export default class Chat extends Component {
     }
     render() {
         return (
-            <div className='chat'>
+            <div id='chat' className='chat'>
                 <div className='chat__container'>
-                <div id='chat__showHelp' className='chat__showHelp'>
+                <div id='showhelp' id='chat__showHelp' className='chat__showHelp'>
                 <h5 onClick={this.onChatClick} className='chat__h5'><i class="fas fa-comments"></i> Chat support</h5>
                 </div>
 
                 <div id='chat__Chat' className='chat__Chat'>
                 <div className='chat__display'>
-                <i onClick={this.onMinimizeClick} class="far fa-window-minimize chat__minimize"></i>
+                <i id='icon' onClick={this.onMinimizeClick} class="far fa-window-minimize chat__minimize"></i>
                 <div className='chat__displayMessages'>
-
+                <div className='chat__moderator'>
+                <p className='chat__moderatorP'>Moderator</p>
+                <h5 className='chat__moderatorMessage'>Welcome how can i help you?</h5>
+                </div>
+                <div className='chat__user'>
+                <p className='chat__userP'>user</p>
+                <h5 className='chat__userMessage'>Hello</h5>
+                </div>
                 </div>
                 <div className='chat__input'>
                     <input className='chat__input' type='text'></input>
