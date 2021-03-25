@@ -24,6 +24,7 @@ import ifUserIsAlreadyRegistered from "./Components/Register/ifAlreadyRegistered
 import SearchPage from "./Components/BLOG/SearchPage/SearchPage";
 import Moderator from "./Components/BLOG/Index/Moderator/Moderator";
 import User from "./Components/BLOG/Index/User/User";
+import Administrator from './Components/BLOG/Index/Administrator/Admin'
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path='/createpost' component={CreatePost} />
           <Route path="/moderator" component={Moderator} />
           <Route path='/user' component={User} />
+          <Route path='/admin' component={Administrator} />
           <Route exact path='/category/:name' component={News} />
           <Route path="/blog/search/posts=:search" component={SearchPage} />
           <Route path="*" component={Error} />

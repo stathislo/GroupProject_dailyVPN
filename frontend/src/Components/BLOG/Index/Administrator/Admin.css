@@ -1,10 +1,10 @@
-   .main-box {
+.wrapper {
 
     display: flex; 
 
    }
 
-   .sidebar-user {
+   .sidebar {
     height: 100vh;
     background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
     padding: 30px 0;
@@ -12,46 +12,43 @@
 
    }
     
-   .logo {
+   .wrapper .sidebar h3 {
     color: #fff;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 30px;
+
    }
 
-   .logo a {
-    color: #fff;
-   }
-
-   .main-box .sidebar-user ul li {
+   .wrapper .sidebar ul li {
     padding: 15px;
     border-bottom: 1px solid rgba(0,0,0,0.05);
     border-top: 1px solid rgba(225,225,0,0.05);
 
    }
 
-   .main-box .sidebar-user ul li a{
+   .wrapper .sidebar ul li a{
     color: #ffffff;
 
    }
 
-   .main-box .sidebar-user ul li:hover {
+   .wrapper .sidebar ul li:hover {
     background: #411ef3;
 
    }
-   .main-box .sidebar-user ul li:hover a{
+   .wrapper .sidebar ul li:hover a{
     color: #fff
 
    }
 
-   .main_content_user {  
+   .main_content_ad {
     background-repeat: no-repeat;
-    background-image: url(./social-media-marketing-colored-.png);
+    background-image: url(./seo\ \(1\).png);
     width: 35%;
    }
 
-   .main_content_middle {
-    width: 50%;
-    text-align: center;
-    }
-
+   .main_content_center {
+       width: 50%;
+       text-align: center;
+   }
+   
