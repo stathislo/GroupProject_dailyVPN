@@ -15,7 +15,7 @@ export default class Moderator extends Component {
                         </ul>
                     </div>
                     <div className="main_content">
-
+                        
                     </div>
                 </div>
             </div>

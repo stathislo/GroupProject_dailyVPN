@@ -44,6 +44,8 @@ const reactionRoute = require('./routes/reaction');
 const CategoryRoute = require("./routes/Categories")
 const SearchRouter = require("./routes/SearchRouter")
 
+const CommentRouter = require("./routes/comment")
+
 
 
 app.use('/login', loginRoute);
@@ -53,6 +55,7 @@ app.use('/user', userRoute);
 app.use('/reaction', reactionRoute);
 app.use(CategoryRoute)
 app.use(SearchRouter)
+app.use(CommentRouter)
 
 // Connect To DB
 mongoose

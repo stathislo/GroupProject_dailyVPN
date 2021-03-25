@@ -8,7 +8,7 @@ export default class Postpage extends Component {
         super(props)
 
         this.state = {
-
+            comments:[]
         }
 
         axios.get("http://localhost:5000/", { withCredentials:true })
@@ -25,14 +25,18 @@ export default class Postpage extends Component {
                 
         axios.get("http://localhost:7000/posts/" + this.props.match.params.postId)
         .then(post=>{
-            console.log(post.data.category)
+            console.log(post.data.comment)
             this.setState({title:post.data.title})
             this.setState({description:post.data.description})
             this.setState({image:post.data.image})
             this.setState({category:post.data.category})
             this.setState({user:post.data.user})
             this.setState({userAvantar:post.data.userAvantar})
+            this.setState({postId:post.data._id})
             this.setState({date:post.data.date.slice(0,10)})
+
+            this.setState({comments:post.data.comment})
+            
 
             let onePost__category = document.getElementById("onePost__category")
             if(onePost__category.textContent==="news"){
@@ -59,7 +63,31 @@ export default class Postpage extends Component {
 
 
 }
-componentDidMount(){
+
+
+onChageTextArea = (event)=>{
+    this.setState({content:event.target.value})
+    console.log(event.target.value)
+}
+
+onCommentSubmit = (event)=>{
+
+const comment = {
+    content:this.state.content,
+    userID:this.state.userId,
+    postID:this.state.postId,
+    avantar:this.state.userAvantar,
+    userFirstName:this.state.userFirstName,
+    userLastName:this.state.userLastName
+}
+
+axios.post("http://localhost:7000/postcomment", comment)
+.then(res=>{
+    console.log(res)
+})
+.catch(err=>{
+    console.log(err)
+})
 
 }
 
@@ -79,6 +107,26 @@ const userFirstName = this.state.userFirstName
 const userLastName = this.state.userLastName
 const getUserId = this.state.userId
 const userAvantar = this.state.userAvantar
+
+const postId = this.state.postId
+
+const getComments = this.state.comments.map(function(commentsItems){
+    return(<div className='showComments__container'>
+            <div className='showComments__Topcontainer'>
+            <div className='showCommentsImage'>
+                        <img src={commentsItems.avantar} className='showCommentsImg'></img>
+                        </div>
+              <div className='showComments__topText'>
+                    <h5 className='showComments__topTextH5'>{commentsItems.userFirstName} {commentsItems.userLastName}</h5>
+                 </div>
+                        
+                    </div>
+                    <div className='showComments__bottomContainer'>
+                            <p className='showComments__bottomP'>{commentsItems.content}</p>
+                            <p className='showCommentsDate'>Ημερομηνία δημοσίευσης: {commentsItems.sendDate.slice(0,10)}</p>
+                    </div>
+    </div>)
+})
 
 
         return (
@@ -140,6 +188,38 @@ const userAvantar = this.state.userAvantar
                 </div>
                 <div class='onePost__desc'>
                     <div class='onePost__h4'>{description}</div>
+                </div>
+
+            <hr className='onePost__h4comments'></hr>
+                <div className='onePost__comments'>
+                    <div className='onePost__topTextComment'>
+                        <h3 className='onePost__topTextH3Comment'>Μπες στη συζήτηση 😃 </h3>
+                    </div>
+                    <div className='onePost__topTextGnwmi'>
+                        <h5 className='onePost__topTextGnwmiH5'>Πες μας τη γνώμη σου!</h5>
+                    </div>
+                    <div className='onePost__topTextXristis'>
+                        <form onSubmit={this.onCommentSubmit}>
+                        <input name='avantar' type='hidden' value={userAvantar}></input>
+                        <input name='userFirstName' type='hidden' value={userFirstName}></input>
+                        <input name='userLastName' type='hidden' value={userLastName}></input>
+                        <input type='hidden' name='postID' value={postId}></input>
+                            <div className='onePost__topTextXristisOnoma'>
+                            <input type='hidden' name='userID' value={getUserId}></input>
+                                <h5 className='onePost__topTextXristisP'>Κάνε comment {userFirstName} {userLastName}</h5>
+                            </div>
+                            <div className='onePost__topTextArea'>
+                                <textarea onChange={this.onChageTextArea} name='content' rows="10" cols="100"></textarea>
+                            </div>
+                            <div className='onePost__topTextAreaButton'>
+                                <button className='topTextAreaBtn' type='submit'>Δημοσίευση σχολίου</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div className='showComments'>
+                    {getComments}
                 </div>
                         </div>
                     </div>

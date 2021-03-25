@@ -28,6 +28,7 @@ module.exports = {
     //   res.send({ message: `Post with id = ${postID} does not exists !` });
     // }
     Post.findOne({_id:postID})
+    .populate("comment")
     .then(result=>{
       res.status(200).json(result)
     })
