@@ -21,11 +21,12 @@ export default class Postpage extends Component {
                 this.setState({userFirstName:user.data.userFirstName})
                 this.setState({userLastName:user.data.userLastName})
                 this.setState({userId:user.data.userId})
+                this.setState({userGetAvantar:user.data.avantar})
                 
                 
         axios.get("http://localhost:7000/posts/" + this.props.match.params.postId)
         .then(post=>{
-            console.log(post.data.comment)
+            console.log(post.data)
             this.setState({title:post.data.title})
             this.setState({description:post.data.description})
             this.setState({image:post.data.image})
@@ -36,6 +37,9 @@ export default class Postpage extends Component {
             this.setState({date:post.data.date.slice(0,10)})
 
             this.setState({comments:post.data.comment})
+
+            this.setState({postUserFirstName:post.data.userFirstName})
+            this.setState({postUserLastName:post.data.userLastName})
             
 
             let onePost__category = document.getElementById("onePost__category")
@@ -76,7 +80,7 @@ const comment = {
     content:this.state.content,
     userID:this.state.userId,
     postID:this.state.postId,
-    avantar:this.state.userAvantar,
+    avantar:this.state.userGetAvantar,
     userFirstName:this.state.userFirstName,
     userLastName:this.state.userLastName
 }
@@ -109,6 +113,12 @@ const getUserId = this.state.userId
 const userAvantar = this.state.userAvantar
 
 const postId = this.state.postId
+
+
+const userGetAvantar = this.state.userGetAvantar
+
+const postUserFirstName = this.state.postUserFirstName
+const postUserLastName = this.state.postUserLastName
 
 const getComments = this.state.comments.map(function(commentsItems){
     return(<div className='showComments__container'>
@@ -160,7 +170,7 @@ const getComments = this.state.comments.map(function(commentsItems){
                     </div>
                     <div className='onePost__userName'>
                     <input type='hidden' name='userId' value={getUserId}></input>
-                        <h5 className='onePost__p1'>{userFirstName} {userLastName}</h5>
+                        <h5 className='onePost__p1'>{postUserFirstName} {postUserLastName}</h5>
                     </div>
                     <div className='onePost__posteDate'>
                         <h5 className='onePost__p'>{date}</h5>
@@ -200,7 +210,7 @@ const getComments = this.state.comments.map(function(commentsItems){
                     </div>
                     <div className='onePost__topTextXristis'>
                         <form onSubmit={this.onCommentSubmit}>
-                        <input name='avantar' type='hidden' value={userAvantar}></input>
+                        <input name='avantar' type='hidden' value={userGetAvantar}></input>
                         <input name='userFirstName' type='hidden' value={userFirstName}></input>
                         <input name='userLastName' type='hidden' value={userLastName}></input>
                         <input type='hidden' name='postID' value={postId}></input>

@@ -25,8 +25,8 @@ const PaymentSchema = mongoose.Schema({
     ref:"users"
     },
     email:{
-    type:mongoose.Schema.Types.String,
-    ref:"users"},
+    type:String
+    },
     
     checkIfPaid:{
         type:Boolean

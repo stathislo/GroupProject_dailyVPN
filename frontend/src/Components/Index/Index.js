@@ -6,6 +6,7 @@ import Content from './Content/Content'
 import Pricing from './Pricing/Pricing'
 import Carusel from './Carusel/Carusel'
 import Footer from './Footer/Footer'
+import Chat from "../Chat/Chat"
 import axios from "axios"
 
 export default class Index extends Component {
@@ -61,6 +62,7 @@ export default class Index extends Component {
 
         {/* Navbar Code  */}
         <Nav />
+        <Chat />
 
         {/* Header  */}
         <Header />
@@ -76,6 +78,8 @@ export default class Index extends Component {
 
         {/* <!-- Footer --> */}
         <Footer />
+
+       
 
       </div>
     )

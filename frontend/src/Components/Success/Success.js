@@ -10,19 +10,19 @@ export default class Success extends Component {
         }
     }
 
-    onSuccess = ()=>{
-        setTimeout(function(){
-           window.location.href = "http://localhost:3000"
-        },3000)
-    }
+    // onSuccess = ()=>{
+    //     setTimeout(function(){
+    //        window.location.href = "http://localhost:3000"
+    //     },8000)
+    // }
     render() {
-        this.onSuccess()
+        // this.onSuccess()
         return (
             <div>
                 <div className='success__card'>
                     <div className='success__texts'>
                         <h3 className='success__h5'>Thank you for your registration</h3>
-                        <h5 className='success__p'>Waiting to redirect!</h5>
+                        <h5 className='success__p'>Please check your email for complete your registration! Thank you</h5>
                         <div class="spinner-border text-primary" role="status">
                             <span class="sr-only"></span>
                         </div>

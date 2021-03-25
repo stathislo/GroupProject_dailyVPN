@@ -2,7 +2,8 @@ const mongoose = require("mongoose")
 
 const RegisterUserSchema = new mongoose.Schema({
     email:{
-        type:String
+        type:String,
+        unique:true
     },
     firstName:{
         type:String
@@ -26,11 +27,16 @@ const RegisterUserSchema = new mongoose.Schema({
         type:Date
     },
     avantar:{
-        type:String
+        type:String,
+        default:"https://images.unsplash.com/photo-1571249104671-f5537fb3e137?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzd8fGF2YXRhcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
     },
     role:{
         type:String
-    }
+    },
+    ChatId:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"chat"
+    }]
 
 })
 

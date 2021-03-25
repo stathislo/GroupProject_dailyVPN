@@ -15,7 +15,7 @@ RegisterUser.findOne({email:req.session.email})
 }
 
 exports.getIndexIp = (req, res, next)=>{
-const url = `http://ipwhois.app/json/8.8.4.4`
+const url = `http://ipwhois.app/json/85.72.164.240`
 
 request(url, function(err, result){
     if(err){

@@ -25,9 +25,10 @@ RegisterUser.findOne({email:req.body.email})
                 console.log(err)
             }else if(hash){
                 console.log("Perase")
-                req.session.user = true,
+                req.session.user = true
                 req.session.role = user.role
                 req.session.email = req.body.email
+                req.session.avantar = user.avantar
                 req.session._id = user._id
                 res.status(201).send("perase")
             }else{

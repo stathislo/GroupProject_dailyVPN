@@ -9,7 +9,7 @@ export default class ProductLow extends Component {
     constructor(props){
         super(props)
         this.state = {
-
+            useremail:''
         }
     }
 
@@ -58,12 +58,17 @@ export default class ProductLow extends Component {
         })
     }
 
+    onEmailChange = (event)=>{
+        this.setState({useremail:event.target.value})
+        console.log(event.target.value)
+    }
+
     onPayClick = (event)=>{
         event.preventDefault()
 
         const makePayment = {
             productId:this.state.productId,
-            email:this.state.email,
+            email:this.state.useremail,
             userId:this.state.userId
         }
 
@@ -76,6 +81,20 @@ export default class ProductLow extends Component {
         .catch(err=>{
             console.log(err)
         })
+
+        const user = {
+            email:this.state.useremail,
+            token:this.state.token
+        }
+
+        axios.post("http://localhost:5000/registerform", user)
+        .then(res=>{
+            console.log("User created!!")
+            const message = document.getElementById("message").textContent="Check your email for confirmation"
+        })
+        .catch(err=>{
+            console.log(err)
+        })  
 
     }
     render() {
@@ -130,7 +149,7 @@ export default class ProductLow extends Component {
                     </div>
                     <div className="w-100"></div>
                         <div className="row justify-content-around">
-                            <input className="input-email col-6" type="email" placeholder="enter your email" name="email"></input>
+                            <input onChange={this.onEmailChange} className="input-email col-6" type="email" placeholder="enter your email" name="useremail"></input>
                     <div className="col-5 email-content">
                             <i class="fas fa-headset col-3 "> 24/7 friendly customer team</i>
                             <i class="fas fa-award col-3"> Award winning product for you all </i>
