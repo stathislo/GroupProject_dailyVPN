@@ -17,6 +17,8 @@ export default class User extends Component {
                                 <li><a href="#">Logout</a></li>
                             </ul>
                     </div>
+                    <div className="main_content_middle"></div>
+                    <div className="main_content_user"></div>
                 </div>
             </div>
         )

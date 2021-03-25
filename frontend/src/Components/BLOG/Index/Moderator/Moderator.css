@@ -1,4 +1,4 @@
-.wrapper {
+   .wrapper {
 
     display: flex; 
 
@@ -8,12 +8,10 @@
     height: 100vh;
     background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
     padding: 30px 0;
-    width: 30%;
+    width: 15%;
 
    }
-
     
-
    .wrapper .sidebar h3 {
     color: #fff;
     text-transform: uppercase;
@@ -44,10 +42,13 @@
    }
 
    .main_content {
-    margin-left: 55%;   
     background-repeat: no-repeat;
     background-image: url(./lead-generation-1.png);
-    width: 70%;
-
+    width: 35%;
    }
+
+   .main_content_between {
+    width: 50%;
+    text-align: center;
+    }
    
