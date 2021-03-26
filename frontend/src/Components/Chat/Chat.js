@@ -13,7 +13,8 @@ export default class Chat extends Component {
             messagesSender:"",
             getChats:[],
             getAllChats1:[],
-            postChat:[]
+            postChat:[],
+            postBody:[]
         }
 
         axios.get("http://localhost:5000/main" , { withCredentials:true })
@@ -58,36 +59,85 @@ export default class Chat extends Component {
         this.setState({messagesSender:event.target.value})
     }
 
-    onChatSend = (event)=>{
-        event.preventDefault()
+    // onChatSend = (event)=>{
+    //     event.preventDefault()
 
         
-        let chatUserInput = document.getElementById("chatUserInput").value=''
+    //     let chatUserInput = document.getElementById("chatUserInput").value=''
 
+    //     const chat = {
+    //         senderUserId:this.state.userId,
+    //         messagesSender:this.state.messagesSender
+    //     }
+
+    //     axios.post("http://localhost:5000/postuserchat", chat, { withCredentials:true })
+    //     .then(resChat=>{
+    //         console.log("chat sended!")
+
+    //         const socket = openSocket("http://localhost:5000")
+    //         socket.on("chatMessage", data=>{
+    //             console.log(data)
+    //             if(data.action==='putNewChat'){
+    //                 console.log(data)
+    //                 this.setState({postChat:data.findUserMessage.messagesSender})
+    //             }
+    //         })
+        
+
+            
+    //     })
+    //     .catch(err=>{
+    //         console.log(err)
+    //     })
+    // }
+
+    onChatSend = async(event)=>{
+        event.preventDefault()
+ 
+        
+        let chatUserInput = document.getElementById("chatUserInput").value=''
+ 
         const chat = {
             senderUserId:this.state.userId,
             messagesSender:this.state.messagesSender
         }
-
+ 
+        let showUserChats = document.querySelectorAll(".showUserChats")
+        for(let deleteShowUsers of showUserChats){
+            deleteShowUsers.style.display = 'none'
+        }
+        console.log(showUserChats)
         axios.post("http://localhost:5000/postuserchat", chat, { withCredentials:true })
         .then(resChat=>{
             console.log("chat sended!")
-
-            const socket = openSocket("http://localhost:5000")
-            socket.on("chatMessage", data=>{
-                console.log(data)
-                if(data.action==='putNewChat'){
-                    console.log(data)
-                    this.setState({postChat:data.findUserMessage.messagesSender})
-                }
-            })
-        
-
+ 
+            // this.asd()
+            // const socket = openSocket("http://localhost:5000")
+            //  socket.on("chatMessage", data=>{
+            //     console.log(data)
+            //     if(data.action==='putNewChat'){
+            //         console.log(data)
+            //         this.setState({postChat:data.findUserMessage.messagesSender})
+            //         //console.log(this.postChat)
+            //     }
+            // })
             
         })
         .catch(err=>{
             console.log(err)
         })
+ 
+        const socket =  openSocket("http://localhost:5000")
+           await  socket.on("chatMessage", data=>{
+                console.log(data.body)
+                if(data.action==='putNewChat'){
+                    
+                    console.log(data)
+                    this.setState({postChat:data.findUserMessage.messagesSender})
+                    this.setState({postBody:data.body})
+                    //console.log(this.postChat)
+                }
+            })
     }
 
     componentDidMount(){
@@ -117,9 +167,16 @@ export default class Chat extends Component {
         const getChatUserFirstName = this.state.getUserChatFirstname
         const getChatUserLastName = this.state.getUserChatLastname
 
-        const postChat = this.state.postChat.map(function(showChats){
+        const postBody = this.state.postBody.map(function(getPostBody){
             return(<div>
-                <h5>{showChats}</h5>
+                 <h5 className='chat__userMessage'>{getPostBody}</h5>
+            </div>)
+        })
+
+        const postChat = this.state.postChat.map(function(showChats){
+            return(<div id='postChat' className='chat__user'>
+            <p className='chat__userP'>{getChatUserFirstName} {getChatUserLastName}</p>
+                <h5 className='chat__userMessage'>{showChats}</h5>
             </div>)
         })
 
@@ -132,7 +189,7 @@ export default class Chat extends Component {
 
 
         const showUserChats = this.state.getChats.map(function(items){
-            return(<div>
+            return(<div className='showUserChats' id='showUserChats'>
             <p className='chat__userP'>{getChatUserFirstName} {getChatUserLastName}</p>
                 <h5 className='chat__userMessage'>{items}</h5>
             </div>)

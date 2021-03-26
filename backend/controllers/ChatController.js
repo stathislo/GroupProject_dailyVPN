@@ -15,7 +15,11 @@ exports.postChat = (req, res, next)=>{
                         findUserMessage.messagesSender.push(req.body.messagesSender)
                         findUserMessage.save()
                         res.send("success")
-                        io.getIO().emit("chatMessage", { action:"putNewChat", findUserMessage:findUserMessage})
+                        io.getIO().emit("chatMessage", { 
+                            action:"putNewChat", 
+                            findUserMessage:findUserMessage,
+                            body:[req.body.messagesSender]
+                        })
                     }else if(!findUserMessage){
                         const chatMessage = new ChatModel({
                             senderUserId:req.session._id,

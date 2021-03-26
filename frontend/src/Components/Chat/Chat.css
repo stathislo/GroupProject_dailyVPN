@@ -36,6 +36,7 @@ position: absolute;
     border: 1px solid black;
     height: 40vh;
     width: 20vw;
+    overflow-y: scroll;
 }
 
 .chat__Chat{
