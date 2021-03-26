@@ -21,6 +21,7 @@
     "nodemailer-sendgrid-transport": "^0.2.0",
     "paypal-rest-sdk": "^1.8.1",
     "pusher": "^5.0.0",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "socket.io": "^4.0.0"
   }
 }

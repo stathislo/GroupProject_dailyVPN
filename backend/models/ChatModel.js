@@ -2,14 +2,14 @@ const mongoose = require("mongoose")
 
 const ChatSchema = new mongoose.Schema({
     senderUserId:{
-        type:String
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"users"
     },
     receiveUserId:{
         type:String
     },
     messagesSender:[{
-        type:String,
-        DateMessage:Date
+        type:String
     }],
     messageReceive:[{
         type:String,

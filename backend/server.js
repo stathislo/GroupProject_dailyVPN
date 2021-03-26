@@ -46,7 +46,8 @@ const IndexRouter = require("./routers/IndexRouter")
 const MainRouter = require("./routers/MainRouter")
 const AdminRouter = require("./routers/AdminRouter")
 const PaymentRouter = require("./routers/PaymentsRouter")
-const SuccessPaymentRouter = require("./routers/SuccessPaymentRouter")
+const SuccessPaymentRouter = require("./routers/SuccessPaymentRouter");
+const ChatRouter = require("./routers/ChatRouter")
 
 
 
@@ -63,13 +64,20 @@ app.use(MainRouter)
 app.use(AdminRouter)
 app.use(PaymentRouter)
 app.use(SuccessPaymentRouter)
+app.use(ChatRouter)
 
 
 
-app.listen(PORT, function(err){
+const server = app.listen(PORT, function(err){
     if(err){
         console.log(err)
     }else{
         console.log(`Backend Server is listening on port ${PORT}`)
     }
 })
+
+const io =require("./apis/socket").init(server);
+io.on("connection", socket=>{
+    console.log("Client connected")
+})
+

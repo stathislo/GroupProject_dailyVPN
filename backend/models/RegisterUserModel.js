@@ -33,9 +33,8 @@ const RegisterUserSchema = new mongoose.Schema({
     role:{
         type:String
     },
-    ChatId:[{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"chat"
+    chatId:[{
+        type:String
     }]
 
 })
