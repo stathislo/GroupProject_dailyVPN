@@ -14,7 +14,7 @@ exports.postChat = (req, res, next)=>{
                         console.log(req.body.messagesSender)
                         findUserMessage.messagesSender.push(req.body.messagesSender)
                         findUserMessage.save()
-                        res.send("success")
+                        res.status(201)
                         io.getIO().emit("chatMessage", { 
                             action:"putNewChat", 
                             findUserMessage:findUserMessage,
@@ -53,6 +53,7 @@ exports.postChat = (req, res, next)=>{
     }
 }
 
+
 exports.getUserMessages = (req, res, next)=>{
     if(req.session.user){
         UserModel.findOne({email:req.session.email})
@@ -60,6 +61,7 @@ exports.getUserMessages = (req, res, next)=>{
             if(user){
                 ChatModel.findOne({senderUserId:user._id})
                 .populate("senderUserId")
+                .populate("receiveUserId")
                 .then(getMessage=>{
                     io.getIO().emit("showChats", { action:"getChats", getAllMessage:getMessage})
                     res.status(200).json({
@@ -69,6 +71,41 @@ exports.getUserMessages = (req, res, next)=>{
                 .catch(err=>{
                     console.log(err)
                 })
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }
+}
+
+exports.postModeratorChat = (req, res, next)=>{
+    if(req.session.user){
+        UserModel.findOne({email:req.session.email})
+        .then(moderator=>{
+            if(moderator){
+                ChatModel.findOneAndUpdate({senderUserId:req.body.senderUserId}, {receiveUserId:req.session._id}, {new:true})
+                .then(updatedModeratorId=>{
+                    if(updatedModeratorId){
+                        ChatModel.findOne({senderUserId:req.body.senderUserId})
+                        .populate("senderUserId")
+                        .populate("receiveUserId")
+                        .then(moderatorChat=>{
+                            moderatorChat.messageReceive.push(req.body.moderatorchat)
+                            moderatorChat.save()
+                            res.status(201).json({
+                                moderatorChat:moderatorChat
+                            })
+                        })
+                        .catch(err=>{
+                            console.log(err)
+                        })
+                    }
+                })
+                .catch(err=>{
+
+                })
+
             }
         })
         .catch(err=>{

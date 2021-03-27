@@ -9,9 +9,10 @@ export default class Moderator extends Component {
                     <div className="sidebar">
                         <h3>Moderator Mode</h3>
                         <ul>
-                            <li><a href="">Posts</a></li>
-                            <li><a href=""> Users</a></li>
-                            <li><a href=""> VpnDaily</a></li>
+                            <li className='moderator__li'><a href="">- Posts</a></li>
+                            <li className='moderator__li'><a href="">- Users</a></li>
+                            <li className='moderator__li'><a href="">- VpnDaily</a></li>
+                            <li className='moderator__li'><a href="">- Chat</a></li>
                         </ul>
                     </div>
                     <div className="main_content">

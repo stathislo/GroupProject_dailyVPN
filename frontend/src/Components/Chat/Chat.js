@@ -13,6 +13,7 @@ export default class Chat extends Component {
             messagesSender:"",
             getChats:[],
             getAllChats1:[],
+            getAllChats2:[],
             postChat:[],
             postBody:[]
         }
@@ -144,18 +145,28 @@ export default class Chat extends Component {
         
         axios.get("http://localhost:5000/getusermessages", { withCredentials:true })
         .then(getChats=>{
+            
             const socket = openSocket("http://localhost:5000/")
+            
             socket.on("showChats", data=>{
                 if(data.action==="getChats"){
                     this.setState({getAllChats1:data.getAllMessage.messagesSender})
-                    //console.log(data.getAllMessage.messagesSender)
+                    
+                    console.log(data.getAllMessage)
+                
+                    
                     //console.log(data.getAllMessage.messagesSender)
                     //console.log(this.state.getAllChats)
                 }
             })
             this.setState({getChats:getChats.data.getMessage.messagesSender})
+            this.setState({getAllChats2:getChats.data.getMessage.messageReceive})
+           
             this.setState({getUserChatFirstname:getChats.data.getMessage.senderUserId.firstName})
             this.setState({getUserChatLastName:getChats.data.getMessage.senderUserId.lastName})
+
+            //moderator
+            this.setState({getModeratorFirstName:getChats.data.getMessage.receiveUserId.firstName})
         })
         .catch(err=>{
             console.log(err)
@@ -166,6 +177,8 @@ export default class Chat extends Component {
         const getUserId = this.state.userId
         const getChatUserFirstName = this.state.getUserChatFirstname
         const getChatUserLastName = this.state.getUserChatLastname
+
+        const getModeratorFirstName = this.state.getModeratorFirstName
 
         const postBody = this.state.postBody.map(function(getPostBody){
             return(<div>
@@ -184,6 +197,13 @@ export default class Chat extends Component {
             console.log(chatitems)
             return(<div>
                 <h1>{chatitems}</h1>
+            </div>)
+        })
+
+        const getAllChats2 = this.state.getAllChats2.map(function(chatitems2){
+            return(<div className='showModeratorChats'>
+                <p className='chat__moderatorP'>{getModeratorFirstName}</p>
+                <h5 className='chat__moderatorMessage'>{chatitems2}</h5>
             </div>)
         })
 
@@ -207,13 +227,12 @@ export default class Chat extends Component {
                 <i id='icon' onClick={this.onMinimizeClick} class="far fa-window-minimize chat__minimize"></i>
                 <div className='chat__displayMessages'>
                 <div className='chat__moderator'>
-                <p className='chat__moderatorP'></p>
-                <h5 className='chat__moderatorMessage'></h5>
+                {getAllChats2}
                 </div>
                 <div className='chat__user'>
                 {showUserChats}
+                
                 {postChat}
-                <h5 className='chat__userMessage'></h5>
                 </div>
                 </div>
                 <form onSubmit={this.onChatSend}>

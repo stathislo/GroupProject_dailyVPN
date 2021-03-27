@@ -25,6 +25,7 @@ import SearchPage from "./Components/BLOG/SearchPage/SearchPage";
 import Moderator from "./Components/BLOG/Index/Moderator/Moderator";
 import User from "./Components/BLOG/Index/User/User";
 import Administrator from './Components/BLOG/Index/Administrator/Admin'
+import ModeratorChat from "./Components/BLOG/Index/Moderator/Chat/ModeratorChat"
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path='/posts/:postId' component={PostPage} />
           <Route path='/createpost' component={CreatePost} />
           <Route path="/moderator" component={Moderator} />
+          <Route path='/moderatorchat' component={ModeratorChat}/>
           <Route path='/user' component={User} />
           <Route path='/admin' component={Administrator} />
           <Route exact path='/category/:name' component={News} />

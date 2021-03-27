@@ -1,0 +1,118 @@
+.moderator__chatContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  
+    
+}
+
+.moderator__chatLeftSide{
+    background-color: white(8, 139, 15);
+    width: 25vw;
+    height: 100vh;
+    
+}
+
+.moderator__chatRightSide{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Chat/Images/nahil-naseer-xljtGZ2-P3Y-unsplash.jpg");
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    width: 60vw;
+    position: relative;
+}
+
+.moderator__Chatinput{
+    padding: 8px;
+    border-radius: 1px;
+    width: 100%;
+}
+
+.moderator__usersChats{
+    border: 1px solid rgb(192, 192, 192);
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+
+.moderator__userNameP{
+    color: black;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    margin-top: 0.3rem;
+    line-height: 0rem;
+    margin-left: 0.5rem;
+}
+
+.moderator__userDateSend{
+    color: black;
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.moderator__userNameH5{
+    top: 0;
+    align-items: center;
+    position: absolute;
+    margin-top: 0.3rem;
+    margin-left: 0.5rem;
+}
+
+.moderator__userImg{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.moderator__chatRightImage{
+    background-color: white;
+    padding: 10px;
+}
+
+.moderator__rightSideInputChat{
+    position: absolute;
+    bottom: 0;
+}
+
+.moderator__rightSideInput{
+    width: 60vw;
+    padding: 10px;
+}
+
+.moderator__rightSideChats{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    border-radius: 15px;
+    margin-right: 3rem;
+   
+}
+
+.moderator__chatSideH5{
+    border-radius: 10px;
+    padding: 2rem;
+    background-color: blue;
+}
+
+.moderator__rightSideUserMessage{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 3rem;
+    color: white;
+    border-radius: 15px;
+}
+
+.moderator__chatSideUser{
+    border-radius: 10px;
+    padding: 2rem;
+    background-color: rgb(2, 110, 25);
+}

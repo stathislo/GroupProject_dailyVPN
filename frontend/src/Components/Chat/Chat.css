@@ -49,15 +49,22 @@ position: absolute;
 }
 
 .chat__moderatorMessage, .chat__moderatorP{
-    text-align: left;
+    display: flex;
+    justify-content: flex-end;
     margin-left: 0.5rem;
     color: black;
 }
 
 .chat__userMessage, .chat__userP{
-    text-align: right;
+    display: flex;
+    justify-content: flex-start;
     margin-right: 0.5rem;
     color: black;
+}
+
+.showModeratorChats{
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .chat__display{
