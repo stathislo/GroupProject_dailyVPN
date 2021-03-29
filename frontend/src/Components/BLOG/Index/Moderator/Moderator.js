@@ -1,7 +1,22 @@
 import React, { Component } from 'react'
 import "./Moderator.css"
+import axios from 'axios'
 
 export default class Moderator extends Component {
+    constructor(props){
+        super(props)
+        this.steate = {
+
+        }
+
+       axios.get("http://localhost:5000/main" , { withCredentials:true })
+       .then(res=>{
+           console.log(res)
+       })
+       .catch(err=>{
+           console.log(err)
+       }) 
+    }
     render() {
         return (
             <div>

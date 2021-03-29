@@ -3,7 +3,7 @@ position: relative;
 align-items: right;
 display: flex;
 justify-content: flex-end;
-top: 55rem;
+top: 48rem;
 right: 15rem;
 }
 
@@ -16,6 +16,7 @@ position: absolute;
 }
 
 .chat__showHelp{
+    
     position: fixed;
     background-color: blue;
     padding: 15px;
@@ -40,10 +41,12 @@ position: absolute;
 }
 
 .chat__Chat{
+    position: fixed;
     display: none;
 }
 
 .chat__Chat__after{
+    
    position: fixed;
    display: contents;
 }

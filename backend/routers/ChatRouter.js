@@ -9,4 +9,7 @@ router.get('/getusermessages', ChatController.getUserMessages)
 
 router.post("/postmoderatorchat", ChatController.postModeratorChat)
 
+router.get("/getmoderatorchat", ChatController.getAllChatsMessagesModerator)
+router.post("/getmoderatormessages", ChatController.getModeratorUserMessage)
+
 module.exports = router

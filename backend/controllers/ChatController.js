@@ -113,3 +113,36 @@ exports.postModeratorChat = (req, res, next)=>{
         })
     }
 }
+
+exports.getAllChatsMessagesModerator = (req, res, next)=>{
+    if(req.session.user){
+        ChatModel.find({})
+        .populate("senderUserId")
+        .populate("receiveUserId")
+        .then(allChats=>{
+            res.status(200).json({
+                chats:allChats
+            })
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }
+}
+
+exports.getModeratorUserMessage = (req, res, next)=>{
+    if(req.session.user){
+        ChatModel.findOne({senderUserId:req.body.chatid})
+        .populate("senderUserId")
+        .populate("receiveUserId")
+        .then(findMessage=>{
+            console.log(findMessage)
+            res.status(200).json({
+                findMessage:findMessage
+            })
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }
+}
