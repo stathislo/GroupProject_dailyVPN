@@ -13,7 +13,8 @@ export default class Chat extends Component {
                 chatid:"",
                 moderatorchat:"",
                 getLiveModerator:[],
-                postChat:[]
+                postChat:[],
+                allMessages:[]
              }
 
         axios.get("http://localhost:5000/main", { withCredentials: true })
@@ -88,6 +89,15 @@ export default class Chat extends Component {
         //         this.setState({chats:data.allChats})
                 
         //     }
+        // })
+        this.setState({allMessages:[...this.state.chats, ...this.state.postChat]})
+        console.log("ALL MESSAGES");
+        console.log(this.allMessages);
+
+        // allMessages.sort((a,b)=>{
+        //     const dateA = new Date(a.sendDate);
+        //     const dateB = new Date(b.sendDate);
+        //     return Math.abs(dateA) - Math.abs(dateB)
         // })
 
     }
