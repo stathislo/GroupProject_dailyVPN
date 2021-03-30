@@ -13,12 +13,14 @@ const ChatSchema = new mongoose.Schema({
         type:String
     }],
     messageReceive:[{
-        type:String,
-        DateMessageReceive:Date
+        type:String
     }],
     status:{
         type:String,
         default:"open"
+    },
+    sendDate:{
+        type:Date
     }
 })
 

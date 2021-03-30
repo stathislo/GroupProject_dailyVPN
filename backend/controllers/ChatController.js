@@ -13,6 +13,7 @@ exports.postChat = (req, res, next)=>{
                     if(findUserMessage){
                         console.log(req.body.messagesSender)
                         findUserMessage.messagesSender.push(req.body.messagesSender)
+                        findUserMessage.sendDate = Date.now()
                         findUserMessage.save()
                         res.status(201)
                         io.getIO().emit("chatMessage", { 
@@ -24,7 +25,8 @@ exports.postChat = (req, res, next)=>{
                         const chatMessage = new ChatModel({
                             senderUserId:req.session._id,
                             messagesSender:req.body.messagesSender,
-                            status:"open"
+                            status:"open",
+                            sendDate:Date.now()
                         })
                         ChatModel.create(chatMessage, function(err,chat){
                             if(err){
@@ -90,9 +92,11 @@ exports.postModeratorChat = (req, res, next)=>{
                         ChatModel.findOne({senderUserId:req.body.senderUserId})
                         .populate("senderUserId")
                         .populate("receiveUserId")
+                        
                         .then(moderatorChat=>{
                             moderatorChat.messageReceive.push(req.body.moderatorchat)
                             moderatorChat.save()
+                            io.getIO().emit("postModeratorMessage" , { action:"getModeratorMessage", moderatorChat:moderatorChat })
                             res.status(201).json({
                                 moderatorChat:moderatorChat
                             })
@@ -120,6 +124,7 @@ exports.getAllChatsMessagesModerator = (req, res, next)=>{
         .populate("senderUserId")
         .populate("receiveUserId")
         .then(allChats=>{
+            io.getIO().emit("getAllChatModerator", {action:"showAllChats", allChats:allChats})
             res.status(200).json({
                 chats:allChats
             })
@@ -137,6 +142,7 @@ exports.getModeratorUserMessage = (req, res, next)=>{
         .populate("receiveUserId")
         .then(findMessage=>{
             console.log(findMessage)
+            
             res.status(200).json({
                 findMessage:findMessage
             })

@@ -122,6 +122,14 @@
     border-radius: 15px;
 }
 
+.moderator__rightSideUserMessage__next{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 3rem;
+    color: white;
+    border-radius: 15px;
+}
+
 .moderator__chatSideUser{
     border-radius: 10px;
     padding: 2rem;
