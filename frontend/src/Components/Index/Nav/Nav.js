@@ -84,9 +84,9 @@ export default class Nav extends Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav ms-auto">
-                <a className="nav-link active" aria-current="page" href="#" style={{ color: '#FFF' }}>Features</a>
-                <a className="nav-link" href="#" style={{ color: '#FFF' }}>Reviews</a>
-                <a className="nav-link" href="#" style={{ color: '#FFF' }}>Pricing</a>
+                <a className="nav-link active" aria-current="page" href="#content" style={{ color: '#FFF' }}>Features</a>
+                <a className="nav-link" href="#testimonials" style={{ color: '#FFF' }}>Reviews</a>
+                <a className="nav-link" href="#pricing" style={{ color: '#FFF' }}>Pricing</a>
                 <a className="nav-link" href="/blog" style={{ color: '#FFF' }}>Blog</a>
                 <a className="nav-link" href="#" style={{ color: '#FFF' }}>Welcome {userEmail}</a>
                 <a className="nav-link" href="/logout" style={{ color: '#FFF' }}>Logout</a>
@@ -109,11 +109,11 @@ export default class Nav extends Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav ms-auto">
-                <a className="nav-link active" aria-current="page" href="#" style={{ color: '#FFF' }}>Features</a>
-                <a className="nav-link" href="#" style={{ color: '#FFF' }}>Reviews</a>
-                <a className="nav-link" href="#" style={{ color: '#FFF' }}>Pricing</a>
+                <a className="nav-link active" aria-current="page" href="#content" style={{ color: '#FFF' }}>Features</a>
+                <a className="nav-link" href="#testimonials" style={{ color: '#FFF' }}>Reviews</a>
+                <a className="nav-link" href="#pricing" style={{ color: '#FFF' }}>Pricing</a>
                 <a className="nav-link" href="/blog" style={{ color: '#FFF' }}>Blog</a>
-                <a className="nav-link" href="/blog" style={{ color: '#FFF' }}>Moderator Panel</a>
+                <a className="nav-link" href="/moderator" style={{ color: '#FFF' }}>Moderator Panel</a>
                 <a className="nav-link" href="#" style={{ color: '#FFF' }}>Welcome {userEmail}</a>
                 <a className="nav-link" href="/logout" style={{ color: '#FFF' }}>Logout</a>
               </div>

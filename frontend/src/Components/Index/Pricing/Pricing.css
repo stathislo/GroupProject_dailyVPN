@@ -8,14 +8,12 @@
 }
 
 /* card header  */
-
 .pricing-card-header {
     background: linear-gradient(217deg, #020524, rgba(255,0,0,0) 70.71%),
                 linear-gradient(127deg, #001737, rgba(0,255,0,0) 70.71%),
                 linear-gradient(336deg, #26456b, rgba(0,0,255,0) 70.71%);            
     height: 15rem;
-    color: white;
-    
+    color: white;  
 }
 
 .card h3 {
