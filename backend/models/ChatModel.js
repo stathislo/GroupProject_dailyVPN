@@ -5,24 +5,22 @@ const ChatSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"users"
     },
-    receiveUserId:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"users",
+    roleSender:{
+        type:String
     },
-    messagesSender:[{
+    message:{
         type:String
-    }],
-    messageReceive:[{
-        type:String
-    }],
+    },
     status:{
         type:String,
         default:"open"
     },
     sendDate:{
-        type:Date
-    }
-})
+        type:Date,
+    },
+
+}, {timestamps: true,})
+
 
 const ChatModel = mongoose.model("chats", ChatSchema)
 

@@ -1,73 +1,81 @@
 const UserModel = require("../models/RegisterUserModel")
 const ChatModel= require("../models/ChatModel")
-const User = require("../../blog/modules/User")
 const io = require("../apis/socket")
 
-exports.postChat = (req, res, next)=>{
+exports.postUserChat = (req, res, next)=>{
     if(req.session.user){
         UserModel.findOne({email:req.session.email})
         .then(user=>{
             if(user){
-                ChatModel.findOne({senderUserId:req.session._id})
-                .then(findUserMessage=>{
-                    if(findUserMessage){
-                        console.log(req.body.messagesSender)
-                        findUserMessage.messagesSender.push(req.body.messagesSender)
-                        findUserMessage.sendDate = Date.now()
-                        findUserMessage.save()
-                        res.status(201)
-                        io.getIO().emit("chatMessage", { 
-                            action:"putNewChat", 
-                            findUserMessage:findUserMessage,
-                            body:[req.body.messagesSender]
-                        })
-                    }else if(!findUserMessage){
-                        const chatMessage = new ChatModel({
-                            senderUserId:req.session._id,
-                            messagesSender:req.body.messagesSender,
-                            status:"open",
-                            sendDate:Date.now()
-                        })
-                        ChatModel.create(chatMessage, function(err,chat){
-                            if(err){
-                                console.log(err)
-                            }else{
-                                console.log(chat)
-                                console.log(user.chatId)
-                                user.chatId.push(chatMessage.senderUserId)
-                                user.save()
-                                io.getIO().emit('CreatechatMessage', { action:"create", chatMessage:chatMessage})
-                                res.status(201).json({
-                                    chatUserMessage:chatMessage
-                                })
-                            }
+                const message = new ChatModel({
+                    senderUserId:user._id,
+                    message:req.body.message,
+                    sendDate:Date.now(),
+                    roleSender:"user"
+                })
+                ChatModel.create(message, (err,result)=>{
+                    if(err){
+                        console.log(err)
+                    }else{
+                        io.getIO().emit("postuserchats", {action:"postuserchat", message:result})
+                        console.log(result)
+                        res.status(201).json({
+                            message:result
                         })
                     }
-                })
-                .catch(err=>{
-                    console.log(err)
                 })
             }
         })
         .catch(err=>{
-
+            console.log(err)
         })
     }
 }
 
-
-exports.getUserMessages = (req, res, next)=>{
+exports.postModeratorChat = (req, res, next)=>{
     if(req.session.user){
         UserModel.findOne({email:req.session.email})
         .then(user=>{
             if(user){
-                ChatModel.findOne({senderUserId:user._id})
+            const moderatorMessage = new ChatModel({
+                senderUserId:req.body.senderUserId,
+                message:req.body.message,
+                sendDate:Date.now(),
+                roleSender:"moderator"
+                })
+
+                        ChatModel.create(moderatorMessage, (err,result)=>{
+                            if(err){
+                                console.log(err)
+                            }else{
+                                console.log(result)
+                                io.getIO().emit("postmoderatorchats", {action:"postmoderatorchat", message:result})
+                                res.status(201).json({
+                                    moderator:user.firstName,
+                                    message:result
+                                })
+                            }
+                        })
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }
+}
+
+exports.showBothMessages = (req, res, next)=>{
+    if(req.session.user){
+        UserModel.findOne({email:req.session.email})
+        .then(user=>{
+            if(user){
+                ChatModel.find({senderUserId:req.body.senderUserId})
                 .populate("senderUserId")
-                .populate("receiveUserId")
-                .then(getMessage=>{
-                    io.getIO().emit("showChats", { action:"getChats", getAllMessage:getMessage})
+                .then(chats=>{
+                    console.log(chats)
+                   
                     res.status(200).json({
-                        getMessage:getMessage
+                        chats:chats
                     })
                 })
                 .catch(err=>{
@@ -81,35 +89,24 @@ exports.getUserMessages = (req, res, next)=>{
     }
 }
 
-exports.postModeratorChat = (req, res, next)=>{
+exports.showUserMessages = (req, res, next)=>{
     if(req.session.user){
         UserModel.findOne({email:req.session.email})
-        .then(moderator=>{
-            if(moderator){
-                ChatModel.findOneAndUpdate({senderUserId:req.body.senderUserId}, {receiveUserId:req.session._id}, {new:true})
-                .then(updatedModeratorId=>{
-                    if(updatedModeratorId){
-                        ChatModel.findOne({senderUserId:req.body.senderUserId})
-                        .populate("senderUserId")
-                        .populate("receiveUserId")
-                        
-                        .then(moderatorChat=>{
-                            moderatorChat.messageReceive.push(req.body.moderatorchat)
-                            moderatorChat.save()
-                            io.getIO().emit("postModeratorMessage" , { action:"getModeratorMessage", moderatorChat:moderatorChat })
-                            res.status(201).json({
-                                moderatorChat:moderatorChat
-                            })
-                        })
-                        .catch(err=>{
-                            console.log(err)
-                        })
-                    }
+        .then(user=>{
+            if(user){
+                ChatModel.find({senderUserId:user._id})
+                .sort({createdAt:1})
+                .populate("senderUserId")
+                .then(showUserChat=>{
+                    console.log(showUserChat)
+                    io.getIO().emit("userchat", { action:"userchats", message:showUserChat})
+                    res.status(200).json({
+                        showUserChat:showUserChat
+                    })
                 })
                 .catch(err=>{
-
+                    console.log(err)
                 })
-
             }
         })
         .catch(err=>{
@@ -118,34 +115,23 @@ exports.postModeratorChat = (req, res, next)=>{
     }
 }
 
-exports.getAllChatsMessagesModerator = (req, res, next)=>{
+exports.getAllChats=(req,res, next)=>{
     if(req.session.user){
-        ChatModel.find({})
-        .populate("senderUserId")
-        .populate("receiveUserId")
-        .then(allChats=>{
-            io.getIO().emit("getAllChatModerator", {action:"showAllChats", allChats:allChats})
-            res.status(200).json({
-                chats:allChats
-            })
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-    }
-}
-
-exports.getModeratorUserMessage = (req, res, next)=>{
-    if(req.session.user){
-        ChatModel.findOne({senderUserId:req.body.chatid})
-        .populate("senderUserId")
-        .populate("receiveUserId")
-        .then(findMessage=>{
-            console.log(findMessage)
-            
-            res.status(200).json({
-                findMessage:findMessage
-            })
+        UserModel.findOne({email:req.session.email})
+        .then(user=>{
+            if(user){
+                ChatModel.find({})
+                .populate("senderUserId")
+                .then(chat=>{
+                    console.log(chat)
+                    res.status(200).json({
+                        chat:chat
+                    })
+                })
+                .catch(err=>{
+                    console.log(err)
+                })
+            }
         })
         .catch(err=>{
             console.log(err)

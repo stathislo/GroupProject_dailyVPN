@@ -95,4 +95,5 @@ position: absolute;
 
 .chat__displayMessages{
     background-color: white;
+    width: 100%;
 }

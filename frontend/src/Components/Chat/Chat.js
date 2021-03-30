@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import "./Chat.css"
-import openSocket from "socket.io-client"
+import openSockets from "socket.io-client"
 
 
 
@@ -10,23 +10,14 @@ export default class Chat extends Component {
         super(props)
 
         this.state = {
-            messagesSender:"",
-            getChats:[],
-            getAllChats1:[],
-            getAllChats2:[],
-            postChat:[],
-            postBody:[]
+            message:"",
+            chats:[]
         }
 
         axios.get("http://localhost:5000/main" , { withCredentials:true })
         .then(res=>{
-            
             if(res.data.loggedin==='loggedin' && res.data.user==="user"){
-                this.setState({userId:res.data.userId})
-                const socket = openSocket("http://localhost:5000")
-                socket.on("connection", data=>{
-                    console.log(data)
-                })
+                console.log(res.data.userFirstName)
             }else{
                 let chat = document.getElementById("chat").style.display ='none'
             }
@@ -54,166 +45,122 @@ export default class Chat extends Component {
         }
         // chat__showHelp.style.display('chat__showHelp')
         // chat__Chat.classList.toggle("chat__Chat")
+        console.log("click")
+        console.log(chat__showHelp.className)
     }
 
-    onChatInputChange = (event)=>{
-        this.setState({messagesSender:event.target.value})
+    onInputChange = (event)=>{
+        this.setState({message:event.target.value})
     }
 
-    // onChatSend = (event)=>{
-    //     event.preventDefault()
-
-        
-    //     let chatUserInput = document.getElementById("chatUserInput").value=''
-
-    //     const chat = {
-    //         senderUserId:this.state.userId,
-    //         messagesSender:this.state.messagesSender
-    //     }
-
-    //     axios.post("http://localhost:5000/postuserchat", chat, { withCredentials:true })
-    //     .then(resChat=>{
-    //         console.log("chat sended!")
-
-    //         const socket = openSocket("http://localhost:5000")
-    //         socket.on("chatMessage", data=>{
-    //             console.log(data)
-    //             if(data.action==='putNewChat'){
-    //                 console.log(data)
-    //                 this.setState({postChat:data.findUserMessage.messagesSender})
-    //             }
-    //         })
-        
-
-            
-    //     })
-    //     .catch(err=>{
-    //         console.log(err)
-    //     })
-    // }
-
-    onChatSend = async(event)=>{
+    onChatSubmit=(event)=>{
         event.preventDefault()
- 
-        
-        let chatUserInput = document.getElementById("chatUserInput").value=''
- 
-        const chat = {
-            senderUserId:this.state.userId,
-            messagesSender:this.state.messagesSender
+
+        const socket = openSockets("http://localhost:5000")
+        const Message = {
+            message:this.state.message
         }
- 
-        let showUserChats = document.querySelectorAll(".showUserChats")
-        for(let deleteShowUsers of showUserChats){
-            deleteShowUsers.style.display = 'none'
-        }
-        console.log(showUserChats)
-        axios.post("http://localhost:5000/postuserchat", chat, { withCredentials:true })
-        .then(resChat=>{
-            console.log("chat sended!")
- 
-            // this.asd()
-            // const socket = openSocket("http://localhost:5000")
-            //  socket.on("chatMessage", data=>{
-            //     console.log(data)
-            //     if(data.action==='putNewChat'){
-            //         console.log(data)
-            //         this.setState({postChat:data.findUserMessage.messagesSender})
-            //         //console.log(this.postChat)
-            //     }
-            // })
-            
+
+       let chatinput = document.getElementById("chatinput")
+
+        axios.post("http://localhost:5000/postuserchat", Message, { withCredentials:true })
+        .then(chat=>{
+            console.log(chat)
+            chatinput.value=''
+            const socket = openSockets("http://localhost:5000")
+            axios.get("http://localhost:5000/showuserchats", { withCredentials:true })
+            .then(res=>{
+                this.setState({chats:res.data.showUserChat})
+                socket.on("userchat", data=>{
+                    console.log(data.message)
+                    if(data.action==="userchats"){
+                        this.setState({userLiveChat:data.message.message})
+                    }
+                })
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+    
+
+
         })
         .catch(err=>{
             console.log(err)
         })
- 
-        const socket =  openSocket("http://localhost:5000")
-           await  socket.on("chatMessage", data=>{
-                console.log(data.body)
-                if(data.action==='putNewChat'){
-                    
-                    console.log(data)
-                    this.setState({postChat:data.findUserMessage.messagesSender})
-                    this.setState({postBody:data.body})
-                    //console.log(this.postChat)
-                }
-            })
+
+        socket.on("postuserchats", data=>{
+            console.log(data)
+            this.setState({postUserChat:data.message.message})
+        })
+        
+
     }
 
     componentDidMount(){
-        
-        axios.get("http://localhost:5000/getusermessages", { withCredentials:true })
-        .then(getChats=>{
-            
-            const socket = openSocket("http://localhost:5000/")
-            
-            socket.on("showChats", data=>{
-                if(data.action==="getChats"){
-                    this.setState({getAllChats1:data.getAllMessage.messagesSender})
-                    
-                    console.log(data.getAllMessage)
-                
-                    
-                    //console.log(data.getAllMessage.messagesSender)
-                    //console.log(this.state.getAllChats)
-                }
-            })
-            this.setState({getChats:getChats.data.getMessage.messagesSender})
-            this.setState({getAllChats2:getChats.data.getMessage.messageReceive})
-           
-            this.setState({getUserChatFirstname:getChats.data.getMessage.senderUserId.firstName})
-            this.setState({getUserChatLastName:getChats.data.getMessage.senderUserId.lastName})
-
-            //moderator
-            this.setState({getModeratorFirstName:getChats.data.getMessage.receiveUserId.firstName})
+        const socket = openSockets("http://localhost:5000")
+        axios.get("http://localhost:5000/showuserchats", { withCredentials:true })
+        .then(res=>{
+            this.setState({chats:res.data.showUserChat})
         })
         .catch(err=>{
             console.log(err)
         })
+
+        socket.on("userchat", data=>{
+            console.log(data.message)
+            if(data.action==="userchats"){
+                this.setState({userLiveChat:data.message.message})
+            }
+        })
+
+ 
     }
 
+    componentDidUpdate(){
+        const socket = openSockets("http://localhost:5000")
+        socket.on("postmoderatorchats", data=>{
+            console.log(data.message)
+            if(data.action==="postmoderatorchat"){
+                this.setState({moderatorLiveChat:data.message.message})
+            }
+        })
+    }
+
+    
     render() {
-        const getUserId = this.state.userId
-        const getChatUserFirstName = this.state.getUserChatFirstname
-        const getChatUserLastName = this.state.getUserChatLastname
 
-        const getModeratorFirstName = this.state.getModeratorFirstName
+        const chats = this.state.chats.map(items=>{
+            if(items.roleSender==="user"){
+                return(<div id='chat__user' className='chat__user'>
+                <p className='chat__userP'>{items.senderUserId.firstName}</p>
+                <h5 className='chat__userMessage'>{items.message}</h5>
+                </div>)
+            }
+                if(items.roleSender==='moderator'){
+                    return(<div className='chat__moderator'>
+                    <p className='chat__moderatorP'>Support team</p>
+                    <h5 className='chat__moderatorMessage'>{items.message}</h5>
+                    </div>)
+                }
 
-        const postBody = this.state.postBody.map(function(getPostBody){
-            return(<div>
-                 <h5 className='chat__userMessage'>{getPostBody}</h5>
-            </div>)
         })
 
-        const postChat = this.state.postChat.map(function(showChats){
-            return(<div id='postChat' className='chat__user'>
-            <p className='chat__userP'>{getChatUserFirstName} {getChatUserLastName}</p>
-                <h5 className='chat__userMessage'>{showChats}</h5>
-            </div>)
-        })
+        const userLiveMessage = this.state.userLiveChat
 
-        const getAllChats1 = this.state.getAllChats1.map(function(chatitems){
-            console.log(chatitems)
-            return(<div>
-                <h1>{chatitems}</h1>
-            </div>)
-        })
+        const postUserChat = this.state.postUserChat
 
-        const getAllChats2 = this.state.getAllChats2.map(function(chatitems2){
-            return(<div className='showModeratorChats'>
-                <p className='chat__moderatorP'>{getModeratorFirstName}</p>
-                <h5 className='chat__moderatorMessage'>{chatitems2}</h5>
-            </div>)
-        })
+        const moderatorLiveChat = this.state.moderatorLiveChat
 
 
-        const showUserChats = this.state.getChats.map(function(items){
-            return(<div className='showUserChats' id='showUserChats'>
-            <p className='chat__userP'>{getChatUserFirstName} {getChatUserLastName}</p>
-                <h5 className='chat__userMessage'>{items}</h5>
-            </div>)
-        })
+        // const moderatorChats = this.state.chats.map(moderatorItems=>{
+        //     if(moderatorItems.roleSender==='moderator'){
+        //         return(<div className='chat__moderator'>
+        //         <p className='chat__moderatorP'>Moderator</p>
+        //         <h5 className='chat__moderatorMessage'>{moderatorItems.message}</h5>
+        //         </div>)
+        //     }
+        // })
 
         return (
             <div id='chat' className='chat'>
@@ -226,23 +173,30 @@ export default class Chat extends Component {
                 <div className='chat__display'>
                 <i id='icon' onClick={this.onMinimizeClick} class="far fa-window-minimize chat__minimize"></i>
                 <div className='chat__displayMessages'>
-                <div className='chat__moderator'>
-                {getAllChats2}
+                    {/* moderaotr */}
+
+        
+                    {/* {moderatorChats} */}
+                    
+                    
+                   
+                    {chats}
+                    {/* {moderatorLiveChat} */}
+                    <div className='chat__user'>
+                <p className='chat__userP'></p>
+                <h5 className='chat__userMessage'>{userLiveMessage}</h5>
                 </div>
-                <div className='chat__user'>
-                {showUserChats}
-                
-                {postChat}
+                   
+
                 </div>
-                </div>
-                <form onSubmit={this.onChatSend}>
+                <form onSubmit={this.onChatSubmit}>
                 <div className='chat__input'>
-                <input type='hidden' value={getUserId}></input>
-                    <input id='chatUserInput' onChange={this.onChatInputChange} name="messagesSender" className='chat__input' type='text'></input>
-                     
-                     <button type='submit'>Chat</button>
+                    <input id='chatinput' onChange={this.onInputChange} name='message' className='chat__input' type='text'></input>
+                     <button>Chat</button>
                 </div>
                 </form>
+
+
                 </div>
 
                 </div>
