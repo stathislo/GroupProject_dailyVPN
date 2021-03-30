@@ -129,6 +129,14 @@ export default class Chat extends Component {
 
 
         const postChat = this.state.postChat.map(postChats=>{
+            let moderator__rightSideUserMessage = document.querySelectorAll(".moderator__rightSideUserMessage")
+            for(let deletemoderator__rightSideUserMessage of moderator__rightSideUserMessage){
+                deletemoderator__rightSideUserMessage.childNodes[0].style.display='none'
+                    let moderator__rightSideUserMessage__next = document.getElementsByClassName(".moderator__rightSideUserMessage__next")
+                    for(let showmoderator__rightSideUserMessage__next of moderator__rightSideUserMessage__next){
+                        showmoderator__rightSideUserMessage__next.style.display='flex'
+                    }
+            }
             return(<div className='moderator__rightSideUserMessage__next'>
                 <h5 className='moderator__chatSideUser'>{postChats}</h5>
             </div>)
@@ -145,14 +153,14 @@ export default class Chat extends Component {
                             senderUserId:this.state.getSenderUserId
                         }
 
-                        // let moderator__rightSideUserMessage = document.querySelectorAll(".moderator__rightSideUserMessage")
-                        // for(let deletemoderator__rightSideUserMessage of moderator__rightSideUserMessage){
-                        //     deletemoderator__rightSideUserMessage.style.display='none'
-                        //         let moderator__rightSideUserMessage__next = document.getElementsByClassName(".moderator__rightSideUserMessage__next")
-                        //         for(let showmoderator__rightSideUserMessage__next of moderator__rightSideUserMessage__next){
-                        //             showmoderator__rightSideUserMessage__next.style.display='flex'
-                        //         }
-                        // }
+                        let moderator__rightSideUserMessage = document.querySelectorAll(".moderator__rightSideUserMessage")
+                        for(let deletemoderator__rightSideUserMessage of moderator__rightSideUserMessage){
+                            deletemoderator__rightSideUserMessage.childNodes[0].style.display='none'
+                                let moderator__rightSideUserMessage__next = document.getElementsByClassName(".moderator__rightSideUserMessage__next")
+                                for(let showmoderator__rightSideUserMessage__next of moderator__rightSideUserMessage__next){
+                                    showmoderator__rightSideUserMessage__next.style.display='flex'
+                                }
+                        }
                         
                         axios.post("http://localhost:5000/postmoderatorchat" ,moderatorChat,  { withCredentials:true })
                         
