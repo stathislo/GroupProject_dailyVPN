@@ -46,11 +46,11 @@ export default class Nav extends Component {
     const userEmail = this.state.email
     return (
       <div className="nav">
-        <nav id='nav' className="navbar navbar-expand-lg navbar-light ">
+        <nav id='nav' className="navbar navbar-expand-lg navbar ">
           <div className="container-fluid">
             <img className='logo-img' src={logo} width="45" />
             <a className="navbar-brand" href="#" style={{ color: '#FFF' }}>DailyVPN</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <button className="navbar-toggler custom-toggler  bg-danger" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
               aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
