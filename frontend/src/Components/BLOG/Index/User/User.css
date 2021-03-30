@@ -1,7 +1,5 @@
    .main-box {
-
     display: flex; 
-
    }
 
    .sidebar-user {
@@ -9,7 +7,6 @@
     background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
     padding: 30px 0;
     width: 15%;
-
    }
     
    .logo {
@@ -41,17 +38,73 @@
    }
    .main-box .sidebar-user ul li:hover a{
     color: #fff
-
    }
 
    .main_content_user {  
     background-repeat: no-repeat;
     background-image: url(./social-media-marketing-colored-.png);
     width: 35%;
+    background-color: #eef3f8;
    }
 
    .main_content_middle {
     width: 50%;
     text-align: center;
+    background-color: #eef3f8;
+    }
+   
+    /* download-card-windows */
+   .download-card-title-windows{
+      padding: 30px 0;
+      margin: auto;
+   }
+    
+   .download-card-windows {
+       width: 30%;
+       margin: auto;
+   }
+    .card-download-windows {
+       margin: auto;
+    }
+    
+    .download-card-header-windows {  
+       border-radius: 5px 5px 2px 2px; 
+       height: 20rem;
+       background: url(./windows2.png),rgb(56, 55, 55);
+       background-size: cover;
+    }
+    .download-card-body-windows {
+       height: 4rem;
+       background-color:gainsboro;
+       border-radius: 0 0 5px 5px;
+       padding-top: 20px;
+    }
+    div a {
+       color: black;
     }
 
+    /* download-card-mac */
+
+   .download-card-title-mac{
+      padding: 30px 0;
+      margin-left: -50px
+   }
+
+  .card-download-mac {
+   width: 30%;
+   margin: auto;
+   }
+  
+   .download-card-header-mac {  
+   border-radius: 5px 5px 2px 2px; 
+   height: 20rem;
+   background: url(./mac.jpg),rgb(56, 55, 55);
+   background-size: cover;
+   }
+
+   .download-card-body-mac {
+   height: 4rem;
+   background-color:gainsboro;
+   border-radius: 0 0 5px 5px;
+   padding-top: 20px;
+   }

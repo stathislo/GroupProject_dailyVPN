@@ -1,14 +1,11 @@
 /* Title and Header  */
 .main-header{
     height: 45rem;
-    /* background-image: linear-gradient(to right,  rgb(45, 45, 87),rgb(86, 57, 133)); */
     width: 100%;
     margin: 0;
-    /* background-image: url(../Images/website1.jpg); */
     background: linear-gradient(217deg, #020524, rgba(255,0,0,0) 70.71%),
                 linear-gradient(127deg, #001737, rgba(0,255,0,0) 70.71%),
                 linear-gradient(336deg, #26456b, rgba(0,0,255,0) 70.71%); 
-    /* background-image: linear-gradient(to right,  #020524,#1b324d 20%,#001737 );           */
     background-size: cover;
     background-repeat: no-repeat;
     object-fit: cover;
@@ -23,7 +20,6 @@
     font-family:'K2D', sans-serif;
     text-shadow: 4px 4px black;
     font-size: 3rem;
-    /* font-weight: 800; */
     color: white;
     margin: 40px auto;
 }
@@ -32,7 +28,6 @@
     font-family: 'K2D', sans-serif;
     color: white;
     text-shadow: 4px 4px black;
-
 }
 
 #btn-header{
@@ -41,7 +36,6 @@
     height: 3.5rem;
     font-size: 1.5rem;
 }
-
 
 p{
 color: white;
