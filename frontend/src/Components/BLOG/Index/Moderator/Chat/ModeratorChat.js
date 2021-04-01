@@ -8,12 +8,13 @@ export default class Chat extends Component {
         super(props)
         this.state={
             allChats:[],
-            getmessages:[]
+            getmessages:[],
+            //userLiveChat2:[]
         }
 
         axios.get("http://localhost:5000/main", { withCredentials:true})
         .then(res=>{
-            console.log(res)
+            //console.log(res)
             if(res.data.loggedin ==='loggedin' && res.data.user==='moderator'){
                 this.setState({moderatorName:res.data.userFirstName})
                 this.setState({moderatorAvantar:res.data.avantar})
@@ -27,6 +28,7 @@ export default class Chat extends Component {
                 .catch(err=>{
                     console.log(err)
                 })
+
             }else{
                 this.props.history.push("/login")
             }
@@ -44,7 +46,7 @@ export default class Chat extends Component {
         for(let getchats of moderator__usersChats){
             
             getchats.addEventListener("click", ()=>{
-                console.log(getchats.childNodes[0].value)
+                //console.log(getchats.childNodes[0].value)
                 axios.post("http://localhost:5000/getChatMsgsBetweenModeratorsAndUser", {userId:getchats.childNodes[0].value}, { withCredentials:true })
                 .then(getmessages=>{
                     this.setState({getmessages:getmessages.data.chat})
@@ -57,42 +59,66 @@ export default class Chat extends Component {
     }
 
     componentDidMount(){
-        axios.get("http://localhost:5000/showuserchats", { withCredentials:true })
-        .then(res=>{
-            this.setState({chats:res.data.showUserChat})
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-
         const socket = openSockets("http://localhost:5000")
-        socket.on("postmoderatorchats123", data=>{
-            console.log(data.message)
-            if(data.action==="postmoderatorchat"){
-                this.setState({moderatorLiveChat:data.message.message})
-            }
+        // socket.on("userchat", data=>{
+        //     console.log(data.message)
+        //     if(data.action==="userchats"){
+        //         this.setState({userLiveChat2:data.message})
+        //     }
+        // })
+
+        // socket.on("postuserchats", data=>{
+        //     console.log(data)
+        //     this.setState({userLiveChat:data.message.message})
+        // })
+        
+        socket.on("postuserchats", data=>{
+            console.log(data)
+            this.setState({userLiveChat:data.message.message})
+            let container = document.getElementById("container")
+            let div1 = document.createElement("DIV")
+            let divH5 = document.createElement("H5")
+            div1.className = 'moderator__rightSideUserMessage'
+            divH5.className='moderator__chatSideUser'
+            divH5.textContent=data.message.message
+            container.append(div1)
+            div1.append(divH5)
         })
     }
 
-    componentDidUpdate(){
-        const socket = openSockets("http://localhost:5000")
-        socket.on("postmoderatorchats123", data=>{
-            console.log(data.message)
-            if(data.action==="postmoderatorchat"){
-                this.setState({moderatorLiveChat:data.message.message})
-            }
-        })
-    }
+
+    // componentDidUpdate(){
+    //     const sockets = openSockets("http://localhost:5000")
+    //     sockets.on("postmoderatorchats123", data=>{
+    //         //console.log(data)
+    //         if(data.action==="postmoderatorchat"){
+    //             this.setState({moderatorLiveChat:data.message.message})
+    //         }
+    //     })
+
+    // }
+
 
     
     render() {
 
-        const moderatorLiveChat = this.state.moderatorLiveChat
         const showMessage2 = this.state.showMessage2
+        
+        // const userLiveChat2 = this.state.userLiveChat2.map(function(live){
+        //     return(<div className='moderator__rightSideUserMessage'>
+        //         <h1 className='moderator__chatSideUser'>{live.message}</h1>
+        //     </div>)
+            
+        // })
+
+        const userLiveChat = this.state.userLiveChat
+
+        const moderatorLiveChat = this.state.moderatorLiveChat
+        // const userLiveChat2 = this.state.userLiveChat2
         
 
         const getmessages = this.state.getmessages.map(chats=>{
-            console.log(chats)
+            //console.log(chats)
             if(chats.roleSender==='user'){
                 return(<div className='moderator__rightSideUserMessage'>            
                 <h5 className='moderator__chatSideUser'>{chats.message}</h5>
@@ -112,10 +138,19 @@ export default class Chat extends Component {
                         .then(res=>{
                             console.log("Sended!")
                             const sockets = openSockets("http://localhost:5000")
-                            sockets.on("postmoderatorchats123", data=>{
-                                console.log(data)
+                      sockets.on("postmoderatorchats123", data=>{
+                //console.log(data)
+                if(data.action==="postmoderatorchat"){
+                    this.setState({moderatorLiveChat:data.message.message})
+                }
+            })
 
-                            })
+            sockets.on("userchat", data=>{
+            //console.log(data.message)
+            if(data.action==="userchats"){
+                this.setState({userLiveChat:data.message.message})
+            }
+        })
                         })
                         .catch(err=>{
                             console.log(err)
@@ -135,7 +170,7 @@ export default class Chat extends Component {
                 </div>)
             }
                 if(chats.roleSender==='moderator'){
-                    return(<div className='moderator__rightSideChats'>
+                    return(<div id='moderator__rightSideChats' className='moderator__rightSideChats'>
                             
                     <h5 className='moderator__chatSideH5'>{chats.message}</h5>
                     <form onSubmit={(event=>{
@@ -148,22 +183,19 @@ export default class Chat extends Component {
 
                         axios.post("http://localhost:5000/postmoderatorchat", message, { withCredentials:true })
                         .then(res=>{
-                           
-                                                 
-                        sockets.on("postmoderatorchats123", data=>{
-                                // console.log(data)
-                                if(data.action==='postmoderatorchat'){
-                                    console.log(data.message.message)
-                                    this.setState({showMessage2:data.message.message})
-                                }
-                            })
                             console.log("Sended!")
-            
+                            let container = document.getElementById("container")
+                            let div2 = document.createElement("DIV")
+                            let divH52 = document.createElement("H5")
+                            div2.className = 'moderator__rightSideChats'
+                            divH52.className='moderator__chatSideH5'
+                            divH52.textContent=this.state.message
+                            container.append(div2)
+                            div2.append(divH52)
                         })
                         .catch(err=>{
                             console.log(err)
                         })
-  
   
                     })}>
                     <div className='moderator__rightSideInputChat'>
@@ -180,7 +212,7 @@ export default class Chat extends Component {
         })
 
         const allChats = this.state.allChats.map(items=>{
-            console.log(items)
+            //console.log(items)
             return(<div onClick={this.onUserClick} className='moderator__usersChats'>
             <input id='input' className='chatinput' name='userId' type='hidden' value={items._id}></input>
                         <div className='moderator__userImage'>
@@ -224,11 +256,16 @@ export default class Chat extends Component {
                                 <div className='moderator__chatRightImage'>
                                     <img className='moderator__chatRightImg'></img>
                                 </div>
-
+                                    <div id='container'>
                                     {getmessages}
+                                    </div>
                                     
-                                    <h1>{moderatorLiveChat}</h1>
-                                   
+                                    {/* {userLiveChat2} */}
+                                   {/* <div className='moderator__rightSideUserMessage'>
+                                   <h5 className='moderator__chatSideUser'>{userLiveChat}</h5>
+                                   </div>          */}
+                
+                                
                                  
                             </div>
                         </div>
