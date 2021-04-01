@@ -18,6 +18,10 @@ const ChatSchema = new mongoose.Schema({
     sendDate:{
         type:Date,
     },
+    chatId:{
+        type:mongoose.Schema.Types.String,
+        ref:"users"
+    }
 
 }, {timestamps: true,})
 

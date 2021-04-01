@@ -122,6 +122,41 @@ exports.getAllChats=(req,res, next)=>{
             if(user){
                 ChatModel.find({})
                 .populate("senderUserId")
+                .then(resp=>{
+                    const x = [...new Set(resp.map(x=>x.senderUserId))]
+                    res.status(200).json({
+                        x:x,
+                        resp:resp
+                    })
+                    console.log(x)
+                })
+                // .distinct("senderUserId")
+                // .populate("senderUserId")
+                // .exec(function(err, chats){
+                //     ChatModel.find({senderUserId: chats})
+                //     .then(getChats=>{
+                //         console.log(getChats)
+                //     })
+                //     .catch(err=>{
+                //         console.log(err)
+                //     })
+                // })
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }
+
+}
+
+exports.getChatMsgsBetweenModeratorsAndUser = async(req,res,next) => {
+    if(req.session.user){
+        UserModel.findOne({email:req.session.email})
+        .then(user=>{
+            if(user){
+                ChatModel.find({senderUserId:req.body.userId})
+                .populate("senderUserId")
                 .then(chat=>{
                     console.log(chat)
                     res.status(200).json({
@@ -137,4 +172,23 @@ exports.getAllChats=(req,res, next)=>{
             console.log(err)
         })
     }
+
+    // try{
+
+    //     const findUser = await UserModel.findById({ _id: req.body.userID })
+
+    //     console.log(findUser)
+
+    //     const getChatsBetweenModeratorsAndUser = await ChatModel.find({ user: findUser }).populate('moderator').populate('user')
+
+
+
+    //     res.status(201).json(getChatsBetweenModeratorsAndUser);
+
+    // }catch(err){
+
+    //     res.status(500).send("Error")
+
+    // }
+
 }

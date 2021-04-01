@@ -6,7 +6,8 @@ export default class Chat extends Component {
     constructor(props){
         super(props)
         this.state={
-            allChats:[]
+            allChats:[],
+            getmessages:[]
         }
 
         axios.get("http://localhost:5000/main", { withCredentials:true})
@@ -20,7 +21,7 @@ export default class Chat extends Component {
                 axios.get("http://localhost:5000/getallchats", { withCredentials:true})
                 .then(allChats=>{
                     console.log(allChats)
-                    this.setState({allChats:allChats.data.chat})
+                    this.setState({allChats:allChats.data.x})
                 })
                 .catch(err=>{
                     console.log(err)
@@ -33,17 +34,56 @@ export default class Chat extends Component {
             console.log(err)
         })
     }
+
+    onUserClick = (event)=>{
+        event.preventDefault()
+
+        let moderator__usersChats = document.querySelectorAll(".moderator__usersChats")
+
+        for(let getchats of moderator__usersChats){
+            
+            getchats.addEventListener("click", ()=>{
+                console.log(getchats.childNodes[0].value)
+                axios.post("http://localhost:5000/getChatMsgsBetweenModeratorsAndUser", {userId:getchats.childNodes[0].value}, { withCredentials:true })
+                .then(getmessages=>{
+                    //console.log(getmessages.data.chat)
+                    this.setState({getmessages:getmessages.data.chat})
+                    
+                })
+                .catch(err=>{
+                    console.log(err)
+                })
+            })
+        }
+    }
     render() {
+
+        const getmessages = this.state.getmessages.map(chats=>{
+            console.log(chats.roleSender)
+            if(chats.roleSender==='user'){
+                return(<div className='moderator__rightSideUserMessage'>            
+                <h5 className='moderator__chatSideUser'>{chats.message}</h5>                
+                </div>)
+            }
+                if(chats.roleSender==='moderator'){
+                    return(<div className='moderator__rightSideChats'>
+                            
+                    <h5 className='moderator__chatSideH5'>{chats.message}</h5>
+                                
+                    </div>)
+                }
+        })
 
         const allChats = this.state.allChats.map(items=>{
             console.log(items)
-            return(<div className='moderator__usersChats'>
+            return(<div onClick={this.onUserClick} className='moderator__usersChats'>
+            <input id='input' className='chatinput' name='userId' type='hidden' value={items._id}></input>
                         <div className='moderator__userImage'>
-                            <img src={items.senderUserId.avantar}></img>
+                            <img className='moderator__userImg' src={items.avantar}></img>
                          </div>
                       <div className='moderator__userNameAndText'>
-                      <h5 className='moderator__userNameH5'>{items.senderUserId.firstName}</h5>
-                        <p className='moderator__userNameP'>{items.message}</p>
+                      <h5 className='moderator__userNameH5'>{items.firstName} {items.lastName}</h5>
+                        <p className='moderator__userNameP'></p>
                                     </div>
                                     <div className='moderator__userDateOfSend'>
                                         <p className='moderator__userDateSend'>25-12-1991 16:00</p>
@@ -71,18 +111,17 @@ export default class Chat extends Component {
                                 </div>
 
                                 {allChats}
+                              
 
                             </div>
                             <div className='moderator__chatRightSide'>
                                 <div className='moderator__chatRightImage'>
                                     <img className='moderator__chatRightImg'></img>
                                 </div>
-                                <div className='moderator__rightSideChats'>
-                                    <h5 className='moderator__chatSideH5'>Hey, this is a chat!</h5>
-                                </div>
-                                <div className='moderator__rightSideUserMessage'>
-                                    <h5 className='moderator__chatSideUser'>Hey i am the user</h5>
-                                </div>
+
+
+                                    {getmessages}
+
                                 <div className='moderator__rightSideInputChat'>
                                     <input className='moderator__rightSideInput' placeholder='Type your message and hit enter' type='text'></input>
                                 </div>
