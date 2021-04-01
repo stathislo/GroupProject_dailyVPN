@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import './ModeratorChat.css'
+import openSockets from "socket.io-client"
 
 export default class Chat extends Component {
     constructor(props){
@@ -46,9 +47,7 @@ export default class Chat extends Component {
                 console.log(getchats.childNodes[0].value)
                 axios.post("http://localhost:5000/getChatMsgsBetweenModeratorsAndUser", {userId:getchats.childNodes[0].value}, { withCredentials:true })
                 .then(getmessages=>{
-                    //console.log(getmessages.data.chat)
                     this.setState({getmessages:getmessages.data.chat})
-                    
                 })
                 .catch(err=>{
                     console.log(err)
@@ -56,21 +55,127 @@ export default class Chat extends Component {
             })
         }
     }
+
+    componentDidMount(){
+        axios.get("http://localhost:5000/showuserchats", { withCredentials:true })
+        .then(res=>{
+            this.setState({chats:res.data.showUserChat})
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+
+        const socket = openSockets("http://localhost:5000")
+        socket.on("postmoderatorchats123", data=>{
+            console.log(data.message)
+            if(data.action==="postmoderatorchat"){
+                this.setState({moderatorLiveChat:data.message.message})
+            }
+        })
+    }
+
+    componentDidUpdate(){
+        const socket = openSockets("http://localhost:5000")
+        socket.on("postmoderatorchats123", data=>{
+            console.log(data.message)
+            if(data.action==="postmoderatorchat"){
+                this.setState({moderatorLiveChat:data.message.message})
+            }
+        })
+    }
+
+    
     render() {
 
+        const moderatorLiveChat = this.state.moderatorLiveChat
+        const showMessage2 = this.state.showMessage2
+        
+
         const getmessages = this.state.getmessages.map(chats=>{
-            console.log(chats.roleSender)
+            console.log(chats)
             if(chats.roleSender==='user'){
                 return(<div className='moderator__rightSideUserMessage'>            
-                <h5 className='moderator__chatSideUser'>{chats.message}</h5>                
+                <h5 className='moderator__chatSideUser'>{chats.message}</h5>
+                <form onSubmit={(event=>{
+                        event.preventDefault()
+
+                        
+
+                            const message = {
+                            message:this.state.message,
+                            senderUserId:chats.senderUserId._id
+                        }
+
+
+                        axios.post("http://localhost:5000/postmoderatorchat", message, { withCredentials:true })
+                        
+                        .then(res=>{
+                            console.log("Sended!")
+                            const sockets = openSockets("http://localhost:5000")
+                            sockets.on("postmoderatorchats123", data=>{
+                                console.log(data)
+
+                            })
+                        })
+                        .catch(err=>{
+                            console.log(err)
+                        })
+
+
+  
+                    })}>
+                    <div className='moderator__rightSideInputChat'>
+                        <input name='senderUserId' type='hidden' value={chats.senderUserId._id}></input>
+                        <input onChange={(event)=>{
+                            this.setState({message:event.target.value})
+                        }} name='message' className='moderator__rightSideInput' placeholder='Type your message and hit enter' type='text'></input>
+                        
+                    </div>
+                    </form>                
                 </div>)
             }
                 if(chats.roleSender==='moderator'){
                     return(<div className='moderator__rightSideChats'>
                             
                     <h5 className='moderator__chatSideH5'>{chats.message}</h5>
-                                
+                    <form onSubmit={(event=>{
+                        event.preventDefault()
+                        const sockets = openSockets("http://localhost:5000")
+                            const message = {
+                            message:this.state.message,
+                            senderUserId:chats.senderUserId._id
+                        }
+
+                        axios.post("http://localhost:5000/postmoderatorchat", message, { withCredentials:true })
+                        .then(res=>{
+                           
+                                                 
+                        sockets.on("postmoderatorchats123", data=>{
+                                // console.log(data)
+                                if(data.action==='postmoderatorchat'){
+                                    console.log(data.message.message)
+                                    this.setState({showMessage2:data.message.message})
+                                }
+                            })
+                            console.log("Sended!")
+            
+                        })
+                        .catch(err=>{
+                            console.log(err)
+                        })
+  
+  
+                    })}>
+                    <div className='moderator__rightSideInputChat'>
+                        <input name='senderUserId' type='hidden' value={chats.senderUserId._id}></input>
+                        <input onChange={(event)=>{
+                            this.setState({message:event.target.value})
+                        }} name='message' className='moderator__rightSideInput' placeholder='Type your message and hit enter' type='text'></input>
+                        
+                    </div>
+                    </form>
                     </div>)
+                    
                 }
         })
 
@@ -88,6 +193,7 @@ export default class Chat extends Component {
                                     <div className='moderator__userDateOfSend'>
                                         <p className='moderator__userDateSend'>25-12-1991 16:00</p>
                                     </div>
+                                    
             </div>)
         })
 
@@ -119,12 +225,11 @@ export default class Chat extends Component {
                                     <img className='moderator__chatRightImg'></img>
                                 </div>
 
-
                                     {getmessages}
-
-                                <div className='moderator__rightSideInputChat'>
-                                    <input className='moderator__rightSideInput' placeholder='Type your message and hit enter' type='text'></input>
-                                </div>
+                                    
+                                    <h1>{moderatorLiveChat}</h1>
+                                   
+                                 
                             </div>
                         </div>
                     </div>

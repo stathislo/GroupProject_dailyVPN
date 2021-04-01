@@ -49,7 +49,7 @@ exports.postModeratorChat = (req, res, next)=>{
                                 console.log(err)
                             }else{
                                 console.log(result)
-                                io.getIO().emit("postmoderatorchats", {action:"postmoderatorchat", message:result})
+                                io.getIO().emit("postmoderatorchats123", {action:"postmoderatorchat", message:result})
                                 res.status(201).json({
                                     moderator:user.firstName,
                                     message:result

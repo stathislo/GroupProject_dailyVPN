@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-  
+    height: 100%;
     
 }
 
@@ -88,8 +88,9 @@
 
 .moderator__rightSideInputChat{
     position: absolute;
-    bottom: 0;
+    bottom: -3rem;
     right: 0;
+
 }
 
 .moderator__rightSideInput{
@@ -110,7 +111,7 @@
 
 .moderator__chatSideH5{
     border-radius: 10px;
-    padding: 2rem;
+    padding: 1rem;
     background-color: blue;
 }
 
@@ -132,6 +133,6 @@
 
 .moderator__chatSideUser{
     border-radius: 10px;
-    padding: 2rem;
+    padding: 1rem;
     background-color: rgb(2, 110, 25);
 }

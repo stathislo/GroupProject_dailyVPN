@@ -11,4 +11,6 @@ router.get("/showuserchats", ChatController.showUserMessages)
 router.get("/getallchats", ChatController.getAllChats)
 router.post("/getChatMsgsBetweenModeratorsAndUser", ChatController.getChatMsgsBetweenModeratorsAndUser)
 
+router.get("/getChatMsgsBetweenModeratorsAndUser", ChatController.getChatMsgsBetweenModeratorsAndUser)
+
 module.exports = router
