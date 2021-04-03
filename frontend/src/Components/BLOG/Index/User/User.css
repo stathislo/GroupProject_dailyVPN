@@ -1,8 +1,10 @@
    .main-box {
     display: flex; 
+    flex-wrap: wrap;
    }
 
-   .sidebar-user {
+   /* sidebar */
+   .sidebar-user-left {
     height: 100vh;
     background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
     padding: 30px 0;
@@ -20,47 +22,49 @@
     color: #fff;
    }
 
-   .main-box .sidebar-user ul li {
+   .main-box .sidebar-user-left ul li {
     padding: 15px;
     border-bottom: 1px solid rgba(0,0,0,0.05);
     border-top: 1px solid rgba(225,225,0,0.05);
 
    }
 
-   .main-box .sidebar-user ul li a{
+   .main-box .sidebar-user-left ul li a{
     color: #ffffff;
 
    }
 
-   .main-box .sidebar-user ul li:hover {
+   .main-box .sidebar-user-left ul li:hover {
     background: #411ef3;
 
    }
-   .main-box .sidebar-user ul li:hover a{
+   .main-box .sidebar-user-left ul li:hover a{
     color: #fff
    }
-
-   .main_content_user {  
+   
+   /* middle of page */
+   .main_content_middle {
+      width: 45%;
+      text-align: center;
+      background-color: #eef3f8;
+      }
+   
+   /* right side of page */
+   .main_content_user_right {  
     background-repeat: no-repeat;
     background-image: url(./social-media-marketing-colored-.png);
-    width: 35%;
+    width: 40%;
     background-color: #eef3f8;
    }
-
-   .main_content_middle {
-    width: 50%;
-    text-align: center;
-    background-color: #eef3f8;
-    }
    
     /* download-card-windows */
    .download-card-title-windows{
-      padding: 30px 0;
+      padding: 30px 0 10px;
       margin: auto;
    }
     
    .download-card-windows {
-       width: 30%;
+       width: 40%;
        margin: auto;
    }
     .card-download-windows {
@@ -69,7 +73,7 @@
     
     .download-card-header-windows {  
        border-radius: 5px 5px 2px 2px; 
-       height: 20rem;
+       height: 15rem;
        background: url(./windows2.png),rgb(56, 55, 55);
        background-size: cover;
     }
@@ -79,25 +83,25 @@
        border-radius: 0 0 5px 5px;
        padding-top: 20px;
     }
-    div a {
+    .download-text {
        color: black;
     }
 
     /* download-card-mac */
 
    .download-card-title-mac{
-      padding: 30px 0;
+      padding: 10px 0;
       margin-left: -50px
    }
 
   .card-download-mac {
-   width: 30%;
+   width: 40%;
    margin: auto;
    }
   
    .download-card-header-mac {  
    border-radius: 5px 5px 2px 2px; 
-   height: 20rem;
+   height: 15rem;
    background: url(./mac.jpg),rgb(56, 55, 55);
    background-size: cover;
    }
@@ -108,3 +112,24 @@
    border-radius: 0 0 5px 5px;
    padding-top: 20px;
    }
+
+   @media (max-width: 1100px){
+      .main_content_user_right{
+         display: none;
+      }
+
+      .sidebar-user-left{
+         width: 20%;
+      }
+
+      .main_content_middle {
+         width: 80%;
+      }
+
+   }
+
+   @media (max-width: 660px) {
+      .sidebar-user-left,  .main_content_middle {
+        width: 100%;
+      }
+    }

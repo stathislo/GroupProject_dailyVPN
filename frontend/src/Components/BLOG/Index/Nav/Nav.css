@@ -12,6 +12,9 @@
     align-items: center;
 }
 
+.logo-blog{
+    padding-bottom: 0.8rem;
+}
 .blog__navH2{
     color: white;
 }

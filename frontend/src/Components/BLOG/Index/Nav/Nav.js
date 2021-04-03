@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "./Nav.css"
 import Header from "../Header/Header"
 import axios from "axios"
+import logo from "./Images/security.png"
 
 
 export default class Nav extends Component {
@@ -30,7 +31,8 @@ export default class Nav extends Component {
             <div className='blog__nav'>
               <div className='blog__navContainer'>
                   <div className='blog__navLeftSide'>
-                      <h2 className='blog__navH2'>Logo</h2>
+                      <img className='logo-blog' src={logo} width="80" />
+                      <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>DailyVPN Blog</a>
                   </div>
                   <div className='blog__navRightSide'>
                       <ul className='blog__navUl'>

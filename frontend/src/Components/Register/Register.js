@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./Register.css"
-import logo from "./security.png"
+// import logo from "./security.png"
 import axios from "axios"
 import Nav from "./Nav/Nav"
 
@@ -59,7 +59,7 @@ export default class Register extends Component {
             <Nav />
                 <div className='register__container'>
                     <div className='register__leftSide'>
-                        <img className='register__logo' src={logo}></img>
+                        {/* <img className='register__logo' src={logo}></img> */}
                     </div>
                     <div className='register__rightSide'>
                         <form onSubmit={this.onSubmitForm} className='register__form'>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import "./Registerget.css"
+import logo from "./security.png"
 
 
 export default class Reset extends Component {
@@ -171,30 +172,40 @@ export default class Reset extends Component {
     render() {
         const RegisterToken = this.state.registerToken
         return (
-            <div>
+            <div className="registerget__container">
+                
+                <div className='registerget__leftSide'>
+                    <img className='registerget__logo' src={logo}></img>
+                </div>
+
+                <div className="registerget__rightside">
+                <div className='registerget__textsAndLogo'>
+                    <h2 className='registerget__h2'>Register</h2>
+                </div>
                 <div id='registerNewForm' className='form__container'>
                 <form onSubmit={this.onSubmitForm} className='registerNewForm'>
                 <div className='getRegisterFirstname'>
-                    <input onChange={this.onChageFirstname} type='text' name='firstName' placeholder='Write your firstname'></input>
+                    <input onChange={this.onChageFirstname}className="registerInput" type='text' name='firstName' placeholder='Write your firstname'></input>
                 </div>
                 <div className='getRegisterLastname'>
-                    <input onChange={this.OnChageLastname} type='text' name='lastName' placeholder='Write your lastname'></input>
+                    <input onChange={this.OnChageLastname}className="registerInput" type='text' name='lastName' placeholder='Write your lastname'></input>
                 </div>
                     <div className='getRegisterPassword'>
-                        <input onChange={this.onChangePassword1} className='getRegisterInput' name='password' placeholder='Write your password' type='password'></input>
+                        <input onChange={this.onChangePassword1} className='registerInput' name='password' placeholder='Write your password' type='password'></input>
                     </div>
                     <input onChange={this.onTokenChange} name="registerToken" type='hidden' value={RegisterToken}></input>
-                    <h5 id='req-length'>Has 8 Chars <i id='error'></i></h5>
-                    <h5 id='req-upper'>Has one Lowercase <i id='error2'></i></h5>
-                    <h5 id='req-lower'>Has one Upercase <i id='error3'></i></h5>
-                    <h5 id='req-special'>Has one special Char <i id='error4'></i></h5>
-                    <h5 id='req-digit'>Has one digit <i id='error5'></i></h5>
+                    <h5 className="password__evaluation" id='req-length'>Has 8 Chars <i id='error'></i></h5>
+                    <h5 className="password__evaluation" id='req-upper'>Has one Lowercase <i id='error2'></i></h5>
+                    <h5 className="password__evaluation" id='req-lower'>Has one Upercase <i id='error3'></i></h5>
+                    <h5 className="password__evaluation" id='req-special'>Has one special Char <i id='error4'></i></h5>
+                    <h5 className="password__evaluation" id='req-digit'>Has one digit <i id='error5'></i></h5>
                     <div className='getRegisterSubmitButton'>
-                        <button id='button' className='getRegisterSubmitBtn' type='submit'>Register</button>
+                        <button id='button' className='getRegisterSubmitBtn' type='submit'>Continue</button>
                     </div>
                 </form>
                 </div>
             </div>
+         </div>    
         )
     }
 }
