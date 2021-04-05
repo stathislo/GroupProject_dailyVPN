@@ -158,7 +158,6 @@ exports.getChatMsgsBetweenModeratorsAndUser = async(req,res,next) => {
                 ChatModel.find({senderUserId:req.body.userId})
                 .populate("senderUserId")
                 .then(chat=>{
-                    console.log(chat)
                     res.status(200).json({
                         chat:chat
                     })

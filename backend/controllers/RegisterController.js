@@ -4,6 +4,7 @@ const crypto = require("crypto")
 const transporter = require("../apis/sendgrid")
 const PaymentModel = require("../models/PaymentsModel")
 
+
 // exports.postRegister = (req, res, next)=>{
 // bcrypt.hash(req.body.password, 12, function(err,hash){
 //     const User = new RegisterUser({

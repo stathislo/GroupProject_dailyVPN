@@ -1,5 +1,6 @@
 const RegisterUser = require("../models/RegisterUserModel")
 const bcrypt = require("bcryptjs")
+const jwt = require("jsonwebtoken")
 
 exports.getIfUserIsLoggedIn = (req, res ,next)=>{
     RegisterUser.findOne({email:req.session.email})
@@ -30,7 +31,16 @@ RegisterUser.findOne({email:req.body.email})
                 req.session.email = req.body.email
                 req.session.avantar = user.avantar
                 req.session._id = user._id
-                res.status(201).send("perase")
+                const token = jwt.sign({
+                    email:user.email, 
+                    userId:user._id.toString()
+                }, 'vpndailysecret', { expiresIn: "1h" });
+
+                res.status(201).json({
+                    perase:"perase",
+                    token:token,
+                    userId:user._id.toString()
+                })
             }else{
                 console.log("Lathos password")
                 res.status(200).send("Lathos pass")
@@ -46,3 +56,9 @@ RegisterUser.findOne({email:req.body.email})
     })
     
 }
+
+
+//token JWT
+// exports.getAuth = (req, res, next)=>{
+//     const token =
+// }

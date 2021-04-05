@@ -1,5 +1,6 @@
 const User = require('../modules/User');
 const Post = require('../modules/Post');
+const UserModel = require("../../backend/models/RegisterUserModel")
 
 module.exports = {
   // Get all users
@@ -28,5 +29,7 @@ module.exports = {
     }
   },
 };
+
+
 
 
