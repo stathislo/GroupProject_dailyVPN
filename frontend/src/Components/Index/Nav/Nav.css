@@ -58,11 +58,16 @@
     display: none;
 }
 
-.custom-toggler .navbar-toggler{
-    border-color:rgb(255, 255, 255);
-}
-
 .custom-toggler .navbar-toggler-icon{
     background-image:url(
         "data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")
 }
+
+@media only screen and (max-width: 990px) {
+    .navbar-collapse {
+        text-align: center;
+        background: linear-gradient(217deg, #020524, rgba(255,0,0,0) 70.71%),
+        linear-gradient(127deg, #001737, rgba(0,255,0,0) 70.71%),
+        linear-gradient(336deg, #26456b, rgba(0,0,255,0) 70.71%);
+    }
+  }
