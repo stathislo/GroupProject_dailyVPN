@@ -35,9 +35,9 @@ export default class Nav extends Component {
               <div className='blog__navContainer'>
                   <div className='blog__navLeftSide'>
                       <img className='logo-blog' src={logo} width="80" />
-                      <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>DailyVPN Blog</a>
+                      <a className="navbar-brand" href="/blog" style={{ color: '#FFF' }}>DailyVPN Blog</a>
                   </div>
-                  <div className='blog__navRightSide' id="burger">
+                  <div className='blog__navRightSide'>
                       <ul className='blog__navUl'>
                       <li className='blog__navLi'><a className='blog__navLink'>Welcome {userEmail}</a></li>
                           <li className='blog__navLi'><a href='/' className='blog__navLink'>VPNDAILY</a></li>
