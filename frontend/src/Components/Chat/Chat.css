@@ -1,10 +1,11 @@
 .chat{
-position: relative;
+position: fixed;
 align-items: right;
 display: flex;
 justify-content: flex-end;
 top: 48rem;
 right: 15rem;
+z-index: 100;
 }
 
 .chat__container{
