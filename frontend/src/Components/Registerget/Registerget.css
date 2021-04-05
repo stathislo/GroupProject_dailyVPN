@@ -1,3 +1,66 @@
+/* container */
+.registerget__container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    align-items: center;
+    padding: 10rem;
+}
+
+.registerget__leftSide{
+    width: 50%;
+}
+
+.registerget__rightSide{
+    width: 50%;
+}
+
+/* logo */
+.registerget__logo{
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+/* inputs */
+.registerget__h2 {
+    color: white;
+}
+
+.registerInput{
+    padding: 4px;
+    width: 15rem;
+    margin: 0.5rem 0;
+    border:3px solid blue;
+    border-radius: 5px;
+}
+
+/* continue button */
+.getRegisterSubmitBtn {
+    outline-style: none;
+    border: none;
+    background-color: blue;
+    color: white;
+    padding: 4px;
+    width: 5rem;
+    border-radius: 5px;
+}
+
+.getRegisterSubmitButton {
+    margin-top: 0.5rem;
+}
+
+.getRegisterSubmitBtn:hover {
+    background-color: rgb(12, 12, 197);
+}
+
+/* password evaluation colors */
+.password__evaluation {
+    color: white;
+}
+
 .fa-exclamation-circle{
     color: red;
 }
@@ -6,3 +69,9 @@
 .fa-check-circle{
     color: green;
 }
+
+@media (max-width: 1100px) {
+    .registerget__logo{
+        display: none;
+    }
+  }

@@ -1,6 +1,5 @@
 .login{
     background-color: black;
-    height: 100vh;
 }
 
 .login__container{
@@ -22,4 +21,34 @@
 
 .login__already{
     color: white;
+}
+
+.login__h2 {
+    color: white;
+}
+
+.login__input {
+    padding: 4px;
+    width: 15rem;
+    margin: 0.5rem 0;
+    border:3px solid blue;
+    border-radius: 5px;
+}
+
+.login__btn {
+    outline-style: none;
+    border: none;
+    background-color: blue;
+    color: white;
+    padding: 4px;
+    width: 5rem;
+    border-radius: 5px;
+}
+
+.login__button {
+    margin-top: 0.5rem;
+}
+
+.login__btn:hover {
+    background-color: rgb(12, 12, 197);
 }

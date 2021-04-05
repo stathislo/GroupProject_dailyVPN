@@ -49,8 +49,8 @@ export default class Nav extends Component {
         <nav id='nav' className="navbar navbar-expand-lg navbar ">
           <div className="container-fluid">
             <img className='logo-img' src={logo} width="45" />
-            <a className="navbar-brand" href="#" style={{ color: '#FFF' }}>DailyVPN</a>
-            <button className="navbar-toggler custom-toggler  bg-danger" type="button" data-bs-toggle="collapse"
+            <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>DailyVPN</a>
+            <button className="navbar-toggler custom-toggler  bg-primary" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
               aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -59,9 +59,9 @@ export default class Nav extends Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav ms-auto">
-                <a className="nav-link active" aria-current="page" href="#content" style={{ color: '#FFF' }}>Features</a>
-                <a className="nav-link" href="#testimonials" style={{ color: '#FFF' }}>Reviews</a>
-                <a className="nav-link" href="#pricing" style={{ color: '#FFF' }}>Pricing</a>
+                <a className="nav-link active" aria-current="page" href="/#content" style={{ color: '#FFF' }}>Features</a>
+                <a className="nav-link" href="/#testimonials" style={{ color: '#FFF' }}>Reviews</a>
+                <a className="nav-link" href="/#pricing" style={{ color: '#FFF' }}>Pricing</a>
                 <a className="nav-link" href="/blog" style={{ color: '#FFF' }}>Blog</a>
                 <a className="nav-link" href="/login" style={{ color: '#FFF' }}>Login</a>
               </div>
@@ -74,8 +74,8 @@ export default class Nav extends Component {
         <nav id='nav__loggedin' className="navbar navbar-expand-lg navbar-light nav__loggedin">
           <div className="container-fluid">
             <img className='logo-img' src={logo} width="45" />
-            <a className="navbar-brand" href="#" style={{ color: '#FFF' }}>DailyVPN</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>DailyVPN</a>
+            <button className="navbar-toggler custom-toggler  bg-primary" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
               aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -84,11 +84,11 @@ export default class Nav extends Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav ms-auto">
-                <a className="nav-link active" aria-current="page" href="#content" style={{ color: '#FFF' }}>Features</a>
-                <a className="nav-link" href="#testimonials" style={{ color: '#FFF' }}>Reviews</a>
-                <a className="nav-link" href="#pricing" style={{ color: '#FFF' }}>Pricing</a>
+                <a className="nav-link active" aria-current="page" href="/#content" style={{ color: '#FFF' }}>Features</a>
+                <a className="nav-link" href="/#testimonials" style={{ color: '#FFF' }}>Reviews</a>
+                <a className="nav-link" href="/#pricing" style={{ color: '#FFF' }}>Pricing</a>
                 <a className="nav-link" href="/blog" style={{ color: '#FFF' }}>Blog</a>
-                <a className="nav-link" href="#" style={{ color: '#FFF' }}>Welcome {userEmail}</a>
+                <a className="nav-link" href="/user" style={{ color: '#FFF' }}>Welcome {userEmail}</a>
                 <a className="nav-link" href="/logout" style={{ color: '#FFF' }}>Logout</a>
               </div>
             </div>
@@ -99,8 +99,8 @@ export default class Nav extends Component {
       <nav id='nav__loggedinModerator' className="navbar navbar-expand-lg navbar-light nav__loggedin">
           <div className="container-fluid">
             <img className='logo-img' src={logo} width="45" />
-            <a className="navbar-brand" href="#" style={{ color: '#FFF' }}>DailyVPN</a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+            <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>DailyVPN</a>
+            <button className="navbar-toggler custom-toggler  bg-primary" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
               aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
@@ -109,12 +109,12 @@ export default class Nav extends Component {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav ms-auto">
-                <a className="nav-link active" aria-current="page" href="#content" style={{ color: '#FFF' }}>Features</a>
-                <a className="nav-link" href="#testimonials" style={{ color: '#FFF' }}>Reviews</a>
-                <a className="nav-link" href="#pricing" style={{ color: '#FFF' }}>Pricing</a>
+                <a className="nav-link active" aria-current="page" href="/#content" style={{ color: '#FFF' }}>Features</a>
+                <a className="nav-link" href="/#testimonials" style={{ color: '#FFF' }}>Reviews</a>
+                <a className="nav-link" href="/#pricing" style={{ color: '#FFF' }}>Pricing</a>
                 <a className="nav-link" href="/blog" style={{ color: '#FFF' }}>Blog</a>
-                <a className="nav-link" href="/moderator" style={{ color: '#FFF' }}>Moderator Panel</a>
-                <a className="nav-link" href="#" style={{ color: '#FFF' }}>Welcome {userEmail}</a>
+                {/* <a className="nav-link" href="/moderator" style={{ color: '#FFF' }}>Moderator Panel</a> */}
+                <a className="nav-link" href="/moderator" style={{ color: '#FFF' }}>Welcome {userEmail}</a>
                 <a className="nav-link" href="/logout" style={{ color: '#FFF' }}>Logout</a>
               </div>
             </div>

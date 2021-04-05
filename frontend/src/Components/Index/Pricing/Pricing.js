@@ -17,7 +17,7 @@ export default class Pricing extends Component {
                 <h5 className="text-center1">Simple and affordable price plans for your Internet Protection.</h5>
 
                 <div className="row ">
-                    <div className="pricing-columns col-lg-4 col-md-12 text-center">
+                    <div className="pricing-columns col-lg-4 col-md-7 text-center">
                         <div className="card">
                             <div className="pricing-card-header">
                                 <h3>1 Month Plan</h3>
@@ -33,7 +33,7 @@ export default class Pricing extends Component {
                     </div>
 
 
-                    <div className="pricing-columns col-lg-4 col-md-12  text-center">
+                    <div className="pricing-columns col-lg-4 col-md-7  text-center">
                         <div className="card">
                             <div className="pricing-card-header">
                                 <h3>1 Year Plan</h3>
@@ -48,7 +48,7 @@ export default class Pricing extends Component {
                         </div>
                     </div>
 
-                    <div className="pricing-columns col-lg-4 col-md-12  text-center">
+                    <div className="pricing-columns col-lg-4 col-md-7  text-center">
                         <div className="card">
                             <div className="pricing-card-header">
                                 <h3>2 Year Plan</h3>

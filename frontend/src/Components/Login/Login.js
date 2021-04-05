@@ -68,14 +68,17 @@ export default class Login extends Component {
             </div>
             <div className='login__rightSide'>
             <form onSubmit={this.onFormSubmit}>
+                    <div className='login__textsAndLogo'>
+                        <h2 className='login__h2'>Log in</h2>
+                    </div>
                     <div className='login__email'>
-                        <input onChange={this.onEmailChange} type='email' name='email' placeholder='Write your email'></input>
+                        <input onChange={this.onEmailChange} className="login__input" type='email' name='email' placeholder='Write your email'></input>
                     </div>
                     <div className='login__password'>
-                        <input onChange={this.onPasswordChange} type='password' name='password' placeholder='Write your password'></input>
+                        <input onChange={this.onPasswordChange} className="login__input"  type='password' name='password' placeholder='Write your password'></input>
                     </div>
                     <div className='login__button'>
-                        <button type='submit'>Login</button>
+                        <button className="login__btn" type='submit'>Continue</button>
                     </div>
                     <h5 id='message'></h5>
                     <h5 className='login__already'>You dont have an account? Go to register</h5>
