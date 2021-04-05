@@ -25,6 +25,9 @@ export default class Nav extends Component {
             console.log(err)
         })
     }
+
+    
+
     render() {
         const userEmail = this.state.email
         return (
@@ -34,14 +37,13 @@ export default class Nav extends Component {
                       <img className='logo-blog' src={logo} width="80" />
                       <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>DailyVPN Blog</a>
                   </div>
-                  <div className='blog__navRightSide'>
+                  <div className='blog__navRightSide' id="burger">
                       <ul className='blog__navUl'>
                       <li className='blog__navLi'><a className='blog__navLink'>Welcome {userEmail}</a></li>
                           <li className='blog__navLi'><a href='/' className='blog__navLink'>VPNDAILY</a></li>
                           <li id='createPost' className='blog__navLi'><a href='/createpost' className='blog__navLink'>CREATE POST</a></li>
                           <li id='moderatorPanel' className='blog__navLi'><a href='moderator' className='blog__navLink'>MODERATOR PANEL</a></li>
                           <li className='blog__navLi'><a href='logout' className='blog__navLink'>LOGOUT</a></li>
-                          
                       </ul>
                   </div>
               </div>
