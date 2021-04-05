@@ -71,3 +71,12 @@
         linear-gradient(336deg, #26456b, rgba(0,0,255,0) 70.71%);
     }
   }
+
+@media(max-width:991px){ 
+    .container-fluid{
+        margin: 0;
+        padding: 0;
+        position: relative;
+        top: -1.4rem;
+    }
+}

@@ -1,13 +1,11 @@
 /* IP Styles  */
 .navIp{
-    /* padding: 0.1rem; */
     background-color: black;
     text-align: center;
     align-items: center;
     margin: auto;
     z-index: 10;
     position: relative;
-    /* margin-bottom: 2rem; */
 }
 
 .ispspan{
@@ -20,97 +18,15 @@
     margin: 0;
 }
 
-/* NavBar Styles  */
-
-  
-/* content 1*/
-
-
-/* Pricing  */
-
-#pricing{
-    padding: 7% 15%;
-}
-.pricing-columns{
-    padding: 3% 2%;
-}
-
-/* Media queries */
-
-@media(max-width:991px){
-    h1{
-        text-align: center;
+@media(max-width:900px){
+    #getIp {
+        font-size: 10px;
     }
-    .pos{
-      text-align: center;
+}
+
+@media(max-width:550px){
+    #getIp {
+        font-size: 8px;
     }
-    .title-image{
-    transform: rotate(0);
-    margin-right: 180px;  
-  }
-  .content1{
-      width: 100%;
-      padding: 0%;
-    display: flex;
-flex-direction: column;    
-justify-content: center;
-align-items: center;
 }
 
-.right-content1-h1{
-     text-align: center;
-    
-}
-.right-content-text{
-    text-align: center;
-}
-.right-content1-h4{
-    text-align: center;
-}
-.container-fluid{
-    margin: 0;
-    padding: 0;
-    position: relative;
-    top: -1.4rem;
-}
-.navbar-toggler{
-    color: white;
-    background-color: white;
-}
-}
-@media(max-width:1200px){
-    .left-content1{
-        display: none;
-        }
-    
-    .right-content1-h1{
-            text-align: center;
-                  }
-
-    .right-content-text{
-           text-align: center;
-       }
-
-    .right-content1-h4{
-           text-align: center;
-       }
-
-    .content1{
-        text-align: center;
-        flex-direction: column;    
-       justify-content: center;
-       align-items: center;
-    }   
-}
-@media(max-width:548px){
-#btn{
-    margin-top: 1rem;
-    text-align: center;
-    flex-direction: column;    
-   justify-content: center;
-   align-items: center;
-}
-#title-container{
-    margin: 0;
-}
-}

@@ -171,5 +171,27 @@
     }
     .right-content3 {
         margin: auto;
-    }    
+    } 
+   
+}
+
+@media only screen and (max-width: 1100px) {
+    .content1{
+        text-align: center;
+        flex-direction: column;    
+        justify-content: center;
+        align-items: center;
+    }  
+    .content2{
+        text-align: center;
+        flex-direction: column;    
+        justify-content: center;
+        align-items: center;
+    }  
+    .content3{
+        text-align: center;
+        flex-direction: column;    
+        justify-content: center;
+        align-items: center;
+    }  
 }

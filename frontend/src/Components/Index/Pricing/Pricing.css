@@ -5,7 +5,12 @@
 /* background color */
 #pricing {
     background-color:#eef3f8;
+    padding: 7% 15%;
 }
+
+.pricing-columns{
+    padding: 3% 2%;
+} 
 
 /* card header  */
 .pricing-card-header {
