@@ -10,7 +10,7 @@ const cors = require("cors")
 const transporter = require("./apis/sendgrid")
 const paypal = require("./apis/paypal")
 const pusher = require("./apis/pusher")
-const okla = require("./apis/okla")
+
 
 
 const store = new MongoDBStore({
@@ -35,7 +35,7 @@ app.use(cors({
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended:false }))
-app.use(okla)
+
 
 //Routes
 const RegisterRouter = require("./routers/RegisterRouter")
