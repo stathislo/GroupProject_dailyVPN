@@ -45,7 +45,7 @@ export default class Login extends Component {
 
         axios.post("http://localhost:5000/loginform", user, { withCredentials:true })
         .then(res=>{
-            if(res.data==="perase"){
+            if(res.data.perase==="perase"){
                 console.log(res)
                 this.props.history.push("/")
             }else if(res.data==="Lathos pass"){

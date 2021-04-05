@@ -47,6 +47,7 @@ export default class Chat extends Component {
             
             getchats.addEventListener("click", ()=>{
                 //console.log(getchats.childNodes[0].value)
+                
                 axios.post("http://localhost:5000/getChatMsgsBetweenModeratorsAndUser", {userId:getchats.childNodes[0].value}, { withCredentials:true })
                 .then(getmessages=>{
                     this.setState({getmessages:getmessages.data.chat})

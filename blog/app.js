@@ -7,16 +7,18 @@ require('dotenv/config');
 const cors = require("cors")
 const MongoDBStore = require("connect-mongodb-session")(session)
 const PORT = 7000;
+const axios = require("axios")
+const passport = require("passport")
 
 
 const store = new MongoDBStore({
-  uri:process.env.VPNDAILY_URI,
+  uri:process.env.DB_CONNECTION,
   collection:"sessions"
 })
 
-app.use(
-  session({
-    secret: 'vpndaily"',
+app.use(session({
+    secret: 'vpndaily',
+    proxy: true,
     saveUninitialized: false,
     resave: false,
     store:store,
@@ -34,6 +36,8 @@ app.use(cors({
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false }))
+
+
 
 // Import Routes
 const loginRoute = require('./routes/login');
@@ -56,6 +60,12 @@ app.use('/reaction', reactionRoute);
 app.use(CategoryRoute)
 app.use(SearchRouter)
 app.use(CommentRouter)
+
+app.use(passport.initialize())
+
+require("./controllers/Authenticate")
+
+app.get("http://localhost:3000/login", passport.authenticate("vpndaily", {scope: 'profile'}))
 
 // Connect To DB
 mongoose
