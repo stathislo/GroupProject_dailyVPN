@@ -61,8 +61,6 @@ onCategoryChoose = (event)=>{
 onPostSubmit = (event)=>{
     event.preventDefault()
 
-
-
     const post = {
         userId:this.state.userId,
         userEmail:this.state.userEmail,
@@ -76,8 +74,10 @@ onPostSubmit = (event)=>{
     }
 
     axios.post("http://localhost:7000/posts/userCreatesPost", post)
-    .then(post=>{
+    .then(posts=>{
         console.log("post added")
+        console.log(posts)
+        this.props.history.push("/blog")
     })
     .catch(err=>{
         console.log(err)
