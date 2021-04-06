@@ -93,11 +93,10 @@ module.exports = {
             console.log(result)
             Category.findOne({name:req.body.category})
             .then(category=>{
-
                 category.posts.push(result._id)
                 category.save()
                 console.log(category)
-              
+              res.status(201).send("postAdded")
             })
             .catch(err=>{
               console.log(err)
