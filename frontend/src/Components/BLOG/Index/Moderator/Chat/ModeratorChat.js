@@ -232,18 +232,17 @@ export default class Chat extends Component {
 
         return (
             <div>
-                <div className="wrapper">
-                    <div className="sidebar">
-                        <h3>Moderator Mode</h3>
-                        <ul>
-                            <li className='moderator__li'><a href="">- Posts</a></li>
-                            <li className='moderator__li'><a href="">- Users</a></li>
-                            <li className='moderator__li'><a href="">- VpnDaily</a></li>
-                            <li className='moderator__li'><a href="">- Chat</a></li>
-                        </ul>
-                    </div>
                     <div className="main_content2">
                         <div className='moderator__chatContainer'>
+                        <div className="sidebar">
+                        <h3>Moderator</h3>
+                        <ul>
+                            <li className='moderator__li'><a href="">- Posts</a></li>
+                            <li className='moderator__li'><a href="/user">- Users</a></li>
+                            <li className='moderator__li'><a href="/">- VpnDaily</a></li>
+                            <li className='moderator__li'><a href="/moderatorchat">- Chat</a></li>
+                        </ul>
+                    </div>
                             <div className='moderator__chatLeftSide'>
                                 <div className='moderator__chatSearch'>
                                     <input className='moderator__Chatinput' type='text' name='chatSearch' placeholder='Search a chat'></input> 
@@ -272,7 +271,6 @@ export default class Chat extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
         )
     }
 }

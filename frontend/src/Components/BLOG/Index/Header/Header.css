@@ -14,10 +14,14 @@
     font-size: 3rem;
     color: white;
 }
+.blog__headerP {
+    padding-bottom: 2rem;
+}
+
 
 @media only screen and (max-width: 1500px) {
     .blog__headerP {
-        padding-bottom: 10rem;
+        padding-bottom: 5rem;
     }
 }
 
@@ -27,7 +31,7 @@
     }
     .blog__headerP{
         font-size: 1rem;
-        padding-bottom: 20rem;
+        padding-bottom: 10rem;
     }
 }
 
@@ -37,13 +41,11 @@
     }
       .blog__headerP{
           font-size: 0.8rem;
-          padding-bottom: 20rem;
+          padding-bottom: 10rem;
+    }
+    .blog__headerContainer{
+        margin-left :150px;
     }
 }
 
-@media only screen and (max-width: 900px) {
-        .blog__headerContainer{
-            margin-left :150px;;
-    }
-}
   

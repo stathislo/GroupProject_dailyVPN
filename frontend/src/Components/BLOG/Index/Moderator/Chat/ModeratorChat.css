@@ -6,6 +6,39 @@
     
 }
 
+   /* sidebar */
+   .sidebar {
+    height: 100vh;
+    background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
+    padding: 30px 0;
+    width: 12vw;
+   }
+
+   .sidebar h3 {
+       color: #ffffff;
+       text-align: center;
+   }
+    
+   .sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(225,225,0,0.05);
+
+   }
+
+   .sidebar ul li a{
+    color: #ffffff;
+
+   }
+
+   .sidebar ul li:hover {
+    background: #411ef3;
+
+   }
+   .sidebar ul li:hover a{
+    color: #fff
+   } 
+
 .moderator__chatLeftSide{
     background-color: white(8, 139, 15);
     width: 25vw;
@@ -20,6 +53,7 @@
     background-position: center;
     width: 60vw;
     position: relative;
+    margin-bottom: 50px;
 }
 
 .moderator__Chatinput{

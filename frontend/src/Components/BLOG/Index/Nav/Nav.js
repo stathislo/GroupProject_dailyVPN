@@ -5,6 +5,7 @@ import axios from "axios"
 import logo from "./Images/security.png"
 
 
+
 export default class Nav extends Component {
     constructor(props){
         super(props)
@@ -24,8 +25,8 @@ export default class Nav extends Component {
         .catch(err=>{
             console.log(err)
         })
+        
     }
-
     
 
     render() {
@@ -34,12 +35,12 @@ export default class Nav extends Component {
             <div className='blog__nav'>
               <div className='blog__navContainer'>
                   <div className='blog__navLeftSide'>
-                      <img className='logo-blog' src={logo} width="80" />
+                      <img className='logo-blog' src={logo} width="70" />
                       <a className="navbar-brand" href="/blog" style={{ color: '#FFF' }}>DailyVPN Blog</a>
                   </div>
                   <div className='blog__navRightSide'>
                       <ul className='blog__navUl'>
-                      <li className='blog__navLi'><a className='blog__navLink'>Welcome {userEmail}</a></li>
+                      <li className='blog__navLi'><a href='/user' className='blog__navLink'>Welcome {userEmail}</a></li>
                           <li className='blog__navLi'><a href='/' className='blog__navLink'>VPNDAILY</a></li>
                           <li id='createPost' className='blog__navLi'><a href='/createpost' className='blog__navLink'>CREATE POST</a></li>
                           <li id='moderatorPanel' className='blog__navLi'><a href='moderator' className='blog__navLink'>MODERATOR PANEL</a></li>
@@ -52,3 +53,7 @@ export default class Nav extends Component {
         )
     }
 }
+
+
+
+

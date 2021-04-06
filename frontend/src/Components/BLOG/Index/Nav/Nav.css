@@ -7,8 +7,9 @@
 
 .blog__navContainer{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    padding: 2rem 4rem;
+    padding: 1rem 3rem;
     align-items: center;
 }
 
@@ -32,6 +33,7 @@
     text-decoration: none;
     color: white;
     margin-left: 3rem;
+    width: 100%;
 }
 
 #createPost{
@@ -41,5 +43,30 @@
 #moderatorPanel{
     display: none;
 }
+
+@media only screen and (max-width: 1300px) {
+    .blog__navContainer{
+        flex-direction: column;
+    }
+    .blog__navLeftSide{
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .blog__navUl{
+        font-size: small;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .blog__navUl{
+        font-size: 8px;
+    }
+}
+
+  
+
+
 
 

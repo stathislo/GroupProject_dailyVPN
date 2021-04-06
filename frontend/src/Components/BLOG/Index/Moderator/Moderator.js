@@ -25,9 +25,9 @@ export default class Moderator extends Component {
                         <h3>Moderator Mode</h3>
                         <ul>
                             <li className='moderator__li'><a href="">- Posts</a></li>
-                            <li className='moderator__li'><a href="">- Users</a></li>
-                            <li className='moderator__li'><a href="">- VpnDaily</a></li>
-                            <li className='moderator__li'><a href="">- Chat</a></li>
+                            <li className='moderator__li'><a href="/user">- Users</a></li>
+                            <li className='moderator__li'><a href="/">- VpnDaily</a></li>
+                            <li className='moderator__li'><a href="/moderatorchat">- Chat</a></li>
                         </ul>
                     </div>
                     <div className="main_content_moderator_middle"></div>
