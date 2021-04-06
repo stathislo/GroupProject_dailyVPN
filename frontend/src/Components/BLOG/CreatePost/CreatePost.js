@@ -3,6 +3,8 @@ import "./CreatePost.css"
 import axios from "axios"
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic"
 import ckeditor, { CKEditor } from "@ckeditor/ckeditor5-react"
+import chatbotimage from "./chatbot.png"
+import logo from "./security.png"
 
 
 export default class CreatePost extends Component {
@@ -100,7 +102,7 @@ onPostSubmit = (event)=>{
                             </div>
                             <div className='createPost__title'>
                                 <h2 className='createPost__h2'>Title</h2>
-                                <input onChange={this.onTitleChange} type='text' name='title' placeholder='Title'></input>
+                                <input onChange={this.onTitleChange} className="createpost_input" type='text' name='title' placeholder='Title'></input>
                             </div>
                             <div className='createPost__post'>
                             <h2 className='createPost__h2'>Write your post</h2>
@@ -116,11 +118,11 @@ onPostSubmit = (event)=>{
                             </div>
                             <div className='createPost__image'>
                             <h2 className='createPost__h2'>Put an image</h2>
-                                <input onChange={this.onImageChange} type='text' name='image' placeholder='Put an image with url'></input>
+                                <input onChange={this.onImageChange} className="createpost_input" type='text' name='image' placeholder='Put an image with url'></input>
                             </div>
                             <div className='createPost__category'>
                                 <h2 className='createPost__h2'>Choose category</h2>
-                                <select onChange={this.onCategoryChoose}>
+                                <select className="category_select" onChange={this.onCategoryChoose}>
                                 <option>Choose a category</option>
                                     <option name='category' value='how to'>how to</option>
                                     <option name='category' value='security'>security</option>
@@ -131,10 +133,18 @@ onPostSubmit = (event)=>{
                                 
                             </div>
                             <div className='createPost__button'>
-                                <button type='submit'>Post it</button>
+                                <button className="createPost__btn" type='submit'>Post it</button>
+                            </div>
+                            <div className='blog__logo'>
+                                 <img className='logo-blog' src={logo} width="70" />
+                                <a className="navbar-brand" href="/blog" style={{ color: '#FFF' }}>DailyVPN Blog</a>
                             </div>
                         </form>
-                    </div>
+                        
+                        </div>  
+                        </div>
+                        <div className="chatbot_right">
+                        <img  className="chatbotimage" src={chatbotimage}></img>
                 </div>
             </div>
         )

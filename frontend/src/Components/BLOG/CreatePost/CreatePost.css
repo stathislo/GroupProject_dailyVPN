@@ -1,3 +1,64 @@
 .createPost{
-    background-color: grey;
+    display: flex;
+    width: 100%;
 }
+.createPost__container{
+    background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
+    height: 100vh;
+    color: rgb(248, 240, 240);
+    padding-top: 3rem;
+    width: 50%;
+}
+.createPost__formContainer{
+    text-align: center;
+}
+.createpost_input{
+    border:2px solid #aaa;
+    border-radius:4px ;
+    outline:none;
+    box-sizing: border-box;
+    transition: .3s;
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}
+.chatbot_right{
+    width: 50%;
+    background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
+}
+
+.chatbotimage {
+    
+    width: 90%;
+    height: 90%;
+}
+
+.category_select{
+    border:2px solid #aaa;
+    border-radius:4px ;
+    outline:none;
+    box-sizing: border-box;
+    transition: .3s;
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+.createPost__btn{
+    outline-style: none;
+    border: none;
+    background-color: blue;
+    color: white;
+    padding: 4px;
+    width: 5rem;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 0 dodgerblue;
+    margin-top: 1rem;
+}
+
+.createPost__btn:hover {
+    background-color: rgb(12, 12, 197);
+}
+
+.blog__logo{
+    padding-top: 5rem;
+}
+
