@@ -1,0 +1,24 @@
+main_content_moderator_middle{
+    text-align: center;
+    padding-top: 7rem;
+   }
+    
+   .show-button {
+    outline-style: none;
+    border: none;
+    background-color: blue;
+    color: white;
+    padding: 4px;
+    width: 5rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    width: 20%;
+    font-size: 1.5rem;
+   }
+    
+   .show-button:hover {
+    background-color: rgb(12, 12, 197);
+   }
+   .text-post{
+    font-size: 5rem;
+   }

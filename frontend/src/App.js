@@ -26,6 +26,8 @@ import Moderator from "./Components/BLOG/Index/Moderator/Moderator";
 import User from "./Components/BLOG/Index/User/User";
 import Administrator from './Components/BLOG/Index/Administrator/Admin'
 import ModeratorChat from "./Components/BLOG/Index/Moderator/Chat/ModeratorChat"
+import ModeratorPosts from "./Components/BLOG/Index/Moderator_Posts/Moderator_Posts";
+import ModeratorUsers from "./Components/BLOG/Index/Moderator_Users/Moderator_Users";
 
 
 function App() {
@@ -49,6 +51,8 @@ function App() {
           <Route path='/createpost' component={CreatePost} />
           <Route path="/moderator" component={Moderator} />
           <Route path='/moderatorchat' component={ModeratorChat}/>
+          <Route path='/moderatorposts' component={ModeratorPosts}/>
+          <Route path='/moderatorusers' component={ModeratorUsers}/>
           <Route path='/user' component={User} />
           <Route path='/admin' component={Administrator} />
           <Route exact path='/category/:name' component={News} />

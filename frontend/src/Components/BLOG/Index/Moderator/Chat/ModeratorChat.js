@@ -237,8 +237,8 @@ export default class Chat extends Component {
                         <div className="sidebar">
                         <h3>Moderator</h3>
                         <ul>
-                            <li className='moderator__li'><a href="">- Posts</a></li>
-                            <li className='moderator__li'><a href="/user">- Users</a></li>
+                            <li className='moderator__li'><a href="/moderatorposts">- Posts</a></li>
+                            <li className='moderator__li'><a href="/moderatorusers">- Users</a></li>
                             <li className='moderator__li'><a href="/">- VpnDaily</a></li>
                             <li className='moderator__li'><a href="/moderatorchat">- Chat</a></li>
                         </ul>

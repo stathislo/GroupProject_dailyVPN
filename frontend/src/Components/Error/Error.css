@@ -1,0 +1,25 @@
+.error {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(97, 165, 185);
+    height: 100vh;
+    width: 100%;
+   }
+    
+   .error-left {
+    width: 50%;
+    font-size: 100%;
+   }
+    
+   .error-right {
+    width: 50%;
+    
+   }
+   .oops {
+    font-size: 10rem; 
+   }
+   .error-image {
+    width: 100%;
+   }
