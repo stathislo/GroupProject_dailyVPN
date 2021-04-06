@@ -9,7 +9,7 @@ module.exports = {
       const posts = await Post.find();
       res.status(200).json(posts);
     } catch (err) {
-      res.send({ 
+      res.status(500).send({ 
         message: 'The are no posts!' 
       });
     }
@@ -71,8 +71,6 @@ module.exports = {
   // Create a post for user
   userCreatesPost: async (req, res) => {
     // try {
-
-
         const post = new Post({
           title: req.body.title,
           description: req.body.description,
@@ -120,7 +118,7 @@ module.exports = {
 
   // User updates a post
   userUpdatesPost: async (req, res) => {
-    const postID = req.params.postID;
+    const postID = req.body.postID;
     try {
       await Post.findOneAndUpdate(
         {
@@ -129,6 +127,7 @@ module.exports = {
         {
           title: req.body.title,
           description: req.body.description,
+          image:req.body.image,
         },
       );
       res
