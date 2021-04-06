@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import "./CreatePost.css"
 import axios from "axios"
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic"
+import ckeditor, { CKEditor } from "@ckeditor/ckeditor5-react"
+
 
 export default class CreatePost extends Component {
     constructor(props){
@@ -38,6 +39,13 @@ onTitleChange = (event)=>{
 
 onDescriptionChange= (event)=>{
     this.setState({description:event.target.value})
+}
+
+handleCheckEditorState = (event, editor)=>{
+    const data = editor.getData();
+    this.setState({
+        description:data
+    })
 }
 
 onImageChange = (event)=>{
@@ -96,8 +104,15 @@ onPostSubmit = (event)=>{
                             </div>
                             <div className='createPost__post'>
                             <h2 className='createPost__h2'>Write your post</h2>
+                            <CKEditor 
+                                editor = {ClassicEditor}
+                                onInit = { editor=>{
+
+                                }}
+                                onChange ={this.handleCheckEditorState}
+                            />
                             
-                                <textarea id='textField' onChange={this.onDescriptionChange} type='text' name='description'></textarea>
+                            {/* <textarea id='textField' onChange={this.onDescriptionChange} type='text' name='description'></textarea> */}
                             </div>
                             <div className='createPost__image'>
                             <h2 className='createPost__h2'>Put an image</h2>

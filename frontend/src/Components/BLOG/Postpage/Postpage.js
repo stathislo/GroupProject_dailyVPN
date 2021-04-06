@@ -41,6 +41,7 @@ export default class Postpage extends Component {
             this.setState({postUserFirstName:post.data.userFirstName})
             this.setState({postUserLastName:post.data.userLastName})
             
+            const onePost__h4 = document.getElementById("onePost__h4").innerHTML=this.state.description
 
             let onePost__category = document.getElementById("onePost__category")
             if(onePost__category.textContent==="news"){
@@ -98,6 +99,7 @@ axios.post("http://localhost:7000/postcomment", comment)
 render() {
 const title = this.state.title;
 const description = this.state.description
+
 const image = this.state.image
 const category = this.state.category
 const userId = this.state.user
@@ -193,11 +195,11 @@ const getComments = this.state.comments.map(function(commentsItems){
                             <img className='onePost__img' src={image}></img>
                         </div>
                         <div className='onePost__rightSideTexts'>
-                        <div class='onePost_title'>
-                    <h2 class='onePost__h2'>{title}</h2>
+                        <div className='onePost_title'>
+                    <h2 className='onePost__h2'>{title}</h2>
                 </div>
-                <div class='onePost__desc'>
-                    <div class='onePost__h4'>{description}</div>
+                <div className='onePost__desc'>
+                    <div id='onePost__h4' className='onePost__h4'>{description}</div>
                 </div>
 
             <hr className='onePost__h4comments'></hr>
