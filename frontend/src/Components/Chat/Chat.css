@@ -3,13 +3,15 @@ position: fixed;
 align-items: right;
 display: flex;
 justify-content: flex-end;
-top: 58rem;
+top: 48rem;
 right: 15rem;
 z-index: 100;
+
 }
 
 .chat__container{
 position: absolute;
+
 }
 
 .chat__h5{
@@ -19,7 +21,7 @@ position: absolute;
 .chat__showHelp{
     
     position: fixed;
-    background-color: blue;
+    background-color: rgb(56, 102, 163);
     padding: 15px;
     color: white;
     border-radius:5px ;
@@ -28,7 +30,7 @@ position: absolute;
 .chat__showHelp__after{
     display: none;
     position: fixed;
-    background-color: blue;
+    background-color: rgb(56, 102, 163);
     padding: 15px;
     color: white;
     border-radius:5px;
@@ -56,14 +58,14 @@ position: absolute;
     display: flex;
     justify-content: flex-end;
     margin-left: 0.5rem;
-    color: black;
+    color: white;
 }
 
 .chat__userMessage, .chat__userP{
     display: flex;
     justify-content: flex-start;
     margin-right: 0.5rem;
-    color: black;
+    color: white;
 }
 
 .showModeratorChats{
@@ -84,7 +86,8 @@ position: absolute;
 }
 
 .chat__minimize{
-    background-color: rgb(3, 0, 206);
+    background-color: rgb(56, 102, 163);
+    height: 2rem;
     color: white;
     text-align: right;
     display: flex;
@@ -92,9 +95,18 @@ position: absolute;
     padding-bottom: 0.5rem;
     padding-right: 0.5rem;
     border: 1px solid black;
+    
 }
 
 .chat__displayMessages{
-    background-color: white;
+    background-color: black;
+    background-image: url(../Index/Images/security.png);
+    background-size: 100%;
     width: 100%;
+}
+
+.chatbtn{
+    width: 20%;
+    color: white;
+    background-color: rgb(56, 102, 163);
 }

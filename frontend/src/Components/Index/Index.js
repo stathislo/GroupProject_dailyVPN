@@ -32,14 +32,14 @@ export default class Index extends Component {
             })
         } else if (checkLogin.data === "loggedin") {
           axios.get("http://localhost:5000/index")
-          .then(res => {
-            console.log(res)
-            this.setState({ getIp: res.data.ip })
-            this.setState({ getIsp: res.data.isp })
-          })
-          .catch(err => {
-            console.log(err)
-          })
+            .then(res => {
+              console.log(res)
+              this.setState({ getIp: res.data.ip })
+              this.setState({ getIsp: res.data.isp })
+            })
+            .catch(err => {
+              console.log(err)
+            })
         }
       })
       .catch(err => {
@@ -77,11 +77,13 @@ export default class Index extends Component {
         <Pricing />
 
         {/* <!-- Footer --> */}
+        
         <Footer />
 
-       
+
 
       </div>
+      
     )
   }
 }
