@@ -62,7 +62,7 @@ export default class Footer extends Component {
                 <div className="col-md-4">
                     <h5>Help</h5>
                     <dl className="Help-list"></dl>
-                    <dd><a href="#">FAQ</a></dd>
+                    <dd><a href="/faq">FAQ</a></dd>
                     <dd><a href="/privacypolicy">Privacy Policy</a></dd>
                     <dd><a href="/generalterms">Terms Of service</a></dd>    
                 </div>
