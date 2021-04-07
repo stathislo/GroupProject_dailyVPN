@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import './App.css';
 import Index from "./Components/Index/Index"
 import Logout from "./Components/Logout/Logout"
-import Register from "./Components/Register/Register"
+import Forgot from "./Components/Register/Forgot"
 import Login from "./Components/Login/Login"
 import Error from "./Components/Error/Error"
 import Registerget from "./Components/Registerget/Registerget"
@@ -41,7 +41,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Index} />
           <Route path="/login" component={Login} />
-          <Route path='/register' component={Register} />
+          <Route path='/forgot' component={Forgot} />
           <Route path="/logout" component={Logout} />
           <Route path="/registerget/:id" component={Registerget} />
           <Route path="/success" component={Success} />
