@@ -78,6 +78,12 @@ export default class ProductMedium extends Component {
 
     }
 
+    vatCalc = (cost)=> {
+        var vat = 24;
+        var res = (cost/100)*(vat+100)
+        return res.toFixed(2)
+    }
+
     render() {
         const _id = this.state.productId
         const name = this.state.name
@@ -107,7 +113,7 @@ export default class ProductMedium extends Component {
                                 <h3>1 Year Plan</h3>
                             </div>
                             <div className="card-body">
-                                <h2>{price} <small>/mo</small></h2>
+                                <h2>&#8364;{price} <small>/mo</small></h2>
                                 <h5>Up to 10 Devices</h5>
                                 <h5>Limited Bandwith <small>/20Mbps</small></h5>
                                 <h5><small className="text-muted">Save 50%</small></h5>
@@ -165,7 +171,7 @@ export default class ProductMedium extends Component {
                     </div>
                     <div className="row justify-content-between">
                         <div className="col-4">VAT 24% Greece</div>
-                        <div className="col-2">EUR Total</div>
+                        <div className="col-2">EUR {this.vatCalc(price)}</div>
                 
                 <div>
                     <button className="paypal-button" type="submit">

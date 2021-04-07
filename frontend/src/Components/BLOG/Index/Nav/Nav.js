@@ -40,8 +40,8 @@ export default class Nav extends Component {
                   </div>
                   <div className='blog__navRightSide'>
                       <ul className='blog__navUl'>
-                      <li className='blog__navLi'><a href='/user' className='blog__navLink'>Welcome {userEmail}</a></li>
-                          <li className='blog__navLi'><a href='/' className='blog__navLink'>VPNDAILY</a></li>
+                      <li className='blog__navLi'><a href='' className='blog__navLink'>Welcome {userEmail}</a></li>
+                          <li className='blog__navLi'><a href='/' className='blog__navLink'>DailyVPN</a></li>
                           <li id='createPost' className='blog__navLi'><a href='/createpost' className='blog__navLink'>CREATE POST</a></li>
                           <li id='moderatorPanel' className='blog__navLi'><a href='moderator' className='blog__navLink'>MODERATOR PANEL</a></li>
                           <li className='blog__navLi'><a href='logout' className='blog__navLink'>LOGOUT</a></li>

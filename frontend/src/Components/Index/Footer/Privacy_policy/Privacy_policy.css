@@ -1,0 +1,24 @@
+.privacy__container{
+    display: flex;
+    background-color:#eef3f8;
+    padding-top: 2rem;
+}
+
+.privacy__LeftSide{
+    width: 35%;
+    text-align: center;
+}
+
+.privacy__rightside{
+    width: 65%;
+    padding-top: 5rem;
+}
+
+.privacy__content{
+    width: 80%;
+}
+
+.privacy__title{
+    padding-bottom: 5rem;
+    font-weight: 800;
+}

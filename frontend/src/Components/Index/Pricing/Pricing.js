@@ -23,7 +23,7 @@ export default class Pricing extends Component {
                                 <h3>1 Month Plan</h3>
                             </div>
                             <div className="card-body">
-                                <h2>$10.99 <small>/mo</small></h2>
+                                <h2>&#8364;10.99 <small>/mo</small></h2>
                                 <h5>Up to 5 Devices</h5>
                                 <h5>Limited Bandwith<small>/10Mbps</small></h5>
                                 <h5><small className="text-muted">Save 0%</small></h5>
@@ -39,7 +39,7 @@ export default class Pricing extends Component {
                                 <h3>1 Year Plan</h3>
                             </div>
                             <div className="card-body">
-                                <h2>$5.99 <small>/mo</small></h2>
+                                <h2>&#8364;5.99 <small>/mo</small></h2>
                                 <h5>Up to 10 Devices</h5>
                                 <h5>Limited Bandwith <small>/20Mbps</small></h5>
                                 <h5><small className="text-muted">Save 50%</small></h5>
@@ -54,7 +54,7 @@ export default class Pricing extends Component {
                                 <h3>2 Year Plan</h3>
                             </div>
                             <div className="card-body">
-                                <h2>$1.99 <small>/ mo</small></h2>
+                                <h2>&#8364;1.99 <small>/ mo</small></h2>
                                 <h5>Unlimited Devices</h5>
                                 <h5>Unlimited Bandwith<small>/ 200Mbps</small></h5>
                                 <h5><small className="text-muted">Save 66%</small></h5>
