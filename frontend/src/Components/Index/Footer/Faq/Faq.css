@@ -1,0 +1,11 @@
+.Faq__title{
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    padding: 5%;
+}
+
+.Faq__container{
+    background-color: #eef3f8;
+    height: 160vh;
+}
