@@ -46,14 +46,15 @@ exports.postReset = (req, res, next)=>{
     RegisterUser.findOne({token:req.body.token})
     .then(findToken=>{
         if(findToken){
-            bcrypt.hash(req.body.changeNewPassword, 12, function(err,newPassword){
+            bcrypt.hash(req.body.changeNewPassword, 8, function(err,newPassword){
                 if(err){
                     console.log(err)
                 }else{
                     console.log(newPassword)
-                    RegisterUser.findOneAndUpdate({token:req.body.token}, {password:newPassword})
+                    RegisterUser.findOneAndUpdate({token:req.body.token}, {password:newPassword}, {new:true, upsert:true})
                     .then(passwordChanged=>{
                         console.log("o kwdikos allakse")
+                        res.status(201).send("Password Changed!")
                     })
                     .catch(err=>{
                         console.log(err)
