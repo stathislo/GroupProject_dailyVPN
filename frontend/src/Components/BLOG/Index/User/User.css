@@ -5,7 +5,7 @@
 
    /* sidebar */
    .sidebar-user-left {
-    height: 100vh;
+    height: 170vh;
     background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
     padding: 30px 0;
     width: 15%;
@@ -48,6 +48,32 @@
       text-align: center;
       background-color: #eef3f8;
       }
+
+        /* steps */
+   .steps{
+      padding: 30px 0 10px;
+      margin: auto;
+   }
+
+   .steps-container {
+       margin-bottom: 5rem;
+   }
+
+   .steps-image-savefile{
+      width: 22rem;
+      height: 10rem;
+   }
+
+   .steps-image-install{
+      width: 22rem;
+      height: 20rem;
+   }
+
+   .steps-image-imports{
+      width: 22rem;
+      height: 15rem;
+   }
+
    
    /* right side of page */
    .main_content_user_right {  
@@ -131,5 +157,9 @@
    @media (max-width: 660px) {
       .sidebar-user-left,  .main_content_middle {
         width: 100%;
+      }
+      .download-card-windows{
+         width: 22rem;
+      height: 15rem;
       }
     }
