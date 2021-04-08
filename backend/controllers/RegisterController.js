@@ -24,8 +24,23 @@ const PaymentModel = require("../models/PaymentsModel")
 // }
 
 exports.getIfAlreadyRegistered = (req, res, next)=>{
-    if(req.session){
-        res.status(200).send("loggedin")
+    if(req.session.user){
+        RegisterUser.findOne({email:req.session.email})
+        .then(user=>{
+            if(user){
+                res.status(200).json({
+                    user:user,
+                    loggedin:"loggedin"
+                })
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }else{
+        res.status(400).json({
+            loggedin:"not loggedin"
+        })
     }
 }
 

@@ -16,12 +16,13 @@ export default class Register extends Component {
                 console.log(ifAlreadyRegister)
                 if (ifAlreadyRegister.data === "not loggedin") {
                     this.props.history.push("/forgot")
-                } else if (ifAlreadyRegister.data === "loggedin") {
+                } else if (ifAlreadyRegister.data.loggedin === "loggedin") {
                     this.props.history.push("/alreadyregister")
                 }
             })
             .catch(err => {
                 console.log(err)
+                console.log("not loggedin")
             })
     }
 
@@ -41,7 +42,7 @@ export default class Register extends Component {
             token: this.state.token
         }
 
-        axios.post("http://localhost:5000/registerform", user)
+        axios.post("http://localhost:5000/forgotform", user)
             .then(res => {
                 console.log("User created!!")
                 const message = document.getElementById("message").textContent = "Check your email for confirmation"
