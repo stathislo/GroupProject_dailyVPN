@@ -24,7 +24,6 @@ import ifUserIsAlreadyRegistered from "./Components/Register/ifAlreadyRegistered
 import SearchPage from "./Components/BLOG/SearchPage/SearchPage";
 import Moderator from "./Components/BLOG/Index/Moderator/Moderator";
 import User from "./Components/BLOG/Index/User/User";
-import Userhowto from "./Components/BLOG/Index/Userhowto/Userhowto";
 import Administrator from './Components/BLOG/Index/Administrator/Admin';
 import ModeratorChat from "./Components/BLOG/Index/Moderator/Chat/ModeratorChat";
 import ModeratorPosts from "./Components/BLOG/Index/Moderator_Posts/Moderator_Posts";
@@ -61,7 +60,6 @@ function App() {
           <Route path='/privacypolicy' component={Privacy_policy}/>
           <Route path='/faq' component={Faq}/>
           <Route path='/user' component={User} />
-          <Route path='/userhowto' component={Userhowto}/>
           <Route path='/admin' component={Administrator} />
           <Route exact path='/category/:name' component={News} />
           <Route path="/blog/search/posts=:search" component={SearchPage} />

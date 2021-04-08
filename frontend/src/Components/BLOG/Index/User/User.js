@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import './User.css'
-<<<<<<< HEAD
 import savefile from "./savefile.png"
 import install from "./install.png"
 import imports from "./import.png"
-=======
 import axios from "axios"
->>>>>>> cb3536724cb3681fe279afb6e2fc25cc80d6d4a6
 
 export default class User extends Component {
     constructor(props){
@@ -38,7 +35,6 @@ export default class User extends Component {
                             <a href="#">{userFirstName}</a>
                         </div>
                             <ul>
-                                <li><a href="/userhowto">How to</a></li>
                                 <li><a href="/">VpnDaily</a></li>
                                 <li><a href="/logout">Logout</a></li>
                             </ul>
