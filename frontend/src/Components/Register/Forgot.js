@@ -44,8 +44,7 @@ export default class Register extends Component {
 
         axios.post("http://localhost:5000/forgotform", user)
             .then(res => {
-                console.log("User created!!")
-                const message = document.getElementById("message").textContent = "Check your email for confirmation"
+                const message = document.getElementById("message").textContent = "Check your email to reset your password"
             })
             .catch(err => {
                 console.log(err)
