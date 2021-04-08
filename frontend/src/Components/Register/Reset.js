@@ -12,13 +12,13 @@ export default class Reset extends Component {
                     </div>
                     <div className="reset-right">
                         <div>
-                        <input type="text" placeholder="New Password"></input>
+                        <input className="reset-inputs" type="text" placeholder="New Password"></input>
                         </div>
                         <div>
-                        <input type="text" placeholder="Confirm New Password"></input>
+                        <input className="reset-inputs" type="text" placeholder="Confirm New Password"></input>
                         </div>
-                        <div>
-                            <button type="submit">Continue</button>
+                        <div className="reset-btn">
+                            <button className="reset-button" type="submit">Continue</button>
                         </div>
                     </div>
              </div> 

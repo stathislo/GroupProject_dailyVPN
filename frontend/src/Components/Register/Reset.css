@@ -17,3 +17,29 @@
 .reset-right{
     width: 50%;
 }
+
+.reset-inputs{
+    padding: 4px;
+    width: 15rem;
+    margin: 0.5rem 0;
+    border:3px solid blue;
+    border-radius: 5px;
+}
+
+.reset-btn{
+    margin-top: 0.5rem;
+}
+
+.reset-button {
+    outline-style: none;
+    border: none;
+    background: blue;
+    color: white;
+    padding: 4px;
+    width: 5rem;
+    border-radius: 5px;
+}
+
+.reset-button:hover {
+    background:rgb(12, 12, 160);
+}
