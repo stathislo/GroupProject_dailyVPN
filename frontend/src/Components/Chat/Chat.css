@@ -109,7 +109,7 @@ position: absolute;
 
 .chat__input{
     padding-bottom: 1rem;
-    width: 20vw;
+    width: 100%;
     display: flex;
 }
 
@@ -122,8 +122,7 @@ position: absolute;
     justify-content: flex-end;
     padding-bottom: 0.5rem;
     padding-right: 0.5rem;
-    border: 1px solid black;
-    
+    border: 1px solid black;   
 }
 
 .chat__displayMessages{
