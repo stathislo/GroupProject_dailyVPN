@@ -1,0 +1,19 @@
+.reset{
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
+
+.reset-container{
+    display: flex;
+    align-items: center;
+    padding:10rem ;
+}
+
+.reset-left{
+    width: 50%;
+}
+
+.reset-right{
+    width: 50%;
+}
