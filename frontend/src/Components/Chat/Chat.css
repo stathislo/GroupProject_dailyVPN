@@ -11,7 +11,6 @@ z-index: 100;
 
 .chat__container{
 position: absolute;
-
 }
 
 .chat__h5{
@@ -41,6 +40,7 @@ position: absolute;
     height: 40vh;
     width: 20vw;
     overflow-y: scroll;
+    max-width: 38.2vh;
 }
 
 .chat__Chat{
@@ -58,14 +58,42 @@ position: absolute;
     display: flex;
     justify-content: flex-end;
     margin-left: 0.5rem;
+    padding: 0.5rem;
+    color: rgb(231, 229, 229);
+    background-color: rgb(56, 102, 163);
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.chat__moderatorMessage{
+    font-weight: 300;
+}
+
+.chat__moderatorP{
     color: white;
+    font-size:1.2rem;
+    font-weight: 900;  
 }
 
 .chat__userMessage, .chat__userP{
     display: flex;
     justify-content: flex-start;
     margin-right: 0.5rem;
+    color: rgb(231, 229, 229);
+    background-color: rgb(52, 52, 53); 
+    padding: 0.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.chat__userMessage{
+    font-weight: 300;
+}
+
+.chat__userP{
     color: white;
+    font-size:1.2rem;
+    font-weight: 900;
 }
 
 .showModeratorChats{
