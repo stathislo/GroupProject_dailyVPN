@@ -12,7 +12,7 @@ export default class ifAlreadyRegistered extends Component {
         return (
             <div>
                 <h3>You have already registered. Go to index page</h3>
-                <a href="/main">Index</a>
+                <a href="/">Index</a>
             </div>
         )
     }
