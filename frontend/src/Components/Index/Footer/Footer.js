@@ -12,6 +12,14 @@ export default class Footer extends Component {
         }
     }
 
+    onChatClick = () => {
+        const chat__showHelp = document.getElementById("chat__showHelp")
+        const chat__Chat = document.getElementById("chat__Chat")
+
+        chat__showHelp.classList.toggle('chat__showHelp__after')
+        chat__Chat.classList.toggle("chat__Chat__after")
+    }
+
 
     render() {
         return ( 
@@ -46,15 +54,15 @@ export default class Footer extends Component {
                     <h5>Contact Us</h5>
                     <dl className="Contact-list"></dl>
                     <dt>Email:</dt>
-                    <dd><a href="#">info@vpndaily.eu</a></dd>
+                    <dd className="info-email">info@vpndaily.eu</dd>
                     <dt>Tech Support:</dt>
-                    <dd><a href="#">support@vpndaily.eu</a></dd>
+                    <dd className="support-email">support@vpndaily.eu</dd>
                 </div>
 
                 <div className="col-md-4">
                     <dt>Live Chat</dt>
                 <dd>
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+                    <a class="btn btn-outline-light btn-floating m-1" onClick={this.onChatClick} role="button">
                     <i class='far fa-comments'></i></a>
                 </dd>
                 </div>

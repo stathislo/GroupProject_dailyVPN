@@ -14,3 +14,11 @@ footer a  :hover {
 .btn {
     margin-left: 10px;
 }
+
+.info-email{
+    color: grey;
+}
+
+.support-email{
+    color: grey;
+}
