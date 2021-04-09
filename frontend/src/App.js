@@ -28,7 +28,6 @@ import User from "./Components/BLOG/Index/User/User";
 import Administrator from './Components/BLOG/Index/Administrator/Admin';
 import ModeratorChat from "./Components/BLOG/Index/Moderator/Chat/ModeratorChat";
 import ModeratorPosts from "./Components/BLOG/Index/Moderator_Posts/Moderator_Posts";
-import ModeratorUsers from "./Components/BLOG/Index/Moderator_Users/Moderator_Users";
 import General_terms from "./Components/Index/Footer/General_terms/General_terms";
 import Privacy_policy from "./Components/Index/Footer/Privacy_policy/Privacy_policy";
 import Faq from './Components/Index/Footer/Faq/Faq';
@@ -57,7 +56,6 @@ function App() {
           <Route path="/moderator" component={Moderator} />
           <Route path='/moderatorchat' component={ModeratorChat}/>
           <Route path='/moderatorposts' component={ModeratorPosts}/>
-          <Route path='/moderatorusers' component={ModeratorUsers}/>
           <Route path='/generalterms' component={General_terms}/>
           <Route path='/privacypolicy' component={Privacy_policy}/>
           <Route path='/faq' component={Faq}/>

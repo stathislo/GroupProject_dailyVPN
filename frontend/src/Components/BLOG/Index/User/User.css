@@ -5,7 +5,7 @@
 
    /* sidebar */
    .sidebar-user-left {
-    height: 170vh;
+    height: 300vh;
     background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
     padding: 30px 0;
     width: 15%;
@@ -55,22 +55,26 @@
       margin: auto;
    }
 
+   .steps-choose{
+      padding-top: 5rem;
+   }
+
    .steps-container {
        margin-bottom: 5rem;
    }
 
    .steps-image-savefile{
-      width: 22rem;
+      width: 25rem;
       height: 10rem;
    }
 
    .steps-image-install{
-      width: 22rem;
+      width: 25rem;
       height: 20rem;
    }
 
    .steps-image-imports{
-      width: 22rem;
+      width: 25rem;
       height: 15rem;
    }
 
@@ -90,8 +94,9 @@
    }
     
    .download-card-windows {
-       width: 40%;
+       width: 25rem;
        margin: auto;
+       
    }
     .card-download-windows {
        margin: auto;
@@ -99,60 +104,20 @@
     
     .download-card-header-windows {  
        border-radius: 5px 5px 2px 2px; 
-       height: 15rem;
+       height: 20rem;
        background: url(./windows2.png),rgb(56, 55, 55);
        background-size: cover;
     }
     .download-card-body-windows {
-       height: 4rem;
+       height: 5rem;
        background-color:gainsboro;
        border-radius: 0 0 5px 5px;
        padding-top: 20px;
+       font-size: x-large;
     }
     .download-text {
        color: black;
     }
-
-    /* download-card-mac */
-
-   .download-card-title-mac{
-      padding: 10px 0;
-      margin-left: -50px
-   }
-
-  .card-download-mac {
-   width: 40%;
-   margin: auto;
-   }
-  
-   .download-card-header-mac {  
-   border-radius: 5px 5px 2px 2px; 
-   height: 15rem;
-   background: url(./mac.jpg),rgb(56, 55, 55);
-   background-size: cover;
-   }
-
-   .download-card-body-mac {
-   height: 4rem;
-   background-color:gainsboro;
-   border-radius: 0 0 5px 5px;
-   padding-top: 20px;
-   }
-
-   @media (max-width: 1100px){
-      .main_content_user_right{
-         display: none;
-      }
-
-      .sidebar-user-left{
-         width: 20%;
-      }
-
-      .main_content_middle {
-         width: 80%;
-      }
-
-   }
 
    @media (max-width: 660px) {
       .sidebar-user-left,  .main_content_middle {

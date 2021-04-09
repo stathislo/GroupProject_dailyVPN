@@ -238,7 +238,6 @@ export default class Chat extends Component {
                         <h3>Moderator</h3>
                         <ul>
                             <li className='moderator__li'><a href="/moderatorposts">- Posts</a></li>
-                            <li className='moderator__li'><a href="/moderatorusers">- Users</a></li>
                             <li className='moderator__li'><a href="/">- VpnDaily</a></li>
                             <li className='moderator__li'><a href="/moderatorchat">- Chat</a></li>
                         </ul>
@@ -247,8 +246,8 @@ export default class Chat extends Component {
                                 <div className='moderator__chatSearch'>
                                     <input className='moderator__Chatinput' type='text' name='chatSearch' placeholder='Search a chat'></input> 
                                 </div>
-
-                                {allChats}
+                                <div className="allchats">{allChats}</div>
+                                {/* {allChats} */}
                               
 
                             </div>
