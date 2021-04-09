@@ -70,7 +70,7 @@ export default class Moderator_Posts extends Component {
                 <div id={items._id} className='moderatorPosts__container'>
                 <input name='postdelete' type='hidden' value={items._id}></input>
                     <a className='moderatorPosts__link'>{items.title}</a>
-                    <button type='button' onClick={function(event){
+                    <button className="delete__btn" type='button' onClick={function(event){
                         // event.preventDefault()
                         let moderatorPosts = document.getElementById(`${items._id}`)
                         // for(let moderatorPosts1 of moderatorPosts){
@@ -105,7 +105,7 @@ export default class Moderator_Posts extends Component {
  </div>
  <div className="main_content_moderator_middle">
  <h2 className="text-post">Show all posts</h2>
- <div>
+ <div className="show-btn">
  <button onClick={this.onButtonClick} type="Submit" className="show-button">Posts</button>
  {posts}
  </div>

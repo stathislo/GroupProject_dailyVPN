@@ -1,6 +1,6 @@
 .main_content_moderator_middle{
     text-align: center;
-    padding-top: 7rem;
+    border-right: 1px solid rgb(12, 12, 197);
    }
     
    .show-button {
@@ -14,18 +14,36 @@
     margin-top: 0.5rem;
     width: 20%;
     font-size: 1.5rem;
+    margin-bottom: 5rem;
+   }
+
+   .show-button:hover {
+    background-color: rgb(12, 12, 197);
    }
 
    .moderatorPosts__link{
        cursor: pointer;
        font-size: 1.1rem;
-       margin-bottom: 0.8rem;
-       margin-top: 0.8rem;
+       margin-bottom: 3rem;
+       margin-top: 1rem;
+       border-bottom: 1px solid black;
+       text-align:center;
+       padding-right: 0.5rem;
+   }
+
+   .delete__btn{
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    width: 5rem;
+    font-size: 0.8rem;
+   }
+
+   .delete__btn:hover{
+    background-color: rgb(12, 12, 197);  
    }
     
-   .show-button:hover {
-    background-color: rgb(12, 12, 197);
-   }
    .text-post{
-    /* font-size: 2rem; */
+    padding-top: 9rem;
+    font-size: 2rem;
    }

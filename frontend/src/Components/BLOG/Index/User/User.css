@@ -5,7 +5,7 @@
 
    /* sidebar */
    .sidebar-user-left {
-    height: 300vh;
+    height: 380vh;
     background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
     padding: 30px 0;
     width: 15%;
@@ -94,7 +94,7 @@
    }
     
    .download-card-windows {
-       width: 25rem;
+       width: 18rem;
        margin: auto;
        
    }
@@ -104,7 +104,7 @@
     
     .download-card-header-windows {  
        border-radius: 5px 5px 2px 2px; 
-       height: 20rem;
+       height: 18rem;
        background: url(./windows2.png),rgb(56, 55, 55);
        background-size: cover;
     }
