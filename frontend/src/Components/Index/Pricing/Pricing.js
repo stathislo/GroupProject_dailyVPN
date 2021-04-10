@@ -27,7 +27,7 @@ export default class Pricing extends Component {
                                 <h5>Up to 5 Devices</h5>
                                 <h5>Limited Bandwith<small>/10Mbps</small></h5>
                                 <h5><small className="text-muted">Save 0%</small></h5>
-                                <a href="/product1/product_high"><button type="button" className="btn  btn-lg w-75 card-button">Sign up</button></a>
+                                <a href="/product1/product_low"><button type="button" className="btn  btn-lg w-75 card-button">Sign up</button></a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ export default class Pricing extends Component {
                                 <h5>Unlimited Devices</h5>
                                 <h5>Unlimited Bandwith<small>/ 200Mbps</small></h5>
                                 <h5><small className="text-muted">Save 66%</small></h5>
-                                <a href="/product3/product_low"><button type="button" className="btn w-75 btn-lg  card-button">Sign up</button></a>
+                                <a href="/product3/product_high"><button type="button" className="btn w-75 btn-lg  card-button">Sign up</button></a>
                             </div>
                         </div>
                     </div>

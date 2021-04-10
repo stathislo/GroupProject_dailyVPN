@@ -9,7 +9,6 @@ const MongoDBStore = require("connect-mongodb-session")(session)
 const cors = require("cors")
 const transporter = require("./apis/sendgrid")
 const paypal = require("./apis/paypal")
-const pusher = require("./apis/pusher")
 
 
 
