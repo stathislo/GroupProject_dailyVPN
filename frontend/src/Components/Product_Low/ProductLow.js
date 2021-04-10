@@ -192,7 +192,7 @@ export default class ProductLow extends Component {
                     </div>
                     <div className="row justify-content-between">
                         <div className="col-4">VAT 24% Greece</div>
-                        <div className="col-2">EUR</div>
+                        <div className="col-2">EUR {this.vatCalc(price)}</div>
                 
                 <div>
                     <button className="paypal-button" type="submit">
