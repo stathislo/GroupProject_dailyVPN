@@ -1,7 +1,7 @@
 const RegisterUser = require("../models/RegisterUserModel")
 const bcrypt = require("bcryptjs")
 const crypto = require("crypto")
-
+const transporter = require("../apis/sendgrid")
 
 exports.postForgot = (req, res, next)=>{
 RegisterUser.findOne({email:req.body.email})
@@ -16,6 +16,14 @@ RegisterUser.findOne({email:req.body.email})
                 user.ExpireToken = Date.now() + 36000000
                 res.status(200).send(user.token)
                 user.save()
+            transporter.sendMail({
+                to:user.email,
+                from:"info@vpndaily.eu",
+                subject:"Password reset",
+                html:`
+                <p>Reset your password by this <a href="http://localhost:3000/reset/${user.token}">Link</a></p>
+                `
+            })
             }
         })
     }
