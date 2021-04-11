@@ -4,7 +4,7 @@ import axios from "axios"
 import Nav from "../Index/Nav/Nav"
 import Footer from "../Index/Footer/Footer"
 
-export default class ProductMedium extends Component {
+export default class ProductHigh extends Component {
     constructor(props){
         super(props)
         this.state = {
