@@ -7,7 +7,8 @@ export default class Reset extends Component {
     constructor(props){
         super(props)
         this.state= {
-            changeNewPassword:""
+            changeNewPassword:"",
+            confirmPassowrd:""
         }
     }
 
@@ -25,6 +26,10 @@ export default class Reset extends Component {
         })
     }
 
+    onConfirmPasswordChange = (event) => {
+        this.setState({confirmPassowrd: event.target.value})
+    }
+
     onPasswordChange = (event)=>{
         this.setState({changeNewPassword:event.target.value})
     }
@@ -32,6 +37,8 @@ export default class Reset extends Component {
     onFormSubmit = (event)=>{
         event.preventDefault()
 
+        var pattern = new RegExp(/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d][A-Za-z\d!@#$%^&*()_+]{8,19}$/);
+        if((this.state.confirmPassowrd === this.state.changeNewPassword) && pattern.test(this.state.changeNewPassword)){
         const newPass= {
             changeNewPassword:this.state.changeNewPassword,
             token:this.state.getToken
@@ -45,7 +52,12 @@ export default class Reset extends Component {
         .catch(err=>{
             console.log(err)
         })
+    }else if(!pattern.test(this.state.changeNewPassword)){
+        alert("Password must be at least 8 characters with 1 digit , 1 letter and 1 special character.")
+    }else{
+        alert("The confirm password does not match.")
     }
+}
     render() {
         const getToken = this.state.getToken
         return (
@@ -61,7 +73,7 @@ export default class Reset extends Component {
                         <input onChange={this.onPasswordChange} className="reset-inputs" type="password" name='changeNewPassword' placeholder="New Password"></input>
                         </div>
                         <div>
-                        <input className="reset-inputs" type="password" placeholder="Confirm New Password"></input>
+                        <input onChange={this.onConfirmPasswordChange} className="reset-inputs" type="password" placeholder="Confirm New Password"></input>
                         </div>
                         <div className="reset-btn">
                             <button className="reset-button" type="submit">Continue</button>
