@@ -59,7 +59,6 @@
     justify-content: flex-end;
     margin-left: 0.5rem;
     padding: 0.5rem;
-    color: rgb(231, 229, 229);
     border-radius: 10px;
     font-size: 1rem;
     line-break: auto;
@@ -67,12 +66,14 @@
 
 .chat__moderatorMessage{
     font-weight: 300;
+    color:white
 }
 
 .chat__moderatorP{
-    color: white;
+    color: rgb(125, 174, 238);
     font-size:1.2rem;
-    font-weight: 900;  
+    font-weight: 900; 
+ 
 }
 
 .chat__userMessage, .chat__userP{
@@ -143,6 +144,3 @@
     background-color: rgb(56, 102, 163);
 }
 
-.chat__moderatorMessage{
-    background-color: #dc3545;
-}
