@@ -59,6 +59,9 @@
       padding-top: 5rem;
    }
 
+   .steps-import{
+      padding-top:5rem;
+   }
    .steps-container {
        margin-bottom: 5rem;
    }
@@ -117,6 +120,14 @@
     }
     .download-text {
        color: black;
+    }
+
+    .download-card-header-client{
+      background: url(./clients.png),rgb(56, 55, 55);
+      background-size: cover;
+      border-radius: 5px 5px 2px 2px; 
+      height: 18rem;
+      background-repeat:no-repeat;
     }
 
    @media (max-width: 660px) {
