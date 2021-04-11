@@ -23,9 +23,14 @@ export default class Index extends Component {
         if (checkLogin.data === "not loggedin") {
           axios.get("http://localhost:5000/index")
             .then(res => {
+              let pIp=document.getElementById("getIp2")
               console.log(res)
               this.setState({ getIp: res.data.ip })
               this.setState({ getIsp: res.data.isp })
+              if(res.data.ip === "88.80.186.73"){
+                pIp.style.color="green" 
+                pIp.textContent="Protected"
+             }
             })
             .catch(err => {
               console.log(err)
@@ -33,9 +38,14 @@ export default class Index extends Component {
         } else if (checkLogin.data === "loggedin") {
           axios.get("http://localhost:5000/index")
             .then(res => {
+              let pIp=document.getElementById("getIp2")
               console.log(res)
               this.setState({ getIp: res.data.ip })
               this.setState({ getIsp: res.data.isp })
+              if(res.data.ip === "88.80.186.73"){
+                 pIp.style.color="green"
+                 pIp.textContent="Protected" 
+              }
             })
             .catch(err => {
               console.log(err)
@@ -57,7 +67,7 @@ export default class Index extends Component {
       // IP Code 
       <div id="index">
         <div className='navIp'>
-          <p id='getIp'>Your ip address is {clientIp} - {clientISP}- Your Status: <span className='ispspan'>Unprotected</span></p>
+          <p id='getIp'>Your ip address is {clientIp} - {clientISP}- Your Status: <span id="getIp2" className='ispspan'>Unprotected</span></p>
         </div>
 
         {/* Navbar Code  */}
