@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios"
 import Nav from "../Index/Nav/Nav"
+import logo from "./security.png"
 import "./Postpage.css"
 
 export default class Postpage extends Component {
@@ -147,7 +148,8 @@ const getComments = this.state.comments.map(function(commentsItems){
             <div className='onePost__nav'>
               <div className='blog__navContainer'>
                   <div className='blog__navLeftSide'>
-                      <h2 className='blog__navH2'>Logo</h2>
+                  <img className='logo-blog' src={logo} width="70" />
+                      <a className="navbar-brand" href="/blog" style={{ color: '#FFF' }}>DailyVPN Blog</a>
                   </div>
                   <div className='blog__navRightSide'>
                       <ul className='blog__navUl'>
