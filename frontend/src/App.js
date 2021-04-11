@@ -39,31 +39,31 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Index} />
-          <Route path="/login" component={Login} />
-          <Route path='/forgot' component={Forgot} />
-          <Route path='/reset/:id' component={Reset}/>
-          <Route path="/logout" component={Logout} />
-          <Route path="/registerget/:id" component={Registerget} />
-          <Route path="/success" component={Success} />
-          <Route path="/confirmlogout" component={ifUserIsLoggedIn} />
-          <Route path="/alreadyregister" component={ifUserIsAlreadyRegistered} />
-          <Route path='/product1/:name' component={Product_Low} />
-          <Route path="/product2/:name" component={Product_Medium} />
-          <Route path="/product3/:name" component={Product_High} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path='/forgot' component={Forgot} />
+          <Route exact path='/reset/:id' component={Reset}/>
+          <Route exact path="/logout" component={Logout} />
+          <Route exact path="/registerget/:id" component={Registerget} />
+          <Route exact path="/success" component={Success} />
+          <Route exact path="/confirmlogout" component={ifUserIsLoggedIn} />
+          <Route exact path="/alreadyregister" component={ifUserIsAlreadyRegistered} />
+          <Route exact path='/product1/:name' component={Product_Low} />
+          <Route exact path="/product2/:name" component={Product_Medium} />
+          <Route exact path="/product3/:name" component={Product_High} />
           <Route exact path='/blog' component={BLOG} />
-          <Route path='/posts/:postId' component={PostPage} />
-          <Route path='/createpost' component={CreatePost} />
-          <Route path="/moderator" component={Moderator} />
-          <Route path='/moderatorchat' component={ModeratorChat}/>
-          <Route path='/moderatorposts' component={ModeratorPosts}/>
-          <Route path='/generalterms' component={General_terms}/>
-          <Route path='/privacypolicy' component={Privacy_policy}/>
-          <Route path='/faq' component={Faq}/>
-          <Route path='/user' component={User} />
-          <Route path='/admin' component={Administrator} />
+          <Route exact path='/posts/:postId' component={PostPage} />
+          <Route exact path='/createpost' component={CreatePost} />
+          <Route exact path="/moderator" component={Moderator} />
+          <Route exact path='/moderatorchat' component={ModeratorChat}/>
+          <Route exact path='/moderatorposts' component={ModeratorPosts}/>
+          <Route exact path='/generalterms' component={General_terms}/>
+          <Route exact path='/privacypolicy' component={Privacy_policy}/>
+          <Route exact path='/faq' component={Faq}/>
+          <Route exact path='/user' component={User} />
+          <Route exact path='/admin' component={Administrator} />
           <Route exact path='/category/:name' component={News} />
-          <Route path="/blog/search/posts=:search" component={SearchPage} />
-          <Route path="*" component={Error} />
+          <Route exact path="/blog/search/posts=:search" component={SearchPage} />
+          <Route exact path="*" component = {Error} />
         </Switch>
       </Router>
     </div>
