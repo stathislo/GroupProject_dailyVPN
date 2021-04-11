@@ -53,13 +53,9 @@ color: white;
     .header-img {
        display: none;
     }
-    h1{
-        text-align: center;
-    }
-
     #title-container {
-        margin: 10rem 10rem;
         margin: auto;
+        text-align: center
     }
 }
 

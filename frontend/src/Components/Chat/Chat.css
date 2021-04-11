@@ -89,7 +89,7 @@
     font-weight: bold;
     margin-right: 3rem;
     color: white;  
-    width: 50%;  
+    width: 50%; 
 }
 
 .chat__userP{
@@ -140,4 +140,8 @@
     width: 20%;
     color: white;
     background-color: rgb(56, 102, 163);
+}
+
+.chat__moderatorMessage{
+    background-color: #dc3545;
 }

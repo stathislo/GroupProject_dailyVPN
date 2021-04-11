@@ -20,7 +20,7 @@
 }
 
 
-@media only screen and (max-width: 1500px) {
+/* @media only screen and (max-width: 1500px) {
     .blog__headerP {
         padding-bottom: 5rem;
     }
@@ -46,6 +46,16 @@
     }
     .blog__headerContainer{
         margin-left :150px;
+    }
+} */
+
+@media only screen and (max-width:600px){
+    .blog__headerImg{
+        display: none;
+    }
+    .blog__headerTexts{
+        margin: auto;
+        text-align: center;
     }
 }
 

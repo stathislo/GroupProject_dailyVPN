@@ -74,3 +74,18 @@ flex-wrap: wrap;
     right: 1rem;
 }
 
+@media only screen and (max-width:600px){
+    .test {
+        margin:0 -150px 0 -150px;
+        padding: 0;
+        /* margin: auto; */
+    }
+    .posts__searchBtn{
+        border: none;
+        background: none;
+        position: relative;
+        bottom: 1.9rem;
+        left:8rem;
+    }
+}
+

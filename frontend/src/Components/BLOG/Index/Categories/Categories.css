@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 .blog__cat{
     background-color: rgb(221, 221, 221);
     padding-bottom: 0.5rem;
@@ -21,11 +22,13 @@
     padding:20px 0;
     text-align: center;
     width: 100%;
+    font-family: 'Gloria Hallelujah';
 }
 
 .blog__catlink{
     text-decoration: none;
     color: black;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    font-family: 'Gloria Hallelujah';
 
 }

@@ -4,9 +4,10 @@
 }
 .createPost__container{
     background: linear-gradient(rgba(4, 62, 223, 0.877), rgba(36, 62, 136, 0.685));
-    height: 100vh;
+    /* height: 100vh; */
     color: rgb(248, 240, 240);
     padding-top: 3rem;
+    padding-bottom: 25rem;
     width: 50%;
 }
 .createPost__formContainer{
@@ -62,3 +63,18 @@
     padding-top: 5rem;
 }
 
+
+@media only screen and (max-width: 900px) {
+    .createPost {
+      /* display: none; */
+      flex-direction: column;
+    }
+    .createPost__container{
+        text-align: center;
+        width: 100%;
+    }
+    .chatbot_right{
+        width: 100%;
+        background: linear-gradient(rgba(36, 62, 136, 0.685),rgba(4, 62, 223, 0.877))
+    }
+  }

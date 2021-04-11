@@ -3,9 +3,20 @@
     font-weight: bold;
     font-size: xx-large;
     padding: 5%;
+    background: linear-gradient(217deg, #020524, rgba(255,0,0,0) 70.71%),
+                linear-gradient(127deg, #001737, rgba(0,255,0,0) 70.71%),
+                linear-gradient(336deg, #26456b, rgba(0,0,255,0) 70.71%); 
+
+    color: white;
+    margin-bottom: 5rem;
 }
 
 .Faq__container{
     background-color: #eef3f8;
     height: 160vh;
+}
+
+.question{
+    margin-left: 5rem;
+    font-weight: 800;
 }

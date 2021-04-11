@@ -7,7 +7,7 @@ export default class General_terms extends Component {
     render() {
         return (
             <div>
-            <div>
+            <div className="faq__nav">
                 <Nav/>
             </div>    
 
@@ -18,7 +18,7 @@ export default class General_terms extends Component {
                 <div className="accordion-item card-header">
                     <div className="row justify-content-between accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <div className="col-9 top">What is a VPN in simple terms?</div>
+                        <div className="col-9 question">What is a VPN in simple terms?</div>
                         </button>
                     </div> 
             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -37,7 +37,7 @@ export default class General_terms extends Component {
                 <div className="accordion-item card-header">
                     <div className="row justify-content-between accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                        <div className="col-9 top">Is using a VPN safe?</div>
+                        <div className="col-9 question">Is using a VPN safe?</div>
                         </button>
                     </div> 
             <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordiontwo">
@@ -56,7 +56,7 @@ export default class General_terms extends Component {
                 <div className="accordion-item card-header">
                     <div className="row justify-content-between accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseOne">
-                        <div className="col-9 top">Can you be tracked if you use a VPN?</div>
+                        <div className="col-9 question">Can you be tracked if you use a VPN?</div>
                         </button>
                     </div> 
             <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -75,7 +75,7 @@ export default class General_terms extends Component {
                 <div className="accordion-item card-header">
                     <div className="row justify-content-between accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
-                        <div className="col-9 top">Is it OK to leave VPN on all the time?</div>
+                        <div className="col-9 question">Is it OK to leave VPN on all the time?</div>
                         </button>
                     </div> 
             <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -94,7 +94,7 @@ export default class General_terms extends Component {
                 <div className="accordion-item card-header">
                     <div className="row justify-content-between accordion-header">
                         <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
-                        <div className="col-9 top">Is VPN illegal?</div>
+                        <div className="col-9 question">Is VPN illegal?</div>
                         </button>
                     </div> 
             <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
