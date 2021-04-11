@@ -1,3 +1,11 @@
+# How to start the app 
+
+1. cd frontend ---> npm i ---> npm start
+2. cd backend  ---> npm i ---> node server.js
+3. cd blog     ---> npm i ---> npm start
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
