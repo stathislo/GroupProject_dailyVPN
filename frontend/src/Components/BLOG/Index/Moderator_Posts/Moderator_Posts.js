@@ -12,11 +12,16 @@ export default class Moderator_Posts extends Component {
  
  axios.get("http://localhost:5000/main" , { withCredentials:true })
     .then(res=>{
-    console.log(res)
-    })
-    .catch(err=>{
-    console.log(err)
-    }) 
+        if(res.data.user ==='moderator' && res.data.loggedin==="loggedin"){
+            console.log('komple')
+           }
+           else{
+               this.props.history.push("/login")
+           }
+       })
+       .catch(err=>{
+           console.log(err)
+       }) 
  }
 
 

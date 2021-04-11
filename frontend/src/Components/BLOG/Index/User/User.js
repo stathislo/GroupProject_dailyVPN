@@ -20,8 +20,10 @@ export default class User extends Component {
             console.log(user)
             if(user.data==='not loggedin'){
                 this.props.history.push("/login")
-            }else{
+            }else if(user.data.loggedin==='loggedin' && user.data.user ==='user'){
                 this.setState({userFirstName:user.data.userFirstName})
+            }else{
+                this.props.history.push('/login')
             }
         })
         .catch(err=>{
