@@ -9,6 +9,19 @@ export default class Posts extends Component {
             posts:[],
             search:""
         }
+
+        
+        axios.get("http://localhost:5000/main", { withCredentials:true })
+        .then(user=>{
+            if(user.data.loggedin==='loggedin'){
+
+            }else{
+                this.props.history.push("/login")
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
     }
 
     componentDidMount(){

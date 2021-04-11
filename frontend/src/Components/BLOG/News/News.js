@@ -32,6 +32,11 @@ export default class News extends Component {
             axios.get("http://localhost:5000/main", { withCredentials:true })
             .then(user=>{
                 console.log(user)
+                if(user.data.loggedin==='loggedin'){
+
+                }else{
+                    this.props.history.push("/login")
+                }
             })
             .catch(err=>{
                 console.log(err)
