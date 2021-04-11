@@ -9,7 +9,7 @@ export default class Privacy_policy extends Component {
             <div className="privacy__container">
             <div className='privacy__LeftSide'>
                 <img className='logo-privay' src={logo} width="50" />
-                <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>DailyVPN</a>
+                <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>vpnDaily</a>
             </div>
 
             <div className="privacy__rightside">

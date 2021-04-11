@@ -8,7 +8,7 @@ export default class General_terms extends Component {
             <div className="terms__container">
             <div className='terms__LeftSide'>
                 <img className='logo-terms' src={logo} width="50" />
-                <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>DailyVPN</a>
+                <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>vpnDaily</a>
             </div>
 
             <div className="terms__rightside">

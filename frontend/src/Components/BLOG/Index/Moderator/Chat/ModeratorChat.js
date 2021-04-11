@@ -103,6 +103,7 @@ export default class Chat extends Component {
     
     render() {
 
+        const moderatorAvantar=this.state.moderatorAvantar
         const showMessage2 = this.state.showMessage2
         
         // const userLiveChat2 = this.state.userLiveChat2.map(function(live){
@@ -253,7 +254,7 @@ export default class Chat extends Component {
                             </div>
                             <div className='moderator__chatRightSide'>
                                 <div className='moderator__chatRightImage'>
-                                    <img className='moderator__chatRightImg'></img>
+                                    <img className='moderator__chatRightImg' src={moderatorAvantar}></img>
                                 </div>
                                     <div id='container'>
                                     {getmessages}

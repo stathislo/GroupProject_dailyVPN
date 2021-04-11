@@ -13,7 +13,7 @@ export default class General_terms extends Component {
 
             {/* 1 faq  */}
             <div className='Faq__container'>
-            <div className='Faq__title'>Frequent Asked Questions</div>
+            <div className='Faq__title'>Frequently Asked Questions</div>
             <div className='accordion accordion-flush card-paypal col-lg-7 col-md-7 text-center'>
                 <div className="accordion-item card-header">
                     <div className="row justify-content-between accordion-header">

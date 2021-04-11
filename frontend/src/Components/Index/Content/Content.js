@@ -31,7 +31,7 @@ export default class Content extends Component {
                         <div className="right-content1 col-6">
                             <h4 className='right-content1-h4'>Going online is safer than ever before</h4>
                             <h1 className='right-content1-h1'><span className='right-content1-span'>Secure</span> & Anonymous Access</h1>
-                            <h4 className='right-content1-text'>DailyVPN provides total anonimity and security for your online data wherever you are.
+                            <h4 className='right-content1-text'>vpnDaily provides total anonimity and security for your online data wherever you are.
                                Stay hidden and protected while accessing the web from everywhere.</h4>
                             <button onClick={this.onButtonScroll} type="button" className="btn btn-danger btn-lg " id="btn-content1">Get Started</button>
                         </div>

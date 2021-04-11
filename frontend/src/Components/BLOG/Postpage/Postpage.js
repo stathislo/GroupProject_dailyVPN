@@ -149,7 +149,7 @@ const getComments = this.state.comments.map(function(commentsItems){
               <div className='blog__navContainer'>
                   <div className='blog__navLeftSide'>
                   <img className='logo-blog' src={logo} width="70" />
-                      <a className="navbar-brand" href="/blog" style={{ color: '#FFF' }}>DailyVPN Blog</a>
+                      <a className="navbar-brand" href="/blog" style={{ color: '#FFF' }}>vpnDaily Blog</a>
                   </div>
                   <div className='blog__navRightSide'>
                       <ul className='blog__navUl'>
