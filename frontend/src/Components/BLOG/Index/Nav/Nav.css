@@ -36,6 +36,11 @@
     width: 100%;
 }
 
+.blog__navLink:hover {
+    color:black;
+    text-decoration: underline;
+}
+
 #createPost{
     display: none;
 }

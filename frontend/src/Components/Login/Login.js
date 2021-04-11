@@ -81,8 +81,8 @@ export default class Login extends Component {
                                 <button className="login__btn" type='submit'>Continue</button>
                             </div>
                             <h5 id='message'></h5>
-                            <h5 className='login__already'>Did you forgot your password?<a href="/forgot"> Click here...</a></h5>
-                            <h5 className='login__already'>You dont have an account? <a href="/#pricing">Go to register...</a></h5>
+                            <h5 className='login__already'>Did you forget your password?<a href="/forgot"> Click here...</a></h5>
+                            <h5 className='login__already'>You don't have an account? <a href="/#pricing">Go to register...</a></h5>
                         </form>
                     </div>
                 </div>
