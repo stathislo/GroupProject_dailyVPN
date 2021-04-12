@@ -9,13 +9,15 @@ const MongoDBStore = require("connect-mongodb-session")(session)
 const cors = require("cors")
 const transporter = require("./apis/sendgrid")
 const paypal = require("./apis/paypal")
-
+const helmet = require ("helmet")
 
 
 const store = new MongoDBStore({
     uri:process.env.DB_URI,
     collection:"sessions"
 })
+
+app.use(helmet());
 
 app.use(session({
     secret:"vpndaily",
