@@ -133,12 +133,12 @@ export default class ProductHigh extends Component {
                     <input type='hidden' name='userId' value={userId}></input> 
                     <div className="card">
                             <div className="pricing-card-header">
-                                <h3>2 Year Plan</h3>
+                                <h3>1 Month Plan</h3>
                             </div>
                             <div className="card-body">
                                 <h2>&#8364;{price} <small>/ mo</small></h2>
-                                <h5>Unlimited Devices</h5>
-                                <h5>Unlimited Bandwith<small>/ 200Mbps</small></h5>
+                                <h5>Up to 5 Devices</h5>
+                                <h5>Limited Bandwith<small>/ 10Mbps</small></h5>
                                 <h5><small className="text-muted">Save 66%</small></h5>
                             </div>
                         </div>
@@ -189,7 +189,7 @@ export default class ProductHigh extends Component {
                 <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div className="accordion-body card-paypal-body">
                     <div className="row justify-content-between"> 
-                        <div className="col-6">Your subscription - 1 month  Plan </div>
+                        <div className="col-6">Your subscription - 1 Month Plan</div>
                         <div className="col-2">EUR {price}</div>
                     </div>
                     <div className="row justify-content-between">
