@@ -49,7 +49,7 @@ export default class Nav extends Component {
         <nav id='nav' className="navbar navbar-expand-lg navbar ">
           <div className="container-fluid">
             <img className='logo-img' src={logo} width="45" />
-            <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>DailyVPN</a>
+            <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>vpnDaily</a>
             <button className="navbar-toggler custom-toggler  bg-primary" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
               aria-label="Toggle navigation">
@@ -99,7 +99,7 @@ export default class Nav extends Component {
       <nav id='nav__loggedinModerator' className="navbar navbar-expand-lg navbar-light nav__loggedin">
           <div className="container-fluid">
             <img className='logo-img' src={logo} width="45" />
-            <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>DailyVPN</a>
+            <a className="navbar-brand" href="/" style={{ color: '#FFF' }}>vpnDaily</a>
             <button className="navbar-toggler custom-toggler  bg-primary" type="button" data-bs-toggle="collapse"
               data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
               aria-label="Toggle navigation">
